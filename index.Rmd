@@ -136,14 +136,20 @@ d %>%
 
 ### Detailed agenda
 
+#### A note about parking
+
+This course is a lolipop, which begins north of Caineville, UT, and also finishes in Caineville. We should be able to leave a vehicle in Caineville, which we will return to on November 25 after three days of riding. *This means that we need to figure out a way to get to the start line, at the junction of HW24 & Temple Mt Road.* We can sort this detail out later...
+
 #### Day 0 Saturday Nov 21
 
 ##### Afternoon (1700?)
+
 - Buchanan arrives in SLC
 - Meet up
 - Gear check
 
 ##### Evening
+
 - Final gear check
 - Prepare for Grand Depart
 
@@ -153,7 +159,9 @@ d %>%
 
 ##### 0715 Sunrise
 
-- Depart for the junction of HW24 & Temple Mt Road (3.5 hr)
+##### 0730
+
+- Depart for the Cainevilee, Utah (3.5 hr drive)
 
 <center>
 
@@ -163,7 +171,7 @@ d %>%
 
 ##### 1100
 
-
+- Park vehicle in Cainevlille, Utah and travel to the junction of HW24 & Temple Mt Road
 - Kit up and ride approx. 6 hr to Sunlit Oasis
 
 <center>
@@ -182,7 +190,7 @@ d %>%
 - Dinner (@ Sunlit Oasis?)
 - Debauch
 
-#### Day 2
+#### Day 2 Monday Nov 23
 
 ##### Sunrise 0715
 
@@ -214,9 +222,13 @@ d %>%
 
 - Debauch
 
-#### Day 3
+#### Day 3 Tuesday Nov 24
 
-#### Day 4
+#### Day 4 Wednesday Nov 25
+
+- Ride in the park for approx. 5 hr
+- Ride to Caineville to collect vehicle
+- Drive to Veyo, UT for Cabin festivities
 
 ## Route summary {.flexbox .vcenter}
 
