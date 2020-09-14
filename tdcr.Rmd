@@ -158,12 +158,16 @@ p
 
 ## The map {.flexbox .vcenter}
 
+<center>
+
 <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1jU5P6ApFli7oH5DRchvhPMoNPf_VNUtl" width="640" height="480"></iframe>
+
+</center>
 
 ```{r gallery, echo=FALSE, message=FALSE, results='asis'}
 fnames <- list.files('./figs')
 for(i in fnames){
-  cat("\n\n## The gallery\n\n")
+  cat("\n\n## The gallery {.flexbox .vcenter}\n\n")
   p <- ggdraw() +
     draw_image(paste0('./figs/', i))
   print(p)
