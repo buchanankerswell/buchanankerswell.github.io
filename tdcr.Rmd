@@ -1,0 +1,171 @@
+---
+title: "Tour du Capitol Reef"
+author: "Buchanan Kerswell"
+date: "9/13/2020"
+output: 
+  html_document:
+    css: style.css
+---
+
+```{r setup, include=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(grid)
+library(gridExtra)
+library(patchwork)
+library(plotKML)
+library(ggmap)
+library(cowplot)
+library(geosphere)
+```
+
+```{r plots, include=FALSE, message=FALSE}
+e <- readGPX('./route.gpx')
+e <- e$tracks[[1]]$`Tour du Capitol Reef` %>%
+  tibble() %>%
+  mutate('ele' = as.numeric(ele),
+         dist = distHaversine(cbind(lon, lat),
+                                cbind(lag(lon), lag(lat)))) %>%
+  mutate(
+    'dist' = dist %>% replace_na(0),
+    cumdist = cumsum(dist)
+  )
+lat <- c(min(e$lat), max(e$lat))
+lon <- c(min(e$lon), max(e$lon))
+bbox <- make_bbox(lon, lat)
+b <- get_map(bbox, maptype = 'terrain', source = 'google')
+dut <- map_data('state', region = 'utah')
+bboxut <- make_bbox(c(min(dut$long), max(dut$long)), c(min(dut$lat), max(dut$lat)))
+but <- get_map(bboxut, maptype = 'terrain', source = 'google', color = 'bw')
+p1inset <- ggmap(but) +
+  geom_path(data = dut, aes(x = long, y = lat), size = 0.5) +
+  geom_rect(data = tibble(lat = lat,
+                          lon = lon),
+            aes(xmin = lon[1], xmax = lon[2], ymin = lat[2], ymax = lat[1]),
+            fill = 'deeppink4',
+            alpha = 0.1,
+            color = 'black',
+            size = 0.25) +
+  ylab('') +
+  xlab('') +
+  theme_map()
+p1 <- ggmap(b) +
+  geom_point(data = e, aes(lon, lat, color = ele*3.28)) +
+  scale_color_gradient(name = 'Elevation\n(ft)', low = 'chocolate4', high = 'lemonchiffon') +
+  ylab('') +
+  xlab('') +
+  theme_bw(base_size = 11) +
+  theme(
+    panel.border = element_rect(size = 2),
+    axis.ticks = element_line(size = 1)
+  ) +
+  geom_label(aes(x = -111.25, y = 38.5, label = 'Tour du\nCapitol Reef\n231 mi\n17.35k (ft)')) +
+  inset(ggplotGrob(p1inset), xmin = -110.95, xmax = -110.55, ymin = 37.75, ymax = 38.18)
+p1
+ggsave('./figs/route.png', device = 'png', plot = p1)
+
+p2 <- e %>%
+  ggplot() +
+  geom_area(aes(x = cumdist*0.000621371, y = ele*3.28), alpha = 0.5) +
+  xlab('Distance (mi)') +
+  ylab('Elevation (ft)') +
+  scale_x_continuous(expand = c(0,0)) +
+  theme_minimal(base_size = 11)
+p2
+ggsave('./figs/ele.png', device = 'png', plot = p2)
+```
+
+## The route {.flexbox .vcenter}
+
+```{r map, echo=FALSE, out.width='100%', fig.cap='Figure 1. Map of Tour du Capitol Reef. The full segment can be found on [komoot](https://www.komoot.com/tour/257901775). Data for map from `google`'}
+p1
+```
+
+## The profile {.flexbox .vcenter}
+
+```{r profile, echo=FALSE, out.width='100%', fig.cap='Figure 2. Elevation profile of Tour du Capitol Reef. The full segment can be found on [komoot](https://www.komoot.com/tour/257901775)'}
+p2
+```
+
+## The experience {.flexbox .vcenter}
+
+The route passes through pristine UT desert, including flybys of:
+
+1. [Mars Desert Research Station](http://mdrs.marssociety.org/)
+2. [Goblin Valley State Park](https://stateparks.utah.gov/parks/goblin-valley/) & the [San Rafael Swell](https://utah.com/san-rafael)
+3. Traversing much of the [Waterpocket fold](https://capitolreef.org/blog/capitol-reef-the-waterpocket-fold/)
+4. [Scenic Byway 12](https://www.visitutah.com/articles/the-all-american-road-scenic-byway-12/) including the infamous **hogsback segment**, or perhaps to [Hells Backbone](https://utah.com/grand-staircase-escalante/hells-backbone)
+5. Beautiful Torrey and [Capitol Reef National Park](https://www.nps.gov/care/index.htm)
+6. Finale on a single track to [Cassidy Arch](https://utah.com/hiking/capitol-reef-national-park/cassidy-arch-trail) and the [Grand Wash](https://www.tripadvisor.com/Attraction_Review-g143017-d212116-Reviews-Grand_Wash_Trail-Capitol_Reef_National_Park_Utah.html)
+
+#### ... and many more
+
+## The details {.flexbox .vcenter}
+
+```{r table, echo=FALSE, message=FALSE}
+d <- tibble(
+  day = factor(c(1, 2, 3, 4)),
+  depart = c('SR24', 'Sunlit Oasis', 'Boulder UT', 'Torrey UT'),
+  arrive = c('Sunlit Oasis', 'Boulder UT', 'Torrey UT', 'Veyo UT'),
+  `distance (mi)` = c(60.1, 65.9, 54.7, 50.3),
+  `climbing (ft)` = c(1946, 5256, 4751, 5397),
+  `descent (ft)` = c(2392, 3832, 4741, 6785)
+) %>%
+  mutate(
+    `distance (km)` = `distance (mi)` * 1.609,
+    `climbing (m)` = `climbing (ft)` / 3.28,
+    `descent (m)` = `descent (ft)` / 3.28,
+    `ETA (hr)` = `distance (mi)` / 10
+  )
+
+d %>%
+  select(c(1:6, 10)) %>%
+  kbl(digits = 0) %>%
+  kable_styling(
+    bootstrap_options = c('hover', 'striped'),
+    font_size = 18,
+    position = 'center',
+    full_width = TRUE
+  )
+```
+
+## Route summary {.flexbox .vcenter}
+
+```{r summary, echo=FALSE, message=FALSE, out.width='100%', fig.cap='Figure 3. Important route information summarized by day. '}
+s <- d %>%
+  select(where(is.numeric)) %>%
+  pivot_longer(cols = everything(), names_to = 'vars', values_to = 'vals') %>%
+  group_by(vars) %>%
+  summarise(total = round(sum(vals), 1),
+            avg = round(mean(vals)), 1)
+p <- d %>%
+  select(day, `distance (mi)`, `climbing (ft)`, `descent (ft)`, `ETA (hr)`) %>%
+  pivot_longer(-day, names_to = 'vars', values_to = 'vals') %>%
+  group_by(vars) %>%
+  group_by(day) %>%
+  ggplot() +
+  geom_area(aes(x = day, y = vals, group = vars, fill = vars), color = 'black', alpha = 0.5, show.legend = FALSE) +
+  geom_text(data = s %>% filter(vars %in% c('ETA (hr)', 'climbing (ft)', 'descent (ft)', 'distance (mi)')), aes(x = 2.5, y = 0, group = vars, label = paste0('avg: ', avg, '/day', '\ntotal: ', total)), vjust = -1, size = 3) +
+  ylab('') +
+  scale_x_discrete(expand = c(0,0)) +
+  scale_fill_brewer(palette = 'Paired') +
+  facet_wrap(~ vars, scales = 'free_y') +
+  theme_bw(base_size = 11)
+p
+```
+
+## The map {.flexbox .vcenter}
+
+<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1jU5P6ApFli7oH5DRchvhPMoNPf_VNUtl" width="640" height="480"></iframe>
+
+```{r gallery, echo=FALSE, message=FALSE, results='asis'}
+fnames <- list.files('./figs')
+for(i in fnames){
+  cat("\n\n## The gallery\n\n")
+  p <- ggdraw() +
+    draw_image(paste0('./figs/', i))
+  print(p)
+}
+```
