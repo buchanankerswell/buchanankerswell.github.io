@@ -164,10 +164,11 @@ p
 
 </center>
 
-```{r gallery, echo=FALSE, message=FALSE, results='asis'}
+## The gallery {.flexbox .vcenter}
+
+```{r gallery, echo=FALSE, message=FALSE, fig.align='center'}
 fnames <- list.files('./figs')
 for(i in fnames){
-  cat("\n\n## The gallery {.flexbox .vcenter}\n\n")
   p <- ggdraw() +
     draw_image(paste0('./figs/', i))
   print(p)
