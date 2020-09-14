@@ -104,8 +104,9 @@ The route passes through pristine UT desert, including flybys of:
 
 #### ... and many more
 
-## The details {.flexbox .vcenter}
+## The details {.flexbox .vcenter .tabset}
 
+### Summary
 ```{r table, echo=FALSE, message=FALSE}
 d <- tibble(
   day = factor(c(1, 2, 3, 4)),
@@ -132,6 +133,90 @@ d %>%
     full_width = TRUE
   )
 ```
+
+### Detailed agenda
+
+#### Day 0 Saturday Nov 21
+
+##### Afternoon (1700?)
+- Buchanan arrives in SLC
+- Meet up
+- Gear check
+
+##### Evening
+- Final gear check
+- Prepare for Grand Depart
+
+#### Day 1 Sunday Nov 22
+
+##### 0700
+
+##### 0715 Sunrise
+
+- Depart for the junction of HW24 & Temple Mt Road (3.5 hr)
+
+<center>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12466.943041453085!2d-110.5840104!3d38.6319595!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDM3JzUwLjgiTiAxMTDCsDM0JzAwLjIiVw!5e0!3m2!1sen!2sus!4v1600108354228!5m2!1sen!2sus" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+</center>
+
+##### 1100
+
+
+- Kit up and ride approx. 6 hr to Sunlit Oasis
+
+<center>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12537.899959683604!2d-111.119681!3d38.222084!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x59f1481fffb8e2f4!2sSunlit%20Oasis!5e0!3m2!1sen!2sus!4v1600108283572!5m2!1sen!2sus" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+</center>
+
+##### 1900
+
+- Arrive at Sunlit Oasis
+- Check in
+
+##### 1915 Sunset
+
+- Dinner (@ Sunlit Oasis?)
+- Debauch
+
+#### Day 2
+
+##### Sunrise 0715
+
+- Breakfast at Sunlit Oasis (included)
+- Kit up and ride approx. 6.5 hr to Boulder, UT
+
+<center>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37261.95641931418!2d-111.45143697028186!3d37.89707148787745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDU0JzExLjciTiAxMTHCsDI1JzE5LjAiVw!5e0!3m2!1sen!2sus!4v1600108790769!5m2!1sen!2sus" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+</center>
+
+##### 0830
+
+- Depart for Boulder, UT
+
+##### 1500
+
+- Arrive in Boulder, UT
+- Check into hotel
+  * [Boulder Mt Lodge](https://www.google.com/maps/place/Boulder+Mountain+Lodge/@37.9006605,-111.4288698,14.77z/data=!4m12!1m3!2m2!1shotel!6e3!3m7!1s0x8735f47c57c09f47:0x79f0dc7ff24be145!5m2!4m1!1i2!8m2!3d37.9020588!4d-111.4245629)
+  * [Circle Cliffs Motel](https://www.google.com/maps/place/Circle+Cliffs+Motel/@37.9006605,-111.4288698,14.77z/data=!4m12!1m3!2m2!1shotel!6e3!3m7!1s0x0:0xe2a94c7ff0cd6f27!5m2!4m1!1i2!8m2!3d37.9066894!4d-111.4245361)
+- Dinner in town
+  * [Hell's Backbone Grill](https://www.google.com/maps/place/Hell's+Backbone+Grill+%26+Farm/@37.9020607,-111.4265417,17z/data=!3m1!4b1!4m5!3m4!1s0x8735f4581f7cdeb3:0x8c2850804cb69ac6!8m2!3d37.9020569!4d-111.4245623)
+  * [Burr Trail Grill](https://www.google.com/maps/place/Burr+Trail+Grill/@37.9020607,-111.4265417,17z/data=!4m5!3m4!1s0x0:0xcf09f9761cb9f2d1!8m2!3d37.9014265!4d-111.4246045)
+  * *Or cook ourselves!*
+  
+##### 1915 Sunset
+
+- Debauch
+
+#### Day 3
+
+#### Day 4
 
 ## Route summary {.flexbox .vcenter}
 
