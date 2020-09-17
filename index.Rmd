@@ -10,21 +10,15 @@ output:
 
 ```{r setup, include=FALSE, message=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-library(tidyverse)
-library(knitr)
-library(kableExtra)
-library(grid)
-library(gridExtra)
-library(patchwork)
-library(plotKML)
-library(ggmap)
-library(cowplot)
-library(geosphere)
-library(rmdformats)
+if (!require("pacman"))
+  install.packages("pacman")
+pacman::p_load(tidyverse, knitr, kableExtra, grid, gridExtra, patchwork,
+               plotKML, ggmap, cowplot, geosphere, rmdformats, leaflet,
+               leaflet.providers, sf)
 ```
 
 ```{r plots, include=FALSE, message=FALSE}
-e <- readGPX('./route.gpx')
+e <- readGPX('./route.gpx', metadata = FALSE, bounds = FALSE, waypoints = FALSE, routes = FALSE)
 e <- e$tracks[[1]]$`Tour du Capitol Reef` %>%
   tibble() %>%
   mutate('ele' = as.numeric(ele),
@@ -267,11 +261,31 @@ p
 
 ## The map {.flexbox .vcenter}
 
-<center>
+```{r map2, echo=FALSE, fig.align='center', message=FALSE, warning=FALSE}
+# Read gpx file
+# st_layers('route.gpx')
+course <- st_read('route.gpx', layer = 'track_points', crs = 3857) %>%
+  select(ele, time, track_seg_point_id, geometry) %>%
+  rename(id = track_seg_point_id)
 
-<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1jU5P6ApFli7oH5DRchvhPMoNPf_VNUtl" width="640" height="480"></iframe>
-
-</center>
+ggmap(b) +
+  geom_sf(data = course, aes(geometry = geometry, color = ele), inherit.aes = FALSE) +
+  coord_sf(crs = 3857) +
+  scale_color_gradient(name = 'Elevation\n(ft)', low = 'chocolate4', high = 'lemonchiffon') +
+  ylab('') +
+  xlab('') +
+  theme_bw(base_size = 11) +
+  theme(
+    panel.border = element_rect(size = 2),
+    axis.ticks = element_line(size = 1)
+  ) +
+  geom_label(aes(x = -111.25, y = 38.5, label = 'Tour du\nCapitol Reef\n231 mi\n17.35k (ft)')) +
+  inset(ggplotGrob(p1inset), xmin = -110.95, xmax = -110.55, ymin = 37.75, ymax = 38.18)
+  
+leaflet(course) %>%
+  addProviderTiles(providers$Esri.WorldStreetMap) %>%
+  addCircles()
+```
 
 ## The gallery {.flexbox .vcenter}
 
