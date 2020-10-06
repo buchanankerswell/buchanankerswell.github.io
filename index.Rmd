@@ -1,299 +1,292 @@
 ---
-title: "Tour du Capitol Reef"
-subtitle: 'guide de cours: *to be updated with more details*'
-author: "Buchanan Kerswell"
-date: "9/13/2020"
+title: "NGSS Standard 5-ESS1-2 Lesson"
+author:
+- Buchanan Kerswell^[Boise State University, buchanankerswell@u.boisestate.edu]
+date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  rmdformats::readthedown:
-    css: style.css
+  html_document:
+    toc: yes
 ---
 
-```{r setup, include=FALSE, message=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-if (!require("pacman"))
-  install.packages("pacman")
-pacman::p_load(tidyverse, knitr, kableExtra, grid, gridExtra, patchwork,
-               plotKML, ggmap, cowplot, geosphere, rmdformats, leaflet,
-               leaflet.providers, sf)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = 'center', message = FALSE, warning = FALSE)
+library(tidyverse)
+library(patchwork)
+library(knitr)
+library(lubridate)
+library(moonsun)
+library(zoo)
+library(wesanderson)
+library(kableExtra)
+library(ggrepel)
+options('latitude' = 43.6150, 'longitude' = 116.2023)
+d.kepler <- read_delim('./data/kepler.txt', delim = ' ') %>%
+  mutate(const = (m.dist^3)/(period^2))
+d.tides <- read_delim('./data/ib_tides.txt', delim = '\t') %>%
+  mutate(Date = as.POSIXct(paste(Date, Time)), .before = Pred) %>%
+  select(-Time, -Day)
+dz.temp <- read_csv('./data/nz_temp.csv')
+db.temp <- read_csv('./data/boise_temp.csv') %>% mutate('TAVG' = (TAVG-32)*5/9)
+de.temp <- read_csv('./data/ec_temp.csv')
+d.temp <- db.temp %>% full_join(de.temp) %>% full_join(dz.temp) %>% rename(Date = DATE)
+d.temp$STATION[grep('US*', d.temp$STATION)] <- 'Boise'
+d.temp$STATION[grep('EC*', d.temp$STATION)] <- 'Ecuador'
+d.temp$STATION[grep('CG*', d.temp$STATION)] <- 'DRC'
+d.temp$STATION[grep('NZ*', d.temp$STATION)] <- 'N.Zealand'
+p.sun <- sun(jd(year = 2000, month = 01, day = 01, length = 1825)) %>%
+  as_tibble(rownames = 'Date') %>%
+  mutate('Date' = as_date(substr(Date, 1, 10))) %>%
+  rename(`Right Ascension` = ra, Declination = d, Phase = phase, Angle = angle, `Dist from Earth` = dist, Size = size) %>%
+  select(-c(Phase, Angle))
+p.moon <- moon(jd(year = 2020, month = 09, day = 30, length = 32)) %>%
+  as_tibble(rownames = 'Date') %>%
+  mutate('Date' = as_date(substr(Date, 1, 10))) %>%
+  rename(`Right Ascension` = ra, Declination = d, Phase = phase, Angle = angle, `Dist from Earth` = dist, Size = size)
+h <- d.tides %>%
+  filter(`High/Low` == 'H') %>%
+  select(-`High/Low`) %>%
+  rename(`High Tide` = Pred)
+l <- d.tides %>%
+  filter(`High/Low` == 'L') %>%
+  select(-`High/Low`) %>%
+  rename(`Low Tide` = Pred)
+d <- p.moon %>%
+  mutate('Date' = as.POSIXct(Date)) %>%
+  full_join(h) %>%
+  full_join(l) %>%
+  mutate(`Right Ascension` = as.numeric(`Right Ascension`),
+         'Declination' = as.numeric(Declination)) %>%
+  select(Date, where(is.numeric), -mag) %>%
+  pivot_longer(-Date, names_to = 'var', values_to = 'val')
 ```
 
-```{r plots, include=FALSE, message=FALSE}
-e <- readGPX('./route.gpx', metadata = FALSE, bounds = FALSE, waypoints = FALSE, routes = FALSE)
-e <- e$tracks[[1]]$`Tour du Capitol Reef` %>%
-  tibble() %>%
-  mutate('ele' = as.numeric(ele),
-         dist = distHaversine(cbind(lon, lat),
-                                cbind(lag(lon), lag(lat)))) %>%
-  mutate(
-    'dist' = dist %>% replace_na(0),
-    cumdist = cumsum(dist)
-  )
-lat <- c(min(e$lat), max(e$lat))
-lon <- c(min(e$lon), max(e$lon))
-bbox <- make_bbox(lon, lat)
-b <- get_map(bbox, maptype = 'terrain', source = 'google')
-dut <- map_data('state', region = 'utah')
-bboxut <- make_bbox(c(min(dut$long), max(dut$long)), c(min(dut$lat), max(dut$lat)))
-but <- get_map(bboxut, maptype = 'terrain', source = 'google', color = 'bw')
-p1inset <- ggmap(but) +
-  geom_path(data = dut, aes(x = long, y = lat), size = 0.5) +
-  geom_rect(data = tibble(lat = lat,
-                          lon = lon),
-            aes(xmin = lon[1], xmax = lon[2], ymin = lat[2], ymax = lat[1]),
-            fill = 'deeppink4',
-            alpha = 0.1,
-            color = 'black',
-            size = 0.25) +
-  ylab('') +
-  xlab('') +
-  theme_map()
-p1 <- ggmap(b) +
-  geom_point(data = e, aes(lon, lat, color = ele*3.28)) +
-  scale_color_gradient(name = 'Elevation\n(ft)', low = 'chocolate4', high = 'lemonchiffon') +
-  ylab('') +
-  xlab('') +
-  theme_bw(base_size = 11) +
-  theme(
-    panel.border = element_rect(size = 2),
-    axis.ticks = element_line(size = 1)
-  ) +
-  geom_label(aes(x = -111.25, y = 38.5, label = 'Tour du\nCapitol Reef\n231 mi\n17.35k (ft)')) +
-  inset(ggplotGrob(p1inset), xmin = -110.95, xmax = -110.55, ymin = 37.75, ymax = 38.18)
-p1
-ggsave('./figs/route.png', device = 'png', plot = p1)
+## Trivia! {.tabset .vline}
 
-p2 <- e %>%
+### The Word 'Planet'
+
+The word 'planet' comes from the Greek word, 'planetes', which means 'wanderer'.
+
+$$\pi\lambda\alpha\nu\eta\tau\eta\sigma\atop "wanderer"$$
+<center>
+
+![Figure 1. An astronomer, probably supposed to be Ptolemy of Alexandria (active 150 AD) observing the Moon and stars using a quadrant. Woodcut from Del Misuarar by Silvio Belli (Venice, 1570)](./figs/ptolemy.jpg)
+
+</center>
+
+### Johannes Kepler
+
+Johannes Kepler was a German astronomer and mathematician famous for his laws of planetary motion. He derived his laws using data from another astronomer, Tycho Brahe, who infamously wore a golden prosthetic nose after his own was removed in a duel.
+
+<center>
+
+![Figure 2. Johannes Kepler (1571-1630). By David F. Coppedge. ](./figs/kepler.jpg)
+
+</center>
+
+### Invention of the Telescope
+
+The first patented telescope was invented in the Netherlands in 1608. The Italian astronomer and Kepler's contemporary, Galileo Galilei, made his own version in 1609.
+
+<center>
+
+![Figure 3. Galileo Galilei (1564-1642) demonstrating his telescope to the ruler of Venice, Italy. By Giuseppe Bertini.](./figs/galileo.jpg)
+
+</center>
+
+### Patterns in Data
+
+Kepler's laws of planetary motion are 'empirical'. They were constructed based on patterns he observed and measured, rather than from theory.
+
+> Keep in your mind where Boise, the Democratic Republic of Congo (DRC), and New Zealand are while viewing the following figure. Can you find any patterns?
+
+For example:
+
+  * What is the temperature when the Earth is closest to the Sun?
+  * What is the temperature when the Earth is farthest from the Sun?
+  * Do you see the same patterns for Boise, the DRC, and New Zealand?
+
+```{r temp, fig.width=11, fig.height=6.1875, fig.cap="Figure 4. Average daily air temperature for Boise, the Democratic Republic of Congo (DRC), and New Zealand. Black dots are data points and colored lines are 20-day moving averages. The Sun's distance relative to Earth is plotted (large black points) on a different scale. Notice the differences in relative amplitudes, wavelengths, and phase of the seasonal temperature changes at these three locations."}
+d.temp %>%
+  group_by(STATION) %>%
+  filter(STATION != 'Ecuador') %>%
   ggplot() +
-  geom_area(aes(x = cumdist*0.000621371, y = ele*3.28), alpha = 0.5) +
-  xlab('Distance (mi)') +
-  ylab('Elevation (ft)') +
-  scale_x_continuous(expand = c(0,0)) +
-  theme_minimal(base_size = 11)
-p2
-ggsave('./figs/ele.png', device = 'png', plot = p2)
-```
-
-## The route {.flexbox .vcenter}
-
-```{r map, echo=FALSE, out.width='100%', fig.cap='Figure 1. Map of Tour du Capitol Reef. The full segment can be found on [komoot](https://www.komoot.com/tour/257901775). Data for map from `google`'}
-p1
-```
-
-## The profile {.flexbox .vcenter}
-
-```{r profile, echo=FALSE, out.width='100%', fig.cap='Figure 2. Elevation profile of Tour du Capitol Reef. The full segment can be found on [komoot](https://www.komoot.com/tour/257901775)'}
-p2
-```
-
-## The experience {.flexbox .vcenter}
-
-The route passes through pristine UT desert, including flybys of:
-
-1. [Mars Desert Research Station](http://mdrs.marssociety.org/)
-2. [Goblin Valley State Park](https://stateparks.utah.gov/parks/goblin-valley/) & the [San Rafael Swell](https://utah.com/san-rafael)
-3. Traversing much of the [Waterpocket fold](https://capitolreef.org/blog/capitol-reef-the-waterpocket-fold/)
-4. [Scenic Byway 12](https://www.visitutah.com/articles/the-all-american-road-scenic-byway-12/) including the infamous **hogsback segment**, or perhaps to [Hells Backbone](https://utah.com/grand-staircase-escalante/hells-backbone)
-5. Beautiful Torrey and [Capitol Reef National Park](https://www.nps.gov/care/index.htm)
-6. Finale on a single track to [Cassidy Arch](https://utah.com/hiking/capitol-reef-national-park/cassidy-arch-trail) and the [Grand Wash](https://www.tripadvisor.com/Attraction_Review-g143017-d212116-Reviews-Grand_Wash_Trail-Capitol_Reef_National_Park_Utah.html)
-
-#### ... and many more
-
-## The details {.flexbox .vcenter .tabset}
-
-### Summary
-```{r table, echo=FALSE, message=FALSE}
-d <- tibble(
-  day = factor(c(1, 2, 3, 4)),
-  depart = c('SR24', 'Sunlit Oasis', 'Boulder UT', 'Torrey UT'),
-  arrive = c('Sunlit Oasis', 'Boulder UT', 'Torrey UT', 'Veyo UT'),
-  `distance (mi)` = c(60.1, 65.9, 54.7, 50.3),
-  `climbing (ft)` = c(1946, 5256, 4751, 5397),
-  `descent (ft)` = c(2392, 3832, 4741, 6785)
-) %>%
-  mutate(
-    `distance (km)` = `distance (mi)` * 1.609,
-    `climbing (m)` = `climbing (ft)` / 3.28,
-    `descent (m)` = `descent (ft)` / 3.28,
-    `ETA (hr)` = `distance (mi)` / 10
-  )
-
-d %>%
-  select(c(1:6, 10)) %>%
-  kbl(digits = 0) %>%
-  kable_styling(
-    bootstrap_options = c('hover', 'striped'),
-    font_size = 18,
-    position = 'center',
-    full_width = TRUE
-  )
-```
-
-### Detailed agenda
-
-#### A note about parking
-
-This course is a lolipop, which begins north of Caineville, UT, and also finishes in Caineville. We should be able to leave a vehicle in Caineville, which we will return to on November 25 after three days of riding. *This means that we need to figure out a way to get to the start line, at the junction of HW24 & Temple Mt Road.* We can sort this detail out later...
-
-#### Day 0 Saturday Nov 21
-
-##### Afternoon (1700?)
-
-- Buchanan arrives in SLC
-- Meet up
-- Gear check
-
-##### Evening
-
-- Final gear check
-- Prepare for Grand Depart
-
-#### Day 1 Sunday Nov 22
-
-##### 0700
-
-##### 0715 Sunrise
-
-##### 0730
-
-- Depart for the Cainevilee, Utah (3.5 hr drive)
-
-<center>
-
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12466.943041453085!2d-110.5840104!3d38.6319595!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDM3JzUwLjgiTiAxMTDCsDM0JzAwLjIiVw!5e0!3m2!1sen!2sus!4v1600108354228!5m2!1sen!2sus" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-
-</center>
-
-##### 1100
-
-- Park vehicle in Cainevlille, Utah and travel to the junction of HW24 & Temple Mt Road
-- Kit up and ride approx. 6 hr to Sunlit Oasis
-
-<center>
-
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12537.899959683604!2d-111.119681!3d38.222084!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x59f1481fffb8e2f4!2sSunlit%20Oasis!5e0!3m2!1sen!2sus!4v1600108283572!5m2!1sen!2sus" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-
-</center>
-
-##### 1900
-
-- Arrive at Sunlit Oasis
-- Check in
-
-##### 1915 Sunset
-
-- Dinner (@ Sunlit Oasis?)
-- Debauch
-
-#### Day 2 Monday Nov 23
-
-##### Sunrise 0715
-
-- Breakfast at Sunlit Oasis (included)
-- Kit up and ride approx. 6.5 hr to Boulder, UT
-
-<center>
-
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37261.95641931418!2d-111.45143697028186!3d37.89707148787745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDU0JzExLjciTiAxMTHCsDI1JzE5LjAiVw!5e0!3m2!1sen!2sus!4v1600108790769!5m2!1sen!2sus" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-
-</center>
-
-##### 0830
-
-- Depart for Boulder, UT
-
-##### 1500
-
-- Arrive in Boulder, UT
-- Check into hotel
-  * [Boulder Mt Lodge](https://www.google.com/maps/place/Boulder+Mountain+Lodge/@37.9006605,-111.4288698,14.77z/data=!4m12!1m3!2m2!1shotel!6e3!3m7!1s0x8735f47c57c09f47:0x79f0dc7ff24be145!5m2!4m1!1i2!8m2!3d37.9020588!4d-111.4245629)
-  * [Circle Cliffs Motel](https://www.google.com/maps/place/Circle+Cliffs+Motel/@37.9006605,-111.4288698,14.77z/data=!4m12!1m3!2m2!1shotel!6e3!3m7!1s0x0:0xe2a94c7ff0cd6f27!5m2!4m1!1i2!8m2!3d37.9066894!4d-111.4245361)
-- Dinner in town
-  * [Hell's Backbone Grill](https://www.google.com/maps/place/Hell's+Backbone+Grill+%26+Farm/@37.9020607,-111.4265417,17z/data=!3m1!4b1!4m5!3m4!1s0x8735f4581f7cdeb3:0x8c2850804cb69ac6!8m2!3d37.9020569!4d-111.4245623)
-  * [Burr Trail Grill](https://www.google.com/maps/place/Burr+Trail+Grill/@37.9020607,-111.4265417,17z/data=!4m5!3m4!1s0x0:0xcf09f9761cb9f2d1!8m2!3d37.9014265!4d-111.4246045)
-  * *Or cook ourselves!*
-  
-##### 1915 Sunset
-
-- Debauch
-
-#### Day 3 Tuesday Nov 24
-
-##### 0715 Sunrise
-
-##### 1915 Sunset
-
-
-#### Day 4 Wednesday Nov 25
-
-##### 0715 Sunrise
-
-- Ride in the park for approx. 5 hr
-- Ride to Caineville to collect vehicle
-
-##### 1915 Sunset
-
-- Drive to Veyo, UT for Cabin festivities
-
-## Route summary {.flexbox .vcenter}
-
-```{r summary, echo=FALSE, message=FALSE, out.width='100%', fig.cap='Figure 3. Important route information summarized by day. '}
-s <- d %>%
-  select(where(is.numeric)) %>%
-  pivot_longer(cols = everything(), names_to = 'vars', values_to = 'vals') %>%
-  group_by(vars) %>%
-  summarise(total = round(sum(vals), 1),
-            avg = round(mean(vals)), 1)
-p <- d %>%
-  select(day, `distance (mi)`, `climbing (ft)`, `descent (ft)`, `ETA (hr)`) %>%
-  pivot_longer(-day, names_to = 'vars', values_to = 'vals') %>%
-  group_by(vars) %>%
-  group_by(day) %>%
-  ggplot() +
-  geom_area(aes(x = day, y = vals, group = vars, fill = vars), color = 'black', alpha = 0.5, show.legend = FALSE) +
-  geom_text(data = s %>% filter(vars %in% c('ETA (hr)', 'climbing (ft)', 'descent (ft)', 'distance (mi)')), aes(x = 2.5, y = 0, group = vars, label = paste0('avg: ', avg, '/day', '\ntotal: ', total)), vjust = -1, size = 3) +
-  ylab('') +
-  scale_x_discrete(expand = c(0,0)) +
-  scale_fill_brewer(palette = 'Paired') +
-  facet_wrap(~ vars, scales = 'free_y') +
-  theme_bw(base_size = 11)
-p
-```
-
-## The map {.flexbox .vcenter}
-
-```{r map2, echo=FALSE, fig.align='center', message=FALSE, warning=FALSE}
-# Read gpx file
-# st_layers('route.gpx')
-course <- st_read('route.gpx', layer = 'track_points', crs = 3857) %>%
-  select(ele, time, track_seg_point_id, geometry) %>%
-  rename(id = track_seg_point_id)
-
-ggmap(b) +
-  geom_sf(data = course, aes(geometry = geometry, color = ele), inherit.aes = FALSE) +
-  coord_sf(crs = 3857) +
-  scale_color_gradient(name = 'Elevation\n(ft)', low = 'chocolate4', high = 'lemonchiffon') +
-  ylab('') +
-  xlab('') +
-  theme_bw(base_size = 11) +
+  geom_point(aes(x = Date, y = TAVG, group = STATION), color = 'black', size = 0.1, alpha = 0.5, na.rm = TRUE) +
+  geom_line(aes(x = Date, y = rollmean(TAVG, 20, na.pad = TRUE), group = STATION, color = STATION), size = 1, alpha = 0.8, na.rm = TRUE) +
+  geom_point(data = p.sun, aes(x = Date, y = rollmean(`Dist from Earth`, 20, na.pad = TRUE)*200-210, size = `Dist from Earth`), color = 'black', alpha = 0.5, na.rm = TRUE) +
+  geom_segment(aes(x = ymd(20010101), xend = ymd(20011101), y = -20, yend = -13), arrow = arrow(angle = 20, length = unit(0.1, 'inches'), type = 'closed')) +
+  annotate('text', x = ymd(20010101), y = -20, label = 'Sun Position', hjust = 1) +
+  scale_color_manual(values = wes_palette("Moonrise3", n = 3, type = 'continuous')) +
+  scale_size_continuous(name = "Sun's Distance from Earth", range = c(0.5,2)) +
+  scale_x_date(limits = c(ymd(20000101), ymd(20050101))) +
+  xlab('Date') +
+  ylab('Temperature (Celcius)') +
+  labs(title = "Average Daily Temperature and the Sun's Position") +
+  theme_minimal(base_size = 12) +
   theme(
-    panel.border = element_rect(size = 2),
-    axis.ticks = element_line(size = 1)
+        legend.position = 'bottom'
+        ) +
+  guides(color = guide_legend(title.position = 'top'),
+         size = guide_legend(title.position = 'top', label.position = 'bottom', override.aes = list(alpha = 1)))
+```
+
+## Explore the Night Sky {.tabset .vline}
+
+> Look at the night sky. Track the positions of the planets with one eye on the calendar date. Can you find any patterns?
+
+For example:
+
+  * How long does it each planet to move from its highest-lowest-highest point in the sky?
+  * Is there any relationship between the duration of one 'highest-lowest-highest' cycle and the planet's distance from the sun? 
+
+### Up-Down Position
+
+<center>
+
+![Figure 5. Animation showing the declination of the planets from September 30, 2020 to September 30, 2021.](./figs/planets.dec.1yr.gif)
+
+</center>
+
+### Up-Down & Right-Left Position
+
+<center>
+
+![Figure 6. Animation showing the paths of the planets from September 23, 2020 to September 23, 2021](./figs/planets.pos.1yr.gif)
+
+</center>
+
+## Kepler's Discovery {.tabset .vline}
+
+### The Pattern
+
+> Take a few moments to describe in words the pattern(s) you observed in the previous animations---especially how the duration of highest-lowest-highest cycles change as a function of distance from the Sun.
+
+### The Discovery
+
+Below is Kepler's original data in table and graphical form.
+
+> Take a moment to view the table and figure. Did you find a similar pattern as Kepler?
+
+```{r kepdata}
+d.kepler %>%
+  kable(caption = 'Table 1. Keplers original data from which he derived his empirical 3rd law', format.args = list(scientific = FALSE), col.names = c('Planet', 'Distance from Sun (r)', 'Orbital Period (T)', '$\\frac{r^3}{T^2}$')) %>%
+  kable_styling(bootstrap_options = c('condensed', 'striped'), full_width = FALSE)
+```
+
+```{r kepfig, fig.cap="Figure 7. Kepler's discovery in graphical form. The farther a planet is from the Sun, the longer its orbital period."}
+d.kepler %>% 
+  ggplot() +
+  geom_point(aes(x = m.dist, y = period, color = planet), size = 3, show.legend = FALSE) +
+  geom_label_repel(aes(x = m.dist, y = period, label = planet), hjust = -0.2, direction = 'y', segment.alpha = 0.2, show.legend = FALSE) +
+  xlab('Log Distance from Sun (AU)') +
+  ylab('Log Orbital Period (Days)') +
+  labs(title = "Kepler's Discovery") +
+  scale_color_manual(values = wes_palette("Moonrise3", n = 6, type = 'continuous')) +
+  scale_x_log10() +
+  scale_y_log10() +
+  theme_grey(base_size = 14)
+```
+
+### Kepler's Laws
+
+Kepler's three laws of planetary motion:
+
+> 1. All planets have elliptical orbits, with the sun at one focus
+
+<center>
+
+![Figure 8. A diagram illustrating the main components of an elliptical orbit.](./figs/1st.jpg)
+
+</center>
+
+> 2. A line segment joining a planet and the Sun sweeps out equal areas during equal intervals of time
+
+<center>
+
+![Figure 9. Animation illustrating Kepler's second law. The blue area remains constant, which implies a non-uniform orbital velocity](./figs/2nd.gif)
+
+</center>
+
+> 3. The square of a planet's orbital period is proportional to the cube of the length of the semi-major axis of its orbit
+
+Although Kepler derived his law empirically, it was Sir Isaac Newton's discovery of gravity and its effects on orbiting bodies that codified our understanding of Kepler's third law. The derivation usually starts with the conservation of angular momentum, which Kepler and his contemporaries had no formal understanding of at the time.
+
+In the case of a circular orbit, we can set the centripetal force equal to the gravitational force:
+
+$$mr\omega^2 = G\frac{mM}{r^2}$$
+
+where $m$ is the mass of an object orbiting a more massive object, $M$. $\omega$ is the angular momentum, $G$ is the gravitational constant, and $r$ is the distance between the two orbiting bodies.
+
+By expressing angular velocity in terms of orbital period ($\omega = 2\pi/T$):
+
+$$mr \left( \frac{2\pi}{T} \right) ^2 = G\frac{mM}{r^2} \rightarrow T^2 = \left( \frac{4\pi^2}{GM} \right) r^3 \rightarrow T^2 \propto r^3$$
+
+What Kepler actually noticed was that the ratio between the cubed semi-major axis and the square of the orbital period was constant:
+
+$$\frac{a^3}{T^2} \approx \frac{GM}{4\pi^2} \approx 7.496\cdot10^-6 \left( \frac{AU^3}{days^2} \right) is~a~constant$$
+
+## The Moon and Tides {.tabset .vline}
+
+Neither Kepler, nor his contemporaries had any idea about gravitation. Nonetheless, Kepler developed his own theories about the effects of the moon on ocean tides.
+
+> Ponder the closeness of our moon and its gravitational pull while viewing the following figures. Can you find any patterns?
+
+### H & L Tides
+
+```{r tides, fig.width=11, fig.height=6.1875, fig.cap="Figure 10. The predicted high and low tides (blue line) from September 30, 2020 to November 1, 2020 at Imperial Beach, California. The Moon's phase (black-pink curve) and distance relative to Earth (black dots) are plotted for the same date range. Notice where the tides are strongest and weakest."}
+d.tides %>% 
+  group_by(`High/Low`) %>%
+  ggplot() + 
+  geom_line(aes(x = Date, y = Pred), size = 1, color = 'navy', alpha = 0.75) +
+  geom_line(data = p.moon, aes(x = as.POSIXct(Date), y = Phase/100*2, color = Phase), size = 3, alpha = 0.7, lineend = 'round', linejoin = 'round', linemitre = 1) +
+  geom_point(data = p.moon, aes(x = as.POSIXct(Date), y = `Dist from Earth`, size = `Dist from Earth`)) +
+  xlab('Date') +
+  ylab('Water Level (m)') +
+  labs(title = "Tides and the Moon's Position") +
+  scale_x_datetime(date_breaks = '2 day', date_labels = '%b %d') +
+  scale_size_continuous(name = 'Distance from Earth', range = c(1,4)) +
+  scale_color_gradient(name = 'Moon Phase', low = 'black', high = 'pink2', breaks = c(0, 50, 100)) +
+  theme_minimal(base_size = 12) +
+  theme(axis.text.x = element_text(angle = 40, vjust = 0.6),
+        legend.position = 'bottom') +
+  guides(color = guide_colorbar(title.position = 'top'),
+         size = guide_legend(title.position = 'top', label.position = 'bottom'))
+```
+
+
+### H or L Tides
+
+```{r tides2, fig.width=11, fig.height=6.1875, fig.cap="Figure 11. The tides dataset, faceted to emphasize high (H) and low (L) tides."}
+d.tides %>% 
+  group_by(`High/Low`) %>%
+  ggplot() + 
+  geom_line(aes(x = Date, y = Pred), size = 1, color = 'navy', alpha = 0.75) +
+  geom_line(data = p.moon, aes(x = as.POSIXct(Date), y = Phase/100*2, color = Phase), size = 3, alpha = 0.7, lineend = 'round', linejoin = 'round', linemitre = 1) +
+  geom_point(data = p.moon, aes(x = as.POSIXct(Date), y = `Dist from Earth`, size = `Dist from Earth`)) +
+  xlab('Date') +
+  ylab('Water Level (m)') +
+  labs(title = "High Tide, Low Tide, and the Moon's Position") +
+  scale_x_datetime(date_breaks = '2 day', date_labels = '%b %d') +
+  scale_size_continuous(name = 'Distance from Earth', range = c(0.5, 2)) +
+  scale_color_gradient(
+    name = 'Moon Phase',
+    low = 'black',
+    high = 'pink2',
+    breaks = c(0, 50, 100)
   ) +
-  geom_label(aes(x = -111.25, y = 38.5, label = 'Tour du\nCapitol Reef\n231 mi\n17.35k (ft)')) +
-  inset(ggplotGrob(p1inset), xmin = -110.95, xmax = -110.55, ymin = 37.75, ymax = 38.18)
-  
-leaflet(course) %>%
-  addProviderTiles(providers$Esri.WorldStreetMap) %>%
-  addCircles()
+  theme_minimal(base_size = 12) +
+  theme(axis.text.x = element_text(angle = 40, vjust = 0.6),
+        legend.position = 'bottom') +
+  guides(
+    color = guide_colorbar(title.position = 'top'),
+    size = guide_legend(title.position = 'top', label.position = 'bottom')
+  ) +
+  facet_wrap(~ `High/Low`)
 ```
 
-## The gallery {.flexbox .vcenter}
+## Wrap up
 
-```{r gallery, echo=FALSE, message=FALSE, fig.align='center'}
-fnames <- list.files('./figs')
-for(i in fnames){
-  p <- ggdraw() +
-    draw_image(paste0('./figs/', i))
-  print(p)
-}
-```
+> Reflect on the patterns you observed in global temperatures, tides, and the positions of the moon, sun, and planets
+>
+> - What was your favorite visualization?
+> - Which pattern did you find the most pronounced?
+> - How did you find the visualizations helpful in recognizing patterns in natural phenomena?
