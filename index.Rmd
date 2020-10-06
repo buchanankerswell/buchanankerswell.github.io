@@ -3,9 +3,9 @@ title: "NGSS Standard 5-ESS1-2 Lesson"
 author:
 - Buchanan Kerswell^[Boise State University, buchanankerswell@u.boisestate.edu]
 date: "`r format(Sys.time(), '%d %B %Y')`"
-output:
-  html_document:
-    toc: yes
+output: rmdformats::readthedown
+  # html_document:
+  #   toc: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -131,7 +131,7 @@ d.temp %>%
 
 ## Explore the Night Sky {.tabset .vline}
 
-> Look at the night sky. Track the positions of the planets with one eye on the calendar date. Can you find any patterns?
+> Look at the night sky. Track the positions of the planets with one eye on the calendar date. Keep in mind that one cycle between a planet's highest and lowest point is one loop around the Sun. Can you find any patterns?
 
 For example:
 
@@ -168,7 +168,7 @@ Below is Kepler's original data in table and graphical form.
 
 ```{r kepdata}
 d.kepler %>%
-  kable(caption = 'Table 1. Keplers original data from which he derived his empirical 3rd law', format.args = list(scientific = FALSE), col.names = c('Planet', 'Distance from Sun (r)', 'Orbital Period (T)', '$\\frac{r^3}{T^2}$')) %>%
+  kable(caption = 'Table 1. Keplers original data from which he derived his empirical 3rd law', format.args = list(scientific = FALSE), col.names = c('Planet', 'Distance from Sun (AU)', 'Orbital Period (days)', '$\\frac{r^3}{T^2}$')) %>%
   kable_styling(bootstrap_options = c('condensed', 'striped'), full_width = FALSE)
 ```
 
