@@ -67,23 +67,15 @@
 	<footer id="footer">
 		<div class="inner">
 			<ul class="icons">
-				{% if site.github_url %}
-				<li><a href="{{ site.github_url }}" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-				{% endif %}
-				{% if site.researchgate_url %}
-				<li><a href="{{ site.researchgate_url }}" class="icon alt fa-researchgate" target="_blank"><span class="label">ResearchGate</span></a></li>
-				{% endif %}
-				{% if site.googlescholar_url %}
-				<li><a href="{{ site.googlescholar_url }}" class="ai ai-google-scholar-square" target="_blank"><span class="label">GoogleScholar</span></a></li>
-				{% endif %}
-				{% if site.orchid_url %}
-				<li><a href="{{ site.orchid_url }}" class="ai ai-orchid-square" target="_blank"><span class="label">Orchid</span></a></li>
-				{% endif %}
+				<li><a href="{{ site.researchgate_url }}" class="ai ai-researchgate-square ai-2x" target="_blank"></a></li>
+				<li><a href="{{ site.googlescholar_url }}" class="ai ai-google-scholar-square ai-2x" target="_blank"></a></li>
+				<li><a href="{{ site.orcid_url }}" class="ai ai-orcid-square ai-2x" target="_blank"></a></li>
+				<li><a href="{{ site.osf_url }}" class="ai ai-osf-square ai-2x" target="_blank"></a></li>
+				<li><a href="{{ site.github_url }}" class="icon fa-github-square fa-2x" target="_blank"></a></li>
 			</ul>
 			<ul class="copyright">
 				<li>&copy; {{ site.title }} {{ site.subtitle }}</li>
 				<li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
-
 			</ul>
 		</div>
 	</footer>
