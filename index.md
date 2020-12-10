@@ -3,7 +3,7 @@ layout: home
 title: Home
 landing-title: 'Hi, my name is buchanan'
 description: null
-image: pic01.jpg
+image: assets/images/pic01.jpg
 author: null
 show_tile: true
 ---
