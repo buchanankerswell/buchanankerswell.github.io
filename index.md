@@ -3,7 +3,13 @@ layout: home
 title: Home
 landing-title: 'Hi, my name is buchanan'
 description: null
-image: null
+images-array:
+ - image: pic01.jpg
+ - image: pic02.jpg
+ - image: pic03.jpg
+ - image: pic04.jpg
+ - image: pic05.jpg
+ - image: pic06.jpg
 author: null
 show_tile: false
 ---

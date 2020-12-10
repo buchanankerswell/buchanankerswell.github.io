@@ -3,7 +3,7 @@ title: B.C.Kerswell
 subtitle: PhD Student
 email: buchanankerswell@u.boisestate.edu
 description: Geoscientist with eclectic interests<br /> Amateur athlete
-baseurl: / # the subpath of your site, e.g. /blog
+baseurl: # the subpath of your site, e.g. /blog
 url: http://buchanankerswell.github.io # the base hostname & protocol for your site
 author:
 street_address: 1916 S Grant Ave
@@ -27,4 +27,3 @@ orchid_url: https://orcid.org/0000-0003-0495-4162
 markdown: kramdown
 sass:
   style: compressed
-root: /
