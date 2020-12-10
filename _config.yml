@@ -1,7 +1,7 @@
 # site settings
 title: B.C.Kerswell
-subtitle: PhD
-email: buck.kerswell@gmail.com
+subtitle: PhD Student
+email: buchanankerswell@u.boisestate.edu
 description: Geoscientist with eclectic interests<br /> Amateur athlete
 baseurl: / # the subpath of your site, e.g. /blog
 url: http://buchanankerswell.github.io # the base hostname & protocol for your site
