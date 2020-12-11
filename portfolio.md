@@ -2,7 +2,7 @@
 title: Portfolio
 layout: portfolio
 description: A sample of my professional and non-professional work
-image: {% link assets/images/pic13.jpg %}
+image: link assets/images/pic13.jpg
 nav-menu: true
 ---
 
