@@ -1,6 +1,6 @@
 ---
 title: About Me
-layout: landing
+layout: about
 description: "It's nice to meet you"
 image: assets/images/pic11.jpg
 nav-menu: true
