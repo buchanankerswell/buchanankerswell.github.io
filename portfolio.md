@@ -1,7 +1,7 @@
 ---
 title: Portfolio
 layout: portfolio
-description: A sample of my professional and non-professional work
+description: research + tools for students + more
 image: assets/images/pic13.jpg
 nav-menu: true
 ---
@@ -20,7 +20,7 @@ nav-menu: true
 				<header class="major">
 					<h3>Reproducible Geoscience</h3>
 				</header>
-				<p>Code to reproduce results. Apps for exploration. All open source.</p>
+				<p>Code to reproduce results. Apps for visualization and exploration. All open source.</p>
 				<p>A recent example:</p>
 				<ul class="actions">
 				<li><a href="https://github.com/buchanankerswell/kerswell_et_al_coupling" class="button">GitHub</a></li>
