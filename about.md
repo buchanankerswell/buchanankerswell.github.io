@@ -29,8 +29,8 @@ nav-menu: true
 	</section>
 	<!-- Two -->
 	<section id="one">
-		<div class="inner" style="text-align: left">
-			<header class="major">
+		<div class="inner">
+			<header class="major" style="text-align: left">
 				<h2>Non-Professional</h2>
 			</header>
 			<p></p>
