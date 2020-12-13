@@ -20,7 +20,8 @@ nav-menu: true
 				<header class="major">
 					<h3>Reproducible Geoscience</h3>
 				</header>
-				<p>Code and apps to reproduce results. An example:</p>
+				<p>Code to reproduce results. Apps for exploration. All open source.</p>
+				<p>A recent example:</p>
 				<ul class="actions">
 				<li><a href="https://github.com/buchanankerswell/kerswell_et_al_coupling" class="button">GitHub</a></li>
 				<li><a href="https://osf.io/zjac3/" class="button">Open Science Framework</a></li>
@@ -36,9 +37,9 @@ nav-menu: true
 		<div class="content">
 			<div class="inner">
 				<header class="major">
-					<h3>Map Making Tools for Students</h3>
+					<h3>Tools for Students</h3>
 				</header>
-				<p>Used by students to make maps for final sedimentology and stratigraphy project</p>
+				<p>Making maps for sedimentology and stratigraphy project</p>
 				<p>Try it for yourself. Copy and paste these data:</p>
 				<div class="table-wrapper">
 					<table>
@@ -115,7 +116,7 @@ nav-menu: true
 		<header class="major">
 			<h2>Interested?</h2>
 		</header>
-		<p>I am for hire. Please review my resumé and get in contact.</p>
+		<p>Think I'm a good fit for your team? Please review my resumé and get in contact.</p>
 		<ul class="actions">
 			<li><a href="cv.html" class="button next">Resumé</a></li>
 		</ul>
