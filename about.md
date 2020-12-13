@@ -10,16 +10,6 @@ nav-menu: true
 <div id="main">
 
 <!-- One -->
-<section id="one">
-	<div class="inner">
-		<header class="major">
-			<h2>Professional Work</h2>
-		</header>
-		<p></p>
-	</div>
-</section>
-
-<!-- Two -->
 <section id="two" class="spotlights">
 	<section>
 		<a href="generic.html" class="image">
@@ -37,10 +27,11 @@ nav-menu: true
 			</div>
 		</div>
 	</section>
+	<!-- Two -->
 	<section id="one">
 		<div class="inner">
 			<header class="major">
-				<h2>Non-Professional Work</h2>
+				<h2>Non-Professional</h2>
 			</header>
 			<p></p>
 		</div>
