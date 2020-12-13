@@ -13,9 +13,9 @@ nav-menu: true
 <section id="one">
 	<div class="inner">
 		<header class="major">
-			<h2>My Personal Philosophy</h2>
+			<h2>Professional Work</h2>
 		</header>
-		<p>Be kind, work hard & play harder, learn from others, serve, train & race fast, be the best me.</p>
+		<p></p>
 	</div>
 </section>
 
@@ -37,6 +37,14 @@ nav-menu: true
 			</div>
 		</div>
 	</section>
+	<section id="one">
+		<div class="inner">
+			<header class="major">
+				<h2>Non-Professional Work</h2>
+			</header>
+			<p></p>
+		</div>
+	</section>
 	<section>
 		<a href="generic.html" class="image">
 			<img src="{% link assets/images/pic26.jpg %}" alt="" data-position="top center" />
@@ -44,7 +52,7 @@ nav-menu: true
 		<div class="content">
 			<div class="inner">
 				<header class="major">
-					<h3>Amateur Athlete</h3>
+					<h3>Athlete</h3>
 				</header>
 				<p>My athletic life is integral to who I am. When I'm not working, I'm usually training, racing, adventuring, or planning my next adventure. I have an unhealthy obsession with bicycles. </p>
 				<ul class="actions">
@@ -61,7 +69,7 @@ nav-menu: true
 		<div class="content">
 			<div class="inner">
 				<header class="major">
-					<h3>Amateur Developer & Guide</h3>
+					<h3>Developer & Guide</h3>
 				</header>
 				<p>I dabble in machine learning, web app & software development, and guiding bicycle tours</p>
 				<ul class="actions">
