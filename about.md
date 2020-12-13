@@ -51,7 +51,7 @@ nav-menu: true
 				<p>My athletic life is integral to who I am. When I'm not working, I'm usually training, racing, adventuring, or planning my next adventure. I have an unhealthy obsession with bicycles. </p>
 				<ul class="actions">
 					<li><a href="https://www.strava.com/athletes/11468816" class="button">Follow me on Strava</a></li>
-					<li><a href="" class="button">See my latest adventure</a></li>
+					<li><a href="https://youtu.be/6GkO-Mz5uOo" class="button">See my latest adventure</a></li>
 				</ul>
 			</div>
 		</div>
