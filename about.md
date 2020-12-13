@@ -6,6 +6,18 @@ image: assets/images/pic11.jpg
 nav-menu: true
 ---
 
+<!-- Full box sectioin -->
+
+<!-- <section id="one">
+	<div class="inner">
+		<header class="major">
+			<h2>Non-Professional</h2>
+		</header>
+		<p></p>
+	</div>
+</section>
+--->
+
 <!-- Main -->
 <div id="main">
 
@@ -25,15 +37,6 @@ nav-menu: true
 					<li><a href="https://scholar.google.com/citations?hl=en&user=O7TM22kAAAAJ" class="button">See my work</a></li>
 				</ul>
 			</div>
-		</div>
-	</section>
-	<!-- Two -->
-	<section id="one">
-		<div class="inner">
-			<header class="major" style="text-align: left">
-				<h2>Non-Professional</h2>
-			</header>
-			<p></p>
 		</div>
 	</section>
 	<section>
