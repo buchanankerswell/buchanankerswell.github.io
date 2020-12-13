@@ -24,7 +24,7 @@ nav-menu: true
 <!-- One -->
 <section id="two" class="spotlights">
 	<section>
-		<a href="generic.html" class="image">
+		<a class="image">
 			<img src="{% link assets/images/pic24.jpg %}" alt="" data-position="center center" />
 		</a>
 		<div class="content">
@@ -40,7 +40,7 @@ nav-menu: true
 		</div>
 	</section>
 	<section>
-		<a href="generic.html" class="image">
+		<a class="image">
 			<img src="{% link assets/images/pic26.jpg %}" alt="" data-position="top center" />
 		</a>
 		<div class="content">
@@ -51,13 +51,13 @@ nav-menu: true
 				<p>My athletic life is integral to who I am. When I'm not working, I'm usually training, racing, adventuring, or planning my next adventure. I have an unhealthy obsession with bicycles. </p>
 				<ul class="actions">
 					<li><a href="https://www.strava.com/athletes/11468816" class="button">Follow me on Strava</a></li>
-					<li><a href="https://drive.google.com/file/d/1rQgbcHshwUytRRi8NfUxBoP7F8WGRvDV/view?usp=sharing" class="button">See my latest adventure</a></li>
+					<li><a href="" class="button">See my latest adventure</a></li>
 				</ul>
 			</div>
 		</div>
 	</section>
 	<section>
-		<a href="generic.html" class="image">
+		<a class="image">
 			<img src="{% link assets/images/pic08.jpg %}" alt="" data-position="25% 25%" />
 		</a>
 		<div class="content">

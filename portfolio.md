@@ -12,7 +12,7 @@ nav-menu: true
 <!-- One -->
 <section id="two" class="spotlights">
 	<section>
-		<a href="generic.html" class="image">
+		<a class="image">
 			<img src="assets/images/pic30.jpg" alt="" data-position="center center" />
 		</a>
 		<div class="content">
@@ -31,7 +31,7 @@ nav-menu: true
 		</div>
 	</section>
 	<section>
-		<a href="generic.html" class="image">
+		<a class="image">
 			<img src="assets/images/pic29.jpg" alt="" data-position="top center" />
 		</a>
 		<div class="content">
@@ -93,7 +93,7 @@ nav-menu: true
 		</div>
 	</section>
 	<section>
-		<a href="generic.html" class="image">
+		<a class="image">
 			<img src="assets/images/pic28.jpg" alt="" data-position="25% 25%" />
 		</a>
 		<div class="content">
