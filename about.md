@@ -86,7 +86,7 @@ nav-menu: true
 		<header class="major">
 			<h2>Interested?</h2>
 		</header>
-		<p>I am for hire. Please review my resumé and get in contact.</p>
+		<p>Think I'm a good fit for your team? Please review my resumé and get in contact.</p>
 		<ul class="actions">
 			<li><a href="cv.html" class="button next">Resumé</a></li>
 		</ul>
