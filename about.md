@@ -6,7 +6,7 @@ image: assets/images/pic11.jpg
 nav-menu: true
 ---
 
-<!-- Full box sectioin -->
+<!-- Header box -->
 
 <!-- <section id="one">
 	<div class="inner">
