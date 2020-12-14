@@ -99,7 +99,7 @@ nav-menu: true
 		<div class="content">
 			<div class="inner">
 				<header class="major">
-					<h3>Guided Bike Tour—Boulder, Utah</h3>
+					<h3>Guided Bike Tour: Boulder, Utah</h3>
 				</header>
 				<p>Guide de cours</p>
 				<ul class="actions">
