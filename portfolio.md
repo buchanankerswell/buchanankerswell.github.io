@@ -2,7 +2,7 @@
 title: Portfolio
 layout: portfolio
 description: Research + Tools for Students + More
-image: assets/images/pic13.jpg
+image: assets/images/pic25.jpg
 nav-menu: true
 meta-description: See samples of Buchanan Kerswell's professional and non-professional work
 meta-keywords:
