@@ -41,3 +41,6 @@ vignettes/*.pdf
 .DS_Store
 
 resume
+
+_site
+.jekyll-cache

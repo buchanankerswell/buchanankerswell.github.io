@@ -1,8 +1,16 @@
 ---
 layout: home
 title: Home
-landing-title: 'Hi, my name is buchanan'
+landing-title: Hi, my name is buchanan
 description: null
+meta-description: Buchanan Kerswell is a Geoscience PhD student at Boise State University. View Buchanan's resume, portfolio, and more
+meta-keywords:
+  - PhD
+  - Boise State University
+  - Boise State
+  - Student
+  - Geoscience
+meta-author: Buchanan Kerswell
 image: null
 author: null
 show_tile: false

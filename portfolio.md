@@ -1,9 +1,15 @@
 ---
 title: Portfolio
 layout: portfolio
-description: research + tools for students + more
+description: Research + Tools for Students + More
 image: assets/images/pic13.jpg
 nav-menu: true
+meta-description: See samples of Buchanan Kerswell's professional and non-professional work
+meta-keywords:
+  - Professional experience
+  - Portfolio
+  - Non-professional experience
+meta-author: Buchanan Kerswell
 ---
 
 <!-- Main -->
@@ -13,7 +19,7 @@ nav-menu: true
 <section id="two" class="spotlights">
 	<section>
 		<a class="image">
-			<img src="assets/images/pic30.jpg" alt="" data-position="center center" />
+			<img src="assets/images/pic30.jpg" alt="Figure from Buchanan Kerswell's publication showing simulated heat flow near volcanic arcs" data-position="center center" />
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -32,15 +38,15 @@ nav-menu: true
 	</section>
 	<section>
 		<a class="image">
-			<img src="assets/images/pic29.jpg" alt="" data-position="top center" />
+			<img src="assets/images/pic29.jpg" alt="Map of Boise South Quad, generated using code by Buchanan Kerswell's mapping vignette" data-position="top center" />
 		</a>
 		<div class="content">
 			<div class="inner">
 				<header class="major">
 					<h3>Tools for Students</h3>
 				</header>
-				<p>Making maps for sedimentology and stratigraphy project</p>
-				<p>Try it for yourself. Copy and paste these data:</p>
+				<p>Map making tools and vignette for sedimentology and stratigraphy</p>
+				<p>Try it for yourself. Copy and paste these data into the app:</p>
 				<div class="table-wrapper">
 					<table>
 						<thead>
@@ -87,23 +93,23 @@ nav-menu: true
 				</div>
 				<ul class="actions">
 					<li><a href="https://kerswell.shinyapps.io/TR_map_creator/?_ga=2.123651531.1564226589.1607628982-904544027.1607496859" class="button">App</a></li>
-					<li><a href="assets/html/maps.html" class="button">Map Making Vignette</a></li>
+					<li><a href="assets/html/maps.html" class="button">Vignette</a></li>
 				</ul>
 			</div>
 		</div>
 	</section>
 	<section>
 		<a class="image">
-			<img src="assets/images/pic28.jpg" alt="" data-position="25% 25%" />
+			<img src="assets/images/pic28.jpg" alt="Landscape view of the beautiful Hell's Backbone bridge, southern Utah" data-position="25% 25%" />
 		</a>
 		<div class="content">
 			<div class="inner">
 				<header class="major">
 					<h3>Guided Bike Tour: Boulder, Utah</h3>
 				</header>
-				<p>Guide de cours</p>
+				<p>Four-day guided bike tour through the beautiful red rock Mesezoic section ofSouthern Utah.</p>
 				<ul class="actions">
-					<li><a href="assets/html/bbb.html" class="button">View</a></li>
+					<li><a href="assets/html/bbb.html" class="button">Guide de Cours</a></li>
 				</ul>
 			</div>
 		</div>
@@ -118,7 +124,7 @@ nav-menu: true
 		</header>
 		<p>Think I'm a good fit for your team? Please review my resumé and get in contact.</p>
 		<ul class="actions">
-			<li><a href="cv.html" class="button next">Resumé</a></li>
+			<li><a href="resume.html" class="button next">Resumé</a></li>
 		</ul>
 	</div>
 </section>
