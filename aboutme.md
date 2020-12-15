@@ -42,7 +42,7 @@ meta-author: Buchanan Kerswell
 				<header class="major">
 					<h3>Athlete</h3>
 				</header>
-				<p>My athletic life is integral to who I am. When I'm not working, I'm usually training, racing, adventuring, or planning my next adventure. I have an unhealthy obsession with bicycles. </p>
+				<p>My athletic life is integral to who I am. When I'm not working, I'm usually training, racing, adventuring, or planning my next adventure. I have a healthy obsession with bicycles. </p>
 				<ul class="actions">
 					<li><a href="https://www.strava.com/athletes/11468816" class="button">Follow me on Strava</a></li>
 					<li><a href="https://youtu.be/6GkO-Mz5uOo" class="button">See my latest adventure</a></li>
