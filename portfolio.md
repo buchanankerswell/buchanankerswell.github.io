@@ -107,7 +107,7 @@ meta-author: Buchanan Kerswell
 				<header class="major">
 					<h3>Guided Bike Tour: Boulder, Utah</h3>
 				</header>
-				<p>Four-day guided bike tour through the beautiful red rock Mesezoic section ofSouthern Utah.</p>
+				<p>Four-day guided bike tour through the beautiful red rock Mesezoic section of Southern Utah.</p>
 				<ul class="actions">
 					<li><a href="assets/html/bbb.html" class="button">Guide de Cours</a></li>
 				</ul>
