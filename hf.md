@@ -1,7 +1,8 @@
 ---
 layout: hf
-title: Heat Flow Near Arcs
+title: Heat Flow Presentation
 description: A short paper on the subject of surface heat flow near volcanic arcs
-nav-menu: false
-include-tile: false
+image: assets/images/pic07.jpg
+nav-menu: true
+include-tile: true
 ---
