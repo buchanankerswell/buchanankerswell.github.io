@@ -4,7 +4,7 @@ subtitle: PhD Candidate
 email: buchanankerswell@u.boisestate.edu
 description: Welcome to my site. This is the best place to get to know me and my professional work
 baseurl: # the subpath of your site, e.g. /blog
-url: http://buchanankerswell.github.io # the base hostname & protocol for your site
+url: https://buchanankerswell.github.io # the base hostname & protocol for your site
 author: Buchanan Kerswell
 street_address: 1916 S Grant Ave
 city: Boise
