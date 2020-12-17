@@ -111,7 +111,7 @@ meta-author: Buchanan Kerswell
 				</header>
 				<p>A short paper on the subject of surface heat flow near volcanic arcs</p>
 				<ul class="actions">
-				<li><a href="assets/html/heatflow.html" class="button">GitHub</a></li>
+				<li><a href="assets/html/heatflow.html" class="button">View</a></li>
 				</ul>
 			</div>
 		</div>
