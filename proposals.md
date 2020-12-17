@@ -13,16 +13,16 @@ include-tile: true
 <!-- One -->
 <section id="one">
 	<div class="inner">
+    <!-- Content -->
+    <h2 id="content">Foreword about my interests and expertise</h2>
+    	<p>My primary interests involve using the rock record (petrology) in combination with computation (applied statistics and numerical modelling) and field methods to investigate geologic problems. I also have considerable backgrounds in geochemistry, geochronology, igneous petrology, ore geology,  and environmental science.</p>
+    	<p>I am increasingly more interested in machine learning and web-based app development and design. I believe open-source ML and web-based apps for research are the future of all physical sciences as datasets, computation, and open-source libraries continue to grow.</p>
+    	<p>I find myself the most enthusiastic when I am trying new things. The projects I propose below reflect my varied and evolving interests. I am delighted to work with students on a variety of geologic and environmental problems using laboratory, computation, and field-based methods.</p>
+		<hr class="major" />
 		<header class="major">
 			<h1>Post-doc Projects</h1>
 		</header>
-
-    <!-- Content -->
-    <h2 id="content">Foreword about my interests and expertise</h2>
-    <p>My primary interests involve using the rock record (petrology) in combination with computation (applied statistics and numerical modelling) and field methods to investigate geologic problems. I also have considerable backgrounds in geochemistry, geochronology, igneous petrology, ore geology,  and environmental science.</p>
-    <p>I am increasingly more interested in machine learning and web-based app development and design. I believe open-source ML and web-based apps for research are the future of all physical sciences as datasets, computation, and open-source libraries continue to grow.</p>
-    <p>I find myself the most enthusiastic when I am trying new things. The projects I propose below reflect my varied and evolving interests. I am delighted to work with students on a variety of geologic and environmental problems using laboratory, computation, and field-based methods.</p>
-    <div class="row">
+		<div class="row">
     	<div class="6u 12u$(small)">
     		<h3>Machine learning applied to numerical geodynamic models</h3>
     		<p>More coming soon!</p>
@@ -45,7 +45,6 @@ include-tile: true
     		<p>More coming soon!</p>
     	</div>
     </div>
-
     <hr class="major" />
   </div>
 </section>

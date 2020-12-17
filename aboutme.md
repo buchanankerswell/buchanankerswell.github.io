@@ -28,7 +28,8 @@ meta-author: Buchanan Kerswell
 				</header>
 				<p>I am passionate about research and teaching. Geoscience datasets are sparse, expensive, and layered with complexity. These challenging problems are attractive and bless me with excuses to visit amazing places to look at wild rocks. In return, I focus on providing students opportunities for support and hands-on learning.</p>
 				<ul class="actions">
-					<li><a href="https://scholar.google.com/citations?hl=en&user=O7TM22kAAAAJ" class="button">See my work</a></li>
+					<li><a href="https://scholar.google.com/citations?hl=en&user=O7TM22kAAAAJ" class="button">My published work</a></li>
+          <li><a href="proposals.html" class="button">My current and proposed work</a></li>
 				</ul>
 			</div>
 		</div>

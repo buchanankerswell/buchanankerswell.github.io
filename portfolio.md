@@ -19,7 +19,7 @@ meta-author: Buchanan Kerswell
 <section id="two" class="spotlights">
 	<section>
 		<a class="image">
-			<img src="assets/images/pic30.jpg" alt="Figure from Buchanan Kerswell's publication showing simulated heat flow near volcanic arcs" data-position="center center" />
+			<img src="assets/images/coupling_hf.png" alt="Figure from Buchanan Kerswell's publication showing simulated heat flow near volcanic arcs" data-position="center center"/>
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -39,15 +39,14 @@ meta-author: Buchanan Kerswell
 
 	<section>
 		<a class="image">
-			<img src="assets/images/pic29.jpg" alt="Map of Boise South Quad, generated using code by Buchanan Kerswell's mapping vignette" data-position="top center" />
+			<img src="assets/images/boise_quad.png" alt="Map of Boise South Quad, generated using code from Buchanan Kerswell's mapping vignette" data-position="top center" />
 		</a>
 		<div class="content">
 			<div class="inner">
 				<header class="major">
 					<h3>Tools for Students</h3>
 				</header>
-				<p>Map making tools and vignette for sedimentology and stratigraphy</p>
-				<p>Try it for yourself. Copy and paste these data into the app:</p>
+				<p>Map making tools and vignette for sedimentology and stratigraphy. Try it for yourself. Copy and paste these data into the app:</p>
 				<div class="table-wrapper">
 					<table>
 						<thead>
@@ -119,7 +118,7 @@ meta-author: Buchanan Kerswell
 
 	<section>
 		<a class="image">
-			<img src="assets/images/pic28.jpg" alt="Landscape view of the beautiful Hell's Backbone bridge, southern Utah" data-position="25% 25%" />
+			<img src="assets/images/cr_loop.png" alt="Bicycle tour course guide map of a loop around Capitol Reef National Park, Southern Utah" data-position="25% 25%" />
 		</a>
 		<div class="content">
 			<div class="inner">
