@@ -36,6 +36,7 @@ meta-author: Buchanan Kerswell
 			</div>
 		</div>
 	</section>
+
 	<section>
 		<a class="image">
 			<img src="assets/images/pic29.jpg" alt="Map of Boise South Quad, generated using code by Buchanan Kerswell's mapping vignette" data-position="top center" />
@@ -98,6 +99,24 @@ meta-author: Buchanan Kerswell
 			</div>
 		</div>
 	</section>
+
+  <section>
+		<a class="image">
+			<img src="assets/images/pacific.jpg" alt="A global compilation of surface heat flow measurements near arcs" data-position="center center" />
+		</a>
+		<div class="content">
+			<div class="inner">
+				<header class="major">
+					<h3>Surface Heat Flow Near Arcs</h3>
+				</header>
+				<p>A short paper on the subject of surface heat flow near volcanic arcs</p>
+				<ul class="actions">
+				<li><a href="assets/html/heatflow.html" class="button">GitHub</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
 	<section>
 		<a class="image">
 			<img src="assets/images/pic28.jpg" alt="Landscape view of the beautiful Hell's Backbone bridge, southern Utah" data-position="25% 25%" />
