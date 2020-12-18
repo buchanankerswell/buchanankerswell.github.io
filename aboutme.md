@@ -75,9 +75,10 @@ meta-author: Buchanan Kerswell
 		<header class="major">
 			<h2>Interested?</h2>
 		</header>
-		<p>Think I'm a good fit for your team? Please review my resumé and get in contact.</p>
+		<p>Think I'm a good fit for your lab? Have funding or want to write a proposal? Please get in contact.</p>
 		<ul class="actions">
 			<li><a href="resume.html" class="button next">Resumé</a></li>
+      <li><a href="proposals.html" class="button next">Proposals</a></li>
 		</ul>
 	</div>
 </section>
