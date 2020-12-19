@@ -25,20 +25,21 @@ include-tile: true
 		<div class="row">
     	<div class="6u 12u$(small)">
     		<h3>Machine learning applied to numerical geodynamic models</h3>
-    		<p>More coming soon!</p>
+    		<p>Numerical models that use Lagrangian markers to store physical and material information within Eulerian grid cells can generate enormous datasets by tracking markers as models evolve <a href="https://www.sciencedirect.com/science/article/pii/S0031920103001900?casa_token=0qnFE29TxugAAAAA:07b2EEUPQXsZ8iYBLHyuNTehVTqlwV8TUmrK7yY_FDXN0YNr2ERSi2eJwoDmq_wfTcYGxmlzwQ">(Gerya and Yuen, 2003)</a>. The size of such datasets, which can easily include millions of markers, inhibits regular quantitative techniques (applied statistics) because markers that can be related to relevant processes cannot be easily distinguished and selected. A combination of feature engineering and machine learning allows markers related to specific processes to be "identified" (Kerswell et al., in prep). This approach can be applied to any model that uses Lagrangian markers, so the proposed work is virtually unlimited. Currently my work focuses on subduction zone processes, but this work could be in collaboration with researchers working in the cryosphere, atmosphere, hydrosphere, or non-geoscience fields that use computational fluid dynamics (i.e. engineering applications).</p>
     	</div>
     	<div class="6u$ 12u$(small)">
-    		<h3>Machine learning applied to Raman microscopy of quartz inclusions in garnet</h3>
-    		<p>More coming soon!</p>
+    		<h3>Machine learning applied to elastic barometry of quartz inclusions in garnet</h3>
+    		<p>Application of elastic barometry of quartz inclusions in garnet (QuiG) requires identification and deconvolution of mixed spectra (separating quartz peaks from interference noise), and estimating peak positions. Fitting peak positions depends on the deconvolution step, as interference peaks (say, from garnet) will affect peak position estimates. Robust methods currently do not exist for this problem, or are at least not widely available. This work proposes web-based, open-source software that will take raw spectra as input, specifically identify which minerals contribute to the mixed spectra, deconvolve the spectra, and estimate peak positions on the deconvolved spectra. The application outputs peak positions with uncertainties, which can be fed directly into <a href="http://www.rossangel.com/home.htm">open-source software</a> for elastic barometric estimates <a href="https://www.degruyter.com/view/journals/zkri/234/2/article-p129.xml">(Angel et al., 2019)</a></p>
     	</div>
     	<!-- Break -->
     	<div class="4u 12u$(medium)">
     		<h3>Reaction overstepping in subduction zones: case studies from the W. Alps</h3>
-    		<p>More coming soon!</p>
+    		<p>The kinematics of important metamorphic reactions is undergoing reinvestigation (<a href="https://www.tandfonline.com/doi/abs/10.1080/00206814.2016.1200499">Castro et al., 2017; </a><a href="https://www.sciencedirect.com/science/article/pii/S0009254117301250?casa_token=DGNNlObHVPgAAAAA:KAjlV9ivQVnhaqEK9NQm1LV51C3ON5PBCrV8UJn-LJNyWEux-mpQmDafuIJb5SbI56c8pv3dAA">Spear and Pattison, 2017</a>). Garnet forming and consuming reactions have important implications for subduction zone dynamics (<a href="https://www.sciencedirect.com/science/article/abs/pii/S0009254112001829">Dragovic et al., 2012; </a><a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2001jb001127">Hacker et al., 2003</a>), so the rates, P-T conditions, and (dis)continuity of these reactions is critically important. Currently, the evidence for significant overstepping in subduction zones is limited to few examples (e.g. Castro et al., 2017). This work proposes replicating estimates of reaction overstepping using rocks from two exhumed ophiolites in the W. Alps—Monviso and Corsica-Sardinia. The results will provide more evidence to support or contradict the hypothesis that significant reaction overstepping occurs in subduction zones.</p>
     	</div>
     	<div class="4u 12u$(medium)">
     		<h3>Web based applications to assess student reading comprehension and compliance</h3>
-    		<p>More coming soon!</p>
+    		<p>This project is based on the work by <a href="https://repository.lib.ncsu.edu/bitstream/handle/1840.20/37510/etd.pdf?sequence=1">(Jones, 2020)</a>, who developed a web-based tool for assessing student learning in intro Geoscience courses: Confidence-based Learning Accuracy Support System. The system takes input from students during examinations on their perceived confidence levels. The volume of responses allows questions about student learning to be evaluated quantitatively, providing rapid feedback to instructors. The proposed work extends this system (or similar system) to reading comprehension and compliance. Questions one could address with large volumes of student responses include: perceived level of comprehension, perceived level of relevance, time to completion, number of rereads, and more. This work would require support from collaborators with expertise in pedagogy to help direct the development of the system (headed by myself).
+</p>
     	</div>
     	<div class="4u$ 12u$(medium)">
     		<h3>Web based applications for data reduction, visualization, and applied statistics</h3>
