@@ -20,7 +20,7 @@ include-tile: true
     	<p>I find myself the most enthusiastic when I am trying new things. The projects I propose below reflect my varied and evolving interests. I am delighted to work with students on a variety of geologic and environmental problems using laboratory, computation, and field-based methods.</p>
 		<hr class="major" />
 		<header class="major">
-			<h1>Post-doc Projects</h1>
+			<h1>Proposed Post-doc Projects</h1>
 		</header>
 		<div class="row">
     	<div class="6u 12u$(small)">
@@ -38,7 +38,7 @@ include-tile: true
     	</div>
     	<div class="4u 12u$(medium)">
     		<h3>Web based applications to assess student reading comprehension and compliance</h3>
-    		<p>This project is based on the work by <a href="https://repository.lib.ncsu.edu/bitstream/handle/1840.20/37510/etd.pdf?sequence=1">(Jones, 2020)</a>, who developed a web-based tool for assessing student learning in intro Geoscience courses: Confidence-based Learning Accuracy Support System. The system takes input from students during examinations on their perceived confidence levels. The volume of responses allows questions about student learning to be evaluated quantitatively, providing rapid feedback to instructors. The proposed work extends this system (or similar system) to reading comprehension and compliance. Questions one could address with large volumes of student responses include: perceived level of comprehension, perceived level of relevance, time to completion, number of rereads, and more. This work would require support from collaborators with expertise in pedagogy to help direct the development of the system (headed by myself).
+    		<p>This project is based on the work by <a href="https://repository.lib.ncsu.edu/bitstream/handle/1840.20/37510/etd.pdf?sequence=1">(Jones, 2020)</a>, who developed a web-based tool for assessing student learning in intro Geoscience courses: Confidence-based Learning Accuracy Support System (CLASS). The system takes input from students during examinations on their perceived confidence levels. The volume of responses allows questions about student learning to be evaluated quantitatively, providing rapid feedback to instructors. The proposed work extends this system (or similar system) to reading comprehension and compliance. Questions one could address with large volumes of student responses include: perceived level of comprehension, perceived level of relevance, time to completion, number of rereads, and more. This work would require support from collaborators with expertise in pedagogy to help direct the development of the system (headed by myself).
 </p>
     	</div>
     	<div class="4u$ 12u$(medium)">
