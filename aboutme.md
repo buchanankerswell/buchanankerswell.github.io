@@ -53,14 +53,14 @@ meta-author: Buchanan Kerswell
 	</section>
 	<section>
 		<a class="image">
-			<img src="assets/images/pic08.jpg" alt="Buchanan happy to find himself atop the Grand St. Bernard Pass, Western Alps" data-position="25% 25%" />
+			<img src="assets/images/buswork.png" alt="Buchanan coding on the go while traveling to his next destination" data-position="25% 25%" />
 		</a>
 		<div class="content">
 			<div class="inner">
 				<header class="major">
 					<h3>Developer & Guide</h3>
 				</header>
-				<p>I dabble in machine learning, web app & software development, and guiding bicycle tours</p>
+				<p>I seek out machine learning solutions to geoscience problems. I focus on developing simple web apps & packages for research and classroom exercises. I also guide bicycle tours + more :)</p>
 				<ul class="actions">
 					<li><a href="portfolio.html" class="button">View my portfolio</a></li>
 				</ul>
