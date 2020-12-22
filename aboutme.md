@@ -60,7 +60,7 @@ meta-author: Buchanan Kerswell
 				<header class="major">
 					<h3>Developer & Guide</h3>
 				</header>
-				<p>I seek out machine learning solutions to geoscience problems. I focus on developing simple web apps & packages for research and classroom exercises. I also guide bicycle tours + more :)</p>
+				<p>I seek out machine learning solutions to geoscience problems. I develop simple web apps and write packages for research & classroom exercises. I also guide bicycle tours :)</p>
 				<ul class="actions">
 					<li><a href="portfolio.html" class="button">View my portfolio</a></li>
 				</ul>
