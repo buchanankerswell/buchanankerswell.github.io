@@ -28,8 +28,8 @@ meta-author: Buchanan Kerswell
 				</header>
 				<p>I am passionate about research and teaching. Geoscience datasets are sparse, expensive, and layered with complexity. These challenging problems are attractive and bless me with excuses to visit amazing places to look at wild rocks. In return, I focus on providing students opportunities for support and hands-on learning.</p>
 				<ul class="actions">
-					<li><a href="https://scholar.google.com/citations?hl=en&user=O7TM22kAAAAJ" class="button">My published work</a></li>
-          <li><a href="proposals.html" class="button">My current and proposed work</a></li>
+					<li><a href="https://scholar.google.com/citations?hl=en&user=O7TM22kAAAAJ" class="button">Published work</a></li>
+          <li><a href="proposals.html" class="button">Proposed work</a></li>
 				</ul>
 			</div>
 		</div>
@@ -46,7 +46,7 @@ meta-author: Buchanan Kerswell
 				<p>My athletic life is integral to who I am. When I'm not working, I'm usually training, racing, adventuring, or planning my next adventure. I have a healthy obsession with bicycles. </p>
 				<ul class="actions">
 					<li><a href="https://www.strava.com/athletes/11468816" class="button">Follow me on Strava</a></li>
-					<li><a href="https://youtu.be/6GkO-Mz5uOo" class="button">See my latest adventure</a></li>
+					<li><a href="https://www.youtube.com/channel/UCASTXh1htnlmMX8YWbR90gw" class="button">See my latest adventure</a></li>
 				</ul>
 			</div>
 		</div>
