@@ -29,7 +29,7 @@ include-tile: true
     	</div>
     	<div class="6u$ 12u$(small)">
     		<h3>Machine learning applied to elastic barometry of quartz inclusions in garnet</h3>
-    		<p>Application of elastic barometry of quartz inclusions in garnet (QuiG) requires estimating peak positions in Raman spectra. The problem is that QuiG spectra are mixed and require deconvolution of quartz spectra from interference noise (from garnet and other minerals) for proper peak position estimates. <b>Robust methods currently do not exist for deconvolution of Raman spectra for QuiG</b>, or are at least not widely available. This work proposes web-based, open-source software that uses deep learning to take raw spectra as input, specifically identify and deconvolve minerals contributing to the mixed spectra, and estimate peak positions. The application would output peak positions, with uncertainties, that could be fed directly into <a href="http://www.rossangel.com/home.htm">open-source software</a> for elastic barometric estimates <a href="https://www.degruyter.com/view/journals/zkri/234/2/article-p129.xml">(Angel et al., 2019)</a></p>
+    		<p>Application of elastic barometry of quartz inclusions in garnet (QuiG) requires estimating peak positions in Raman spectra. The problem is that Raman spectra of quartz inclusions are mixed and require deconvolution of the quartz spectrum from interference noise (from garnet and other minerals) for proper peak position estimates. <b>Robust methods currently do not exist for deconvolution of Raman spectra for QuiG</b>, or are at least not widely available. This work proposes web-based, open-source software that uses deep learning to take raw spectra as input, specifically identify minerals contributing to the mixed spectra, deconvolve the spectra, and estimate peak positions. The application would output peak positions, with uncertainties, that could be fed directly into <a href="http://www.rossangel.com/home.htm">open-source software</a> for elastic barometric estimates <a href="https://www.degruyter.com/view/journals/zkri/234/2/article-p129.xml">(Angel et al., 2019)</a></p>
     	</div>
 			<div class="inner">
     		<h3>Web based applications for data reduction, visualization, and applied statistics</h3>
@@ -49,4 +49,17 @@ include-tile: true
     </div>
     <hr class="major" />
   </div>
+</section>
+
+<!-- Three -->
+<section id="three">
+	<div class="inner">
+		<header class="major">
+			<h2>Interested?</h2>
+		</header>
+		<p>Think I'm a good fit for your lab? Have funding or want to write a proposal? Please get in contact.</p>
+		<ul class="actions">
+			<li><a href="resume.html" class="button next">Resumé</a></li>
+		</ul>
+	</div>
 </section>
