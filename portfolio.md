@@ -31,7 +31,6 @@ meta-author: Buchanan Kerswell
 				<ul class="actions">
 				<li><a href="https://github.com/buchanankerswell/kerswell_et_al_coupling" class="button">GitHub</a></li>
 				<li><a href="https://osf.io/zjac3/" class="button">Open Science Framework</a></li>
-					<li><a href="https://kerswell.shinyapps.io/coupling_app/?_ga=2.70706768.1564226589.1607628982-904544027.1607496859" class="button">App</a></li>
 				</ul>
 			</div>
 		</div>
@@ -39,15 +38,15 @@ meta-author: Buchanan Kerswell
 
 	<section>
 		<a class="image">
-			<img src="assets/images/xtal-sttl.png" alt="An app for calculating Stokes settling velocity of crystals in silicate melts" data-position="top center" />
+			<img src="assets/images/xtal-sttl.png" style="margin-top:4em;" alt="An app for calculating Stokes settling velocity of crystals in silicate melts" data-position="center center" />
 		</a>
 		<div class="content">
 			<div class="inner">
 				<header class="major">
 					<h3>Tools for Students</h3>
 				</header>
-				<p>An app for calculating Stokes settling velocity of crystals in silicate metls. Perfect for a [petrology exercise](https://github.com/buchanankerswell/xtal-sttl). Try it yourself---copy and paste these data into the app:</p>
-				<div class="table-wrapper">
+				<p>An app for calculating Stokes settling velocity of crystals in silicate metls. Perfect for a <a href="https://github.com/buchanankerswell/xtal-sttl">petrology exercise</a>. Try it yourself. Copy and paste these data into the app:</p>
+				<div class="table-wrapper" style="font-size: 0.7em;">
 					<table>
 						<thead>
 							<tr>
@@ -135,7 +134,6 @@ meta-author: Buchanan Kerswell
 				</div>
 				<ul class="actions">
 					<li><a href="https://kerswell.shinyapps.io/xtal-sttl" class="button">App</a></li>
-					<li><a href="assets/html/maps.html" class="button">Vignette</a></li>
 				</ul>
 			</div>
 		</div>
