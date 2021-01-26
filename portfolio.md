@@ -39,60 +39,102 @@ meta-author: Buchanan Kerswell
 
 	<section>
 		<a class="image">
-			<img src="assets/images/boise_quad.png" alt="Map of Boise South Quad, generated using code from Buchanan Kerswell's mapping vignette" data-position="top center" />
+			<img src="assets/images/xtal-sttl.png" alt="An app for calculating Stokes settling velocity of crystals in silicate melts" data-position="top center" />
 		</a>
 		<div class="content">
 			<div class="inner">
 				<header class="major">
 					<h3>Tools for Students</h3>
 				</header>
-				<p>Map making tools and vignette for sedimentology and stratigraphy. Try it for yourself. Copy and paste these data into the app:</p>
+				<p>An app for calculating Stokes settling velocity of crystals in silicate metls. Perfect for a [petrology exercise](https://github.com/buchanankerswell/xtal-sttl). Try it yourself---copy and paste these data into the app:</p>
 				<div class="table-wrapper">
 					<table>
 						<thead>
 							<tr>
-								<th>Outcrop</th>
-								<th>Latitude</th>
-								<th>Longitude</th>
-								<th>Elevation</th>
+								<th>ID</th>
+								<th>SiO2</th>
+								<th>TiO2</th>
+								<th>Al2O3</th>
+                <th>Fe2O3</th>
+								<th>FeO</th>
+								<th>MgO</th>
+								<th>CaO</th>
+                <th>Na2O</th>
+								<th>K2O</th>
+								<th>H2O</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>TR1</td>
-								<td>43.593355</td>
-								<td>-116.144052</td>
-								<td>3620</td>
+								<td>NS-115</td>
+								<td>40.3</td>
+								<td>0.56</td>
+								<td>16.24</td>
+                <td>0</td>
+								<td>5.59</td>
+								<td>18.74</td>
+								<td>0.73</td>
+                <td>5.22</td>
+								<td>12.23</td>
+								<td>0.272</td>
 							</tr>
 							<tr>
-								<td>TR2</td>
-								<td>43.593775</td>
-								<td>-116.147319</td>
-								<td>3557</td>
+								<td>AO24</td>
+                <td>40.33</td>
+								<td>1.73</td>
+								<td>3.44</td>
+                <td>0</td>
+								<td>14.29</td>
+								<td>5.79</td>
+								<td>1.24</td>
+                <td>5.13</td>
+								<td>19.55</td>
+								<td>0.197</td>
 							</tr>
 							<tr>
-								<td>TR3</td>
-								<td>43.594118</td>
-								<td>-116.146982</td>
-								<td>3605</td>
+              <td>96025/1</td>
+              <td>40.68</td>
+              <td>1.79</td>
+              <td>17.13</td>
+              <td>0</td>
+              <td>15.16</td>
+              <td>11.87</td>
+              <td>9.88</td>
+              <td>0.28</td>
+              <td>0.44</td>
+              <td>0.46</td>
 							</tr>
 							<tr>
-								<td>TR4</td>
-								<td>43.597387</td>
-								<td>-116.146797</td>
-								<td>3643</td>
+              <td>OLB8IF1</td>
+              <td>40.75</td>
+              <td>0.92</td>
+              <td>7.72</td>
+              <td>0</td>
+              <td>9.21</td>
+              <td>9.18</td>
+              <td>0.81</td>
+              <td>5.65</td>
+              <td>11.79</td>
+              <td>0.253</td>
 							</tr>
 							<tr>
-								<td>TR5</td>
-								<td>43.598737</td>
-								<td>-116.147453</td>
-								<td>3662</td>
+              <td>PED979</td>
+              <td>40.83</td>
+              <td>1.38</td>
+              <td>4.04</td>
+              <td>0</td>
+              <td>12.45</td>
+              <td>8.23</td>
+              <td>1.17</td>
+              <td>4.86</td>
+              <td>19.91</td>
+              <td>0.04</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 				<ul class="actions">
-					<li><a href="https://kerswell.shinyapps.io/TR_map_creator/?_ga=2.123651531.1564226589.1607628982-904544027.1607496859" class="button">App</a></li>
+					<li><a href="https://kerswell.shinyapps.io/xtal-sttl" class="button">App</a></li>
 					<li><a href="assets/html/maps.html" class="button">Vignette</a></li>
 				</ul>
 			</div>
