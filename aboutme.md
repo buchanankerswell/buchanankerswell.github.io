@@ -63,6 +63,7 @@ meta-author: Buchanan Kerswell
 				<p>I seek out machine learning solutions to geoscience problems. I develop simple web apps and write packages for research & classroom exercises. I also guide bicycle tours :)</p>
 				<ul class="actions">
 					<li><a href="portfolio.html" class="button">View my portfolio</a></li>
+          <li><a href="https://boisetreasuretrove.com" class="button">Treasure Trove</a></li>
 				</ul>
 			</div>
 		</div>
