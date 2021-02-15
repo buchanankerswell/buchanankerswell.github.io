@@ -172,6 +172,23 @@ meta-author: Buchanan Kerswell
 			</div>
 		</div>
 	</section>
+
+  <section>
+    <a class="image">
+      <img src="assets/images/gem-regular.svg" alt="Treasure Trove is a bicycle route guide for the Boise area" data-position="center center" style="width: 70%; margin-left: 5em"/>
+    </a>
+    <div class="content">
+      <div class="inner">
+        <header class="major">
+          <h3>New Project: Treasure Trove</h3>
+        </header>
+        <p>Treasure Trove is a bicycle route guide for the Boise area. New routes coming soon!</p>
+        <ul class="actions">
+          <li><a href="https://boisetreasuretrove.com" class="button">Visit</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
 </section>
 
 <!-- Three -->
