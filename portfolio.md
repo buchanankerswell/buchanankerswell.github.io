@@ -19,7 +19,7 @@ meta-author: Buchanan Kerswell
 <section id="two" class="spotlights">
 	<section>
 		<a class="image">
-			<img src="assets/images/coupling_hf.png" alt="Figure from Buchanan Kerswell's publication showing simulated heat flow near volcanic arcs" data-position="center center"/>
+			<img src="assets/images/streams.png" alt="Figure from Buchanan Kerswell's publication showing simulated heat flow near volcanic arcs" data-position="center center"/>
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -35,6 +35,28 @@ meta-author: Buchanan Kerswell
 			</div>
 		</div>
 	</section>
+
+  <section id="two" class="spotlights">
+  	<section>
+  		<a class="image">
+  			<img src="assets/images/streams.png" alt="Figure from Buchanan Kerswell's publication showing simulated heat flow near volcanic arcs" data-position="center center"/>
+        <video muted autoplay playsinline loop width="100%" alt="Video showing a spinning petrographic thin section in plane- and cross-polarized light">
+          <source src="assets/images/K95_8_5_Gore_Mountain_crop_thumb.mp4" type="video/mp4">
+        </video>
+  		</a>
+  		<div class="content">
+  			<div class="inner">
+  				<header class="major">
+  					<h3>New Project: Light Slides</h3>
+  				</header>
+  				<p>A simple catalogue of petrographic thin sections in plane- and cross-polarized light. Videos thanks to Matt Kohn, Boise State University.</p>
+  				<p>A recent example:</p>
+  				<ul class="actions">
+  				<li><a href="https://buchanankerswell.com/light-slides" class="button">View</a></li>
+  				</ul>
+  			</div>
+  		</div>
+  	</section>
 
 	<section>
 		<a class="image">
@@ -134,40 +156,6 @@ meta-author: Buchanan Kerswell
 				</div>
 				<ul class="actions">
 					<li><a href="https://kerswell.shinyapps.io/xtal-sttl" class="button">App</a></li>
-				</ul>
-			</div>
-		</div>
-	</section>
-
-  <section>
-		<a class="image">
-			<img src="assets/images/pacific.jpg" alt="A global compilation of surface heat flow measurements near arcs" data-position="center center" />
-		</a>
-		<div class="content">
-			<div class="inner">
-				<header class="major">
-					<h3>Surface Heat Flow Near Arcs</h3>
-				</header>
-				<p>A short paper on the subject of surface heat flow near volcanic arcs</p>
-				<ul class="actions">
-				<li><a href="assets/html/heatflow.html" class="button">View</a></li>
-				</ul>
-			</div>
-		</div>
-	</section>
-
-	<section>
-		<a class="image">
-			<img src="assets/images/cr_loop.png" alt="Bicycle tour course guide map of a loop around Capitol Reef National Park, Southern Utah" data-position="25% 25%" />
-		</a>
-		<div class="content">
-			<div class="inner">
-				<header class="major">
-					<h3>Guided Bike Tour: Boulder, Utah</h3>
-				</header>
-				<p>Four-day guided bike tour through the beautiful red rock Mesezoic section of Southern Utah.</p>
-				<ul class="actions">
-					<li><a href="assets/html/bbb.html" class="button">Guide de Cours</a></li>
 				</ul>
 			</div>
 		</div>
