@@ -36,10 +36,8 @@ meta-author: Buchanan Kerswell
 		</div>
 	</section>
 
-  <section id="two" class="spotlights">
   	<section>
   		<a class="image">
-  			<img src="assets/images/streams.png" alt="Figure from Buchanan Kerswell's publication showing simulated heat flow near volcanic arcs" data-position="center center"/>
         <video muted autoplay playsinline loop width="100%" alt="Video showing a spinning petrographic thin section in plane- and cross-polarized light">
           <source src="assets/images/K95_8_5_Gore_Mountain_crop_thumb.mp4" type="video/mp4">
         </video>
@@ -50,13 +48,12 @@ meta-author: Buchanan Kerswell
   					<h3>New Project: Light Slides</h3>
   				</header>
   				<p>A simple catalogue of petrographic thin sections in plane- and cross-polarized light. Videos thanks to Matt Kohn, Boise State University.</p>
-  				<p>A recent example:</p>
   				<ul class="actions">
   				<li><a href="https://buchanankerswell.com/light-slides" class="button">View</a></li>
   				</ul>
   			</div>
   		</div>
-  	</section>
+      </section>
 
 	<section>
 		<a class="image">
@@ -163,7 +160,9 @@ meta-author: Buchanan Kerswell
 
   <section>
     <a class="image">
-      <img src="assets/images/gem-regular.svg" alt="Treasure Trove is a bicycle route guide for the Boise area" data-position="center center" style="width: 70%; margin-left: 5em"/>
+    <video muted autoplay playsinline loop width="100%" alt="Timewarp video of a cycling route in Boise, Idaho">
+      <source src="assets/images/holy-trinity-warp-compressed.mp4" type="video/mp4">
+    </video>
     </a>
     <div class="content">
       <div class="inner">
