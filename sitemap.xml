@@ -29,4 +29,12 @@ sitemap:
       </url>
       {% endunless %}
     {% endfor %}
+    <url>
+      <loc>https://buchanankerswell.com/light-slides</loc>
+
+        <changefreq>monthly</changefreq>
+
+        <priority>0.3</priority>
+        
+    </url>
 </urlset>
