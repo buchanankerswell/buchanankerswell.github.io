@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Light Slides"
+title: "Light slides"
 author: Buchanan Kerswell, PhD
 description: "A website showcasing random assortments of thin sections from Matt Kohn's library"
 date: 2022-05-07

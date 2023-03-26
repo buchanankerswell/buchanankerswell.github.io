@@ -50,3 +50,8 @@ button:hover {
   margin: auto;
   display: none;
 }
+
+#timertitle {
+  font-size: 4em;
+  margin: auto;
+}
