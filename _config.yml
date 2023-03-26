@@ -1,0 +1,44 @@
+# Site settings
+title: Buchanan Kerswell, PhD
+author: Buchanan Kerswell, PhD
+logo: "https://s.gravatar.com/avatar/23fad620a6f427c5a4411938961e545e?s=330"
+tagline: view my current and proposed work
+description: view my current and proposed work
+email: kersweb@miamioh.edu
+post: Visiting Assistant Professor
+field: Metamorphic Petrology & Geodynamics
+university: Miami University
+city: Oxford
+state: OH
+country: USA
+phone: "+1 480 417 2797"
+baseurl: # the subpath of your site, e.g. /blog
+url: # the base hostname & protocol for your site, e.g. http://example.com
+show_excerpts: true
+date_format: "%b %-d, %Y"
+google_analytics: UA-NNNNNNNN-N
+social:
+  name: Buchanan Kerswell
+  links:
+    - https://github.com/buchanankerswell
+    - https://www.researchgate.net/profile/Buchanan_Kerswell
+    - https://scholar.google.com/citations?hl=en&user=O7TM22kAAAAJ
+    - https://orcid.org/0000-0003-0495-4162
+    - https://osf.io/sd5z3/
+github_url: https://github.com/buchanankerswell
+researchgate_url: https://www.researchgate.net/profile/Buchanan_Kerswell
+googlescholar_url: https://scholar.google.com/citations?hl=en&user=O7TM22kAAAAJ
+orcid_url: https://orcid.org/0000-0003-0495-4162
+osf_url: https://osf.io/sd5z3/
+
+# Build settings
+markdown: kramdown
+sass:
+  style: compressed
+
+# remote_theme: mloberg/strata-jekyll-theme
+# theme: jekyll-theme-strata
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap

@@ -1,0 +1,77 @@
+---
+layout: default
+---
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+  {%- if site.posts.size > 0 -%}
+    <section class="post-list">
+    {%- if site.categories.latestWork.size > 0 -%}
+      <h1 class="post-list-heading">{{ page.first_list_title | default: "Latest Work" }}</h1>
+      {%- for post in site.categories.latestWork -%}
+        <section class="post-list-item">
+          <header>
+            <h3>
+              <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h3>
+            <p class="post-meta">{{ post.date | date: date_format }}</p>
+          </header>
+          {%- if site.show_excerpts -%}
+            <div class="post-excerpt">
+              <p>{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</p>
+            </div>
+          {%- endif -%}
+        </section>
+      {%- endfor -%}
+    {%- endif -%}
+    <hr>
+    {%- if site.categories.software.size > 0 -%}
+      <h1 class="post-list-heading">{{ page.third_list_title | default: "Blog" }}</h1>
+      {%- for post in site.categories.software -%}
+        <section class="post-list-item">
+          <header>
+            <h3>
+              <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              {%- if post.github -%}
+                <a class='fa fa-github-square' href='{{ post.github }}' style='margin:0.5em'></a>
+              {%- endif -%}
+            </h3>
+            <p class="post-meta">{{ post.date | date: date_format }}</p>
+          </header>
+          {%- if site.show_excerpts -%}
+            <div class="post-excerpt">
+              <p>{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</p>
+            </div>
+          {%- endif -%}
+        </section>
+      {%- endfor -%}
+    {%- endif -%}
+    <hr>
+    {%- if site.categories.proposedWork.size > 0 -%}
+      <h1 class="post-list-heading">{{ page.second_list_title | default: "Proposed Work" }}</h1>
+		  <h2>Foreword about my interests and expertise</h2>
+      <p>I am a metamorphic petrologist studying the implications of converging tectonic plates. My work involves characterizing and analyzing metamorphic rocks from micro- to macro-scales to quantify how metamorphic reactions effectively regulate geodynamic features in subduction zones and orogenic belts. I approach geodynamic problems with a broad skillset, including: carefully studying rocks in the field, experimenting with numerical models, training machines to analyze geophysical datasets with geostatistical techniques, applying well-established petrologic methods (e.g. thermodynamic modeling) to various rock types, and advancing cutting-edge empirical and computational models of metamorphic processes (e.g. elastic barometry & generative sampling). Thus, my students might visit remote mountains to sample rocks, use analytical instruments in laboratories, conduct numerical experiments on high-performance computing systems, and/or write code for research, scientific communication, and education. I also have special interests in scholarly teaching, developing cutting-edge learning materials, and applying machine learning (ML) and artificial intelligence (AI) techniques to advance the Geosciences.</p>
+      {%- for post in site.categories.proposedWork -%}
+        <section class="post-list-item">
+          <header>
+            <h3>
+              <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h3>
+            <p class="post-meta">{{ post.date | date: date_format }}</p>
+          </header>
+          {%- if site.show_excerpts -%}
+            <div class="post-excerpt">
+              <p>{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</p>
+            </div>
+          {%- endif -%}
+        </section>
+      {%- endfor -%}
+    {%- endif -%}
+    </section>
+  {%- endif -%}
+</div>

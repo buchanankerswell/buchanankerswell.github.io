@@ -1,0 +1,438 @@
+---
+layout: page
+title: 'Snow Canyon gravel ride with a Geoscientist'
+author: Buchanan Kerswell, PhD
+description: "An online guidebook for riding Snow Canyon's 'West Canyon'"
+date: 2022-05-18
+categories: blog
+bibliography: assets/ref/guidebook-page-snow-canyon.bib
+link-citations: true
+csl: assets/ref/agu.csl
+always_allow_html: true
+output:
+  rmdformats::downcute:
+    fig_width: 7
+    fig_height: 7
+    numbered_sections: false
+    thumbnails: false
+    gallery: true
+    use_bookdown: true
+    df_print: tibble
+    code_folding: none
+    default_style: dark
+    downcute_theme: chaos
+---
+
+```{r settings, echo=FALSE, include=FALSE}
+# Fixes file path issues with jekyll
+knitr::opts_knit$set(base.dir = '~/projects/buchanankerswell.github.io/', base.url = '')
+# Some recommended settings
+knitr::opts_chunk$set(
+  echo = F, message = F, warning = F, comment = '###', collapse = TRUE,
+  fig.path = 'assets/images/', out.width = '100%', fig.align = 'center',
+  fig.width = 7, fig.height = 7
+)
+```
+
+```{r}
+# Load libraries
+library(sf)
+library(magrittr)
+library(dplyr)
+library(lubridate)
+library(purrr)
+library(tibble)
+library(ggplot2)
+library(ggspatial)
+library(ggsflabel)
+library(ggrepel)
+library(viridis)
+library(cowplot)
+library(patchwork)
+library(colorspace)
+library(leaflet)
+library(htmlwidgets)
+library(knitr)
+library(kableExtra)
+
+# Helper functions
+
+# Function to reads .gpx file and transform marker track into tibble
+# with useful features (e.g. gradient, elapsed time, distance travelled)
+read_gpx <- function(gpx, layer = 'track_points') {
+  raw.gpx <-
+    st_read(gpx, layer = layer, quiet = T) %>% # read the .gpx file
+    st_set_crs(4326) # set CRS to web standard
+  select(raw.gpx, ele, time, geometry) %>% # select <xyzt>
+  mutate(
+    ele.step = lead(ele) - ele, # [m]
+    time = with_tz(time, 'MST'), # standardize time zone
+    time.step = as.vector(lead(time) - time), # [POSIXct]
+    dist.step = as.vector(st_distance(geometry, lead(geometry), by_element = T)), # [m]
+    dist.travelled = cumsum(dist.step), # [m]
+    velocity.inst = dist.step/time.step, # [m/s]
+    # Gradients need to be filtered and smoothed
+    grad.inst = ele.step/dist.step*100, # [%]
+    grad.inst = replace(grad.inst, is.infinite(grad.inst), 0), # remove infinite values
+    grad.inst = replace(grad.inst, is.na(grad.inst), 0), # remove missing values
+    grad.inst = replace_outliers(grad.inst), # remove outliers
+    grad.inst = c(rep(0, 100), kernapply(grad.inst, kernel('daniell', 100)), rep(0, 100))
+  )
+}
+
+# Function to remove outliers from a vector 
+# note: outliers defined as 3IQR below the 1st quartile
+# or 3IQR above the 3rd quartile
+replace_outliers <- function(x, na.rm = TRUE, ...) {
+  qnt <- quantile(x, probs=c(.25, .75), na.rm = na.rm, ...)
+  H <- 1.5 * IQR(x, na.rm = na.rm)
+  y <- x
+  y[x < (qnt[1] - 2*H)] <- 0
+  y[x > (qnt[2] + 2*H)] <- 0
+  y
+}
+
+# Function to draw a widened box from a st_bbox object
+bbox_widen <- function(bbox = NULL, crs = NULL, borders = c(0.5, 0.5, 0, 0)) {
+  # Check for bbox
+  if(is.null(bbox)) {
+    stop('No bbox given. Please provide an st_bbox object')
+  }
+  # Check for crs
+  if(is.null(crs)) {
+    crs <- st_crs(bbox)
+  }
+  b <- bbox # current bounding box
+  xrange <- b$xmax - b$xmin # range of x values
+  yrange <- b$ymax - b$ymin # range of y values
+  b[1] <- b[1] - (borders[4] * xrange) # xmin - left
+  b[3] <- b[3] + (borders[2] * xrange) # xmax - right
+  b[2] <- b[2] - (borders[3] * yrange) # ymin - bottom
+  b[4] <- b[4] + (borders[1] * yrange) # ymax - top
+  box <-
+    st_polygon(list(matrix(c(b$xmin, b$ymax, b$xmin, b$ymin, b$xmax, b$ymin, b$xmax, b$ymax, b$xmin, b$ymax), ncol = 2, byrow = TRUE))) %>%
+    st_sfc(crs = crs)
+  return(box)
+}
+
+# Reading .gpx file
+fpath <- 'assets/gpx/activity_8676301507.gpx'
+route <- read_gpx(fpath)
+
+# Cutting out a segment
+depart <- min(route$time)
+segment.time.range <- c(depart+hms('00:21:48'), depart+hms('01:06:24'))
+segment <-
+  route %>%
+  filter(time < segment.time.range[2] & time > segment.time.range[1]) %>%
+  mutate(dist.travelled.segment = cumsum(dist.step))
+segment.depart <- min(segment$time)
+
+# Segment summary
+segment.summary <-
+  segment %>%
+  st_set_geometry(NULL) %>%
+  summarise(
+    distance.total = sum(dist.step), # [m]
+    gradient.avg = mean(grad.inst), # [%]
+    gradient.max = max(grad.inst), # [%]
+    elevation.gain = sum(ele.step[ele.step > 0]), # [m]
+    elevation.max = max(ele), # [m]
+    duration = (sum(time.step)) # [POSIXct]
+  )
+
+# Drawing maps and profiles
+# Define locations of special features en route
+features <-
+  tibble(
+    feature =
+      c(
+        'gas station/depart',
+        'park entrance',
+        '*sand dunes',
+        'gravel start',
+        '*tanks',
+        'toilette',
+        '*jointed cliffs',
+        '*lava flow',
+        '*twisted rope',
+        'turn around and descend'
+      ),
+    feature.time =
+      c(
+        segment.depart,
+        segment.depart+hms('00:04:00'),
+        segment.depart+hms('00:06:35'),
+        segment.depart+hms('00:08:43'),
+        segment.depart+hms('00:09:48'),
+        segment.depart+hms('00:13:00'),
+        segment.depart+hms('00:13:30'),
+        segment.depart+hms('00:16:24'),
+        segment.depart+hms('00:20:24'),
+        segment.depart+hms('00:26:14')
+      )
+  )
+
+# Get interest points from segments
+interest.points <-
+  segment %>%
+  slice(map_dbl(features$feature.time, ~which.min(abs(segment$time-.x)))) %>%
+  bind_cols(features)
+
+# Draw static map
+p.map <-
+  ggplot() +
+  geom_sf(data = bbox_widen(st_bbox(segment), borders = c(0.05, 5, 0.05, 4)), fill = NA) +
+  annotation_map_tile('opencycle', zoom = 12) +
+  geom_sf(data = segment[segment$grad.inst > 0,]) +
+  annotation_north_arrow(location = 'tr') +
+  annotation_scale(location = 'br', text_cex = 1, text_face = 'bold') +
+  geom_sf_label_repel(
+    data = interest.points,
+    aes(label = paste0(feature, ' ', round(dist.travelled.segment/1e3, 1), 'km')),
+    label.r = 0.01,
+    label.padding = 0.2,
+    label.size = 0.5,
+    point.padding = 1,
+    nudge_x = -5e-1,
+    nudge_y = 3e-3,
+    segment.curvature = -1e-20,
+    arrow = arrow(length = unit(0.02, 'npc')),
+    fill = rgb(0.9, 0.9, 0.9, 0.9),
+    color = 'black'
+  ) +
+  labs(
+    title = 'Snow Canyon Gravel Ride',
+    subtitle = 'St. George, Utah',
+    caption =
+      paste0(
+        'West Canyon: ',
+        round(sum(segment$dist.step)/1e3, 1),
+        'km out-n-back, ',
+        round(segment.summary$elevation.gain, 1),
+        'm climbing, ',
+        round(segment.summary$gradient.max, 1),
+        '% max gradient'
+      )
+  ) +
+  scale_fill_manual(name = NULL, values = c('start' = 'cornflowerblue', 'finish' = 'deeppink')) +
+  theme_map() +
+  theme(
+    legend.position = c(0.99, 0.5),
+    legend.justification = c(1, 0.5),
+    legend.box.background = element_rect(fill = rgb(1, 1, 1, 0.3), color = NA),
+    plot.margin = margin(),
+    legend.box.margin = margin()
+  )
+
+# Draw profile
+p.profile <-
+  segment %>%
+  ggplot() +
+  geom_ribbon(
+    aes(x = dist.travelled.segment/1e3, ymin = min(ele), ymax = ele),
+    fill = 'grey90'
+  ) +
+  geom_path(
+    aes(x = dist.travelled.segment/1e3, y = ele, color = grad.inst),
+    size = 2,
+    linejoin = 'round',
+    lineend = 'round'
+  ) +
+  geom_point(
+    data = interest.points,
+    aes(x = dist.travelled.segment/1e3, y = ele),
+    shape = 8
+  ) +
+  geom_text_repel(
+    data = interest.points[c(3, 5, 7, 8, 9),],
+    aes(x = dist.travelled.segment/1e3, y = ele, label = feature),
+    size = 3,
+    point.padding = 1,
+    segment.curvature = -1e-20,
+    nudge_y = -200,
+    nudge_x = 2.5,
+    arrow = arrow(length = unit(0.02, 'npc'))
+  ) +
+  labs(x = 'distance (km)', y = 'elev. (m)', color = 'gradient %') +
+  scale_color_continuous_diverging(
+    'berlin',
+    guide = guide_colorbar(title.vjust = 1, barheight = unit(0.03, 'npc'))
+  ) +
+  scale_y_continuous(limits = c(min(segment$ele), max(segment$ele))) +
+  theme_classic() +
+  theme(
+    legend.direction = 'horizontal',
+    legend.position = c(0.99, 0.99),
+    legend.justification = c(1, 1),
+    legend.box.background = element_rect(fill = '#BFB29E', color = NA),
+    legend.background = element_rect(fill = '#BFB29E', color = NA),
+    plot.margin = margin(10, 0, 0, 0),
+    legend.margin = margin(),
+    legend.box.margin = margin(),
+    panel.background = element_rect(fill = '#BFB29E', color = NA),
+    plot.background = element_rect(fill = '#BFB29E', color = NA)
+  )
+
+# Composition plot
+p <- p.map / p.profile + plot_layout(heights = c(6, 1))
+ggsave(
+  'assets/images/snow-canyon-comp.png',
+  plot = p, device = 'png', type = 'cairo',
+  width = 7, height = 7
+)
+
+# Draw interactive Leaflet map
+leaflet(st_cast(st_combine(segment), 'LINESTRING'), width = '100%') %>%
+  addProviderTiles(providers$OpenTopoMap, group = 'Open Topo') %>%
+  addTiles(group = 'Open Street') %>%
+  addPolylines(color = 'black', opacity = 1, group = 'West Canyon route') %>%
+  addMarkers(data = segment[1,], label = 'Start/Finish', group = 'Start/Finish') %>%
+  addCircleMarkers(data = interest.points, stroke = F, color = 'deeppink', radius = 4, fillOpacity = 1, label = ~feature, group = 'Interesting points') %>%
+  addLayersControl(
+    baseGroups = c('Open Topo', 'Open Street'),
+    overlayGroups = c('West Canyon route', 'Start/Finish', 'Interesting points'),
+    options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  saveWidget('assets/html/2022-05-16-guidebook-page-snow-canyon-leaflet.html')
+```
+
+# Introduction {-}
+
+> **tl;dr:**
+> Experience southern Utah's lesser known red-rock scenery on a **2hr bicycle tour** through Snow Canyon. \$25/person. **Beginners welcome**. Ebike rentals [onsite](https://www.google.com/maps/place/Rampage+E-Bike+Sales%2F+Rentals/@37.1692684,-113.6546886,17z/data=!3m1!4b1!4m5!3m4!1s0x80ca43b760506a27:0x2cf9f80607764df2!8m2!3d37.1692684!4d-113.6524999) for an additional \$55/person or bring your own bike and save! Book online through [Airbnb](https://www.airbnb.com/experiences/3776959).
+
+## About the park {-}
+
+Brochures giving general information about [Snow Canyon](https://stateparks.utah.gov/wp-content/uploads/sites/13/2021/10/Snow-Canyon-Brochure-Web-2021-optimized.pdf) and its desert [flora](https://stateparks.utah.gov/stateparks/wp-content/uploads/sites/26/2015/02/SnowCanyon_SCSPHiddenPinyonTrailGuide.pdf) are published by the [State Park](https://stateparks.utah.gov/parks/snow-canyon/).
+
+For those interested in the local geology, I recommend looking at the [interactive map](https://geology.utah.gov/apps/intgeomap/?view=scene&scale=9398&zoom=15.94&lat=37.16354&lng=-113.64571&layers=100k%2Creference&tilt=74&heading=3&elev=1879&exag=2.5&base=terrain#) from the Utah Geologic Survey before the tour. The main units to note are the Lower Jurrasic Kayenta and Navajo Sandstones (green Jk and Jn units on the geologic map), and especially the Quaternary basalt flows (purple Qbs units) that run north-south through the park.
+
+The basalt flows in Snow canyon are the youngest around, but their ages are yet to be measured directly[^1]. Insufficient concentrations of $^{40}Ar$ accumulated in young phenocrysts make radiometric dating difficult. A radiocarbon age of 27,270 $\pm$ 250 B.P. obtained from charcoal detritus collected just beneath the flow is the best guess for the basalt's eruption age. Go figure!?
+
+An in-depth [report](https://ugspub.nr.utah.gov/publications/geologicmaps/30x60quadrangles/m-242.pdf) on the local geology, coauthored by [Janice Hayden](https://science.utahtech.edu/faculty/janice-m-hayden-pg/) of Dixie State University (formerly at the Utah Geologic Survey) is available for the truly mad who are looking for a challenge.
+
+[^1]: Speculation on the age of the basalt flows in Snow Canyon is sourced from [this article](https://geology.utah.gov/map-pub/survey-notes/new-age-for-the-santa-clara-basalt-flow/) by Grant Willis from the Utah Geologic Survey
+
+![Looking to the southwest from the top of Snow Canyon State Park, St. George Utah. Photo taken by Buchanan on April 15, 2022.](assets/images/snow_high_view.png){width=100%}
+
+![Separated bike paths weaving up Snow Canyon, St. George Utah. Photo taken by Buchanan on April 15, 2022.](assets/images/snow_riders.png){width=100%}
+
+# Route Info {-}
+
+## Profile {-}
+
+```{r, fig.height=2}
+print(p.profile)
+```
+
+## Summary {-}
+
+The route is an **18.9km (11.7mi) out-n-back journey** on smooth pavement and fast gravel surfaces. Experienced riders can chat on the **2% uphill grades**, while testing themselves in loose corners on the descent. Inexperienced riders may find themselves concentrating more than others, yet **all will be rewarded for their efforts**.
+
+![West Canyon has some of the fastest, most pristine gravel surfaces anywhere. The vibes are pretty good too.](assets/images/snow_surfaces.png)
+
+## Points of interest {-}
+
+Remarkable geologic formations and desert backdrops showcase the route's natural beauty. I will point to several features along the way, including a toilette at the half way point...how convenient! Keep an eye out for endangered desert tortoises that can be sighted occasionally in the park. 🐢
+
+```{r}
+interest.points %>%
+  st_set_geometry(NULL) %>%
+  mutate(
+    description = c(
+      'Meeting point with E-bike rental shop and gas station',
+      'Entrance to Snow Canyon Park',
+      'Weathering sandstone cliffs recycle into modern sand dunes',
+      'Beginning of gravel sector',
+      'Buried water tanks make for a nice photo spot',
+      'Pit toilettes en route',
+      'Magnificently steep cliffs with conspicuous joint sets',
+      'Spectacular lava flows through stream channels',
+      'Cross-bedded sandstones expose wavy and rope-like fabrics',
+      'Get ready for 20-30 minutes of uninterrupted descent!'
+    )
+  ) %>%
+  select(dist.travelled.segment, feature, description) %>%
+  mutate(dist.travelled.segment = round(dist.travelled.segment/1e3, 1)) %>%
+  rename(
+    'Distance (km)' = dist.travelled.segment,
+    'Point of interest' = feature,
+    'Description' = description
+  ) %>%
+  kable(booktabs = T, format = 'html', table.attr = 'style="width: 100% !important;"') %>%
+  kable_styling(
+    bootstrap_options = c('hover', 'condensed', 'responsive'),
+    full_width = T
+  )
+```
+
+<iframe src='assets/html/2022-05-16-guidebook-page-snow-canyon-leaflet.html' style='width: 100%; height: auto; min-height: 45vh;'></iframe>
+
+## Safety considerations {-}
+
+Please consider the following elemental and personal factors that may affect your experience and/or ability to participate in the tour:
+
+> 1. **Sun protection**: there is little shade along the route, so riders must be prepared for two hours of sun exposure
+>
+> 2. **Endurance**: although a slow pace can be maintained, riders must prepare for a few small hills during two hours of outdoor action
+>
+> 3. **Bike handling**: fast descending (up to 40kph) and loose cornering potential en route, so riders must be confident in your riding capabilities
+>
+> 4. **Bike choice**: loose gravel surfaces require 32c tire and above
+>
+> 5. **Bike reliability**: bad breaking and shifting can cause trouble and safety issues far afield
+
+Factors 2-5 can be effectively resolved by renting an E-bike from a local shop. I have no affiliations with businesses, yet I still recommend E-bikes to most guests to ensure a good time (by hedging against the risk factors listed above). While there is a [shop](https://www.google.com/maps/place/Rampage+E-Bike+Sales%2F+Rentals/@37.1692684,-113.6546886,17z/data=!3m1!4b1!4m5!3m4!1s0x80ca43b760506a27:0x2cf9f80607764df2!8m2!3d37.1692684!4d-113.6524999) conveniently located at our meeting point, you can also just search for E-bike rental shops in St. George Utah and arrange service with one of many other businesses.
+
+Anyone is welcome to bring their own bike (like I do), of course. However, please make sure you have adequate tires, gearing, and that the bike is properly maintained **before the tour**.
+
+# What to Bring {-}
+
+<div class="cols">
+<div class="col-left">
+
+## Bicycle (required) {-}
+
+<details>
+  <summary>I am renting an E-bike at the meeting place</summary>
+    Great, just show up ready to have fun. Please have your rental bike ready *prior to the group's departure time*.
+  </details>
+
+<details>
+  <summary>I am renting an E-bike from another shop</summary>
+    Great, just show up with your E-bike ready to have fun. Please have your rental bike ready *prior to the group's departure time*.
+  </details>
+
+<details>
+  <summary>I am bringing my personal E-bike or conventional bike</summary>
+    Great, just show up with your personal bike ready to have fun. Please have your personal bike ready in proper working order *prior to the group's departure time*.
+  </details>
+
+## General items (optional) {-}
+
+> 1. Sun protection
+>
+> 2. Snacks/beverages
+>
+> 3. Riding kit (helmet, gloves, etc.)
+
+Riding bikes is all about staying light! Only bring what you need for two hours of outdoor action. There is a gas station to stock up on snacks and drinks at the beginning and ending of the tour. I pull a small bike trailer to carry your small items.
+
+</div>
+<div class="col-right">
+
+<video muted playsinline loop autoplay width="100%;">
+<source src="assets/images/snow_clip.mov" type="video/webm">
+</video>
+
+</div>
+</div>
+
+# About me {-}
+
+Hi, I am Buchanan. I have a PhD in Geoscience and am obsessed with bikes. Follow me on [Strava](https://www.strava.com/athletes/11468816) or find out more about my work on [my website](https://buchanankerswell.com/).
+
+Book this tour through [Airbnb](https://www.airbnb.com/experiences/3776959).
+
+![Buchanan and his dog Leo riding West Canyon. Photo taken May 2022.](assets/images/snow_me.png)

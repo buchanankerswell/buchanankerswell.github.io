@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="major post-header">
+    <h2 class="post-title">{{ page.title | escape }}</h2>
+  </header>
+
+  <div class="post-content">
+      {{ content }}
+  </div>
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>
