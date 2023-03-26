@@ -1,0 +1,17 @@
+# Jekyll
+_site/
+*-cache/
+
+# Ruby
+.bundle/
+.byebug_history
+.ruby-gemset
+.ruby-version
+*.gem
+vendor
+
+# Files
+.DS_Store
+
+# Folders
+gh-pages/

@@ -1,0 +1,209 @@
+---
+theme: "minimal-mistakes-jekyll"
+minimal_mistakes_skin: "default"
+
+# Site Settings
+locale: "en-US"
+title: "Buchanan Kerswell, PhD"
+title_separator: "-"
+name: "Buchanan Kerswell, PhD"
+description: "Buchanan Kerswell's homepage"
+url: "https://buchanankerswell.com"
+baseurl:
+repository:
+# teaser: "assets/images/about/vaporwave-geologist.png"
+logo:
+breadcrumbs: true
+words_per_minute: 200
+enable_copy_code_button: true
+search: true
+lunr:
+  search_within_pages: true
+
+# Social Sharing
+og_image: "https://s.gravatar.com/avatar/23fad620a6f427c5a4411938961e545e?s=330"
+atom_feed:
+  hide: true
+
+# For specifying social profiles
+# - https://developers.google.com/structured-data/customize/social-profiles
+social:
+  name: Buchanan Kerswell
+  links:
+    - https://github.com/buchanankerswell
+    - https://www.researchgate.net/profile/Buchanan_Kerswell
+    - https://scholar.google.com/citations?hl=en&user=O7TM22kAAAAJ
+    - https://orcid.org/0000-0003-0495-4162
+    - https://osf.io/sd5z3/
+
+# Analytics
+analytics:
+  provider: "google"
+  google:
+    tracking_id: "G-S4DT8TYQ7X"
+    anonymize_ip: false
+
+# Site Author
+author:
+  name: "Buchanan Kerswell, PhD"
+  avatar: "https://s.gravatar.com/avatar/23fad620a6f427c5a4411938961e545e?s=330"
+  bio: "Postdoctoral researcher in metamorphic petrology and geodynamics"
+  location: "University of Liverpool"
+  country: "United Kingdom"
+  phone: "+44 7783 017682"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:b.kerswell@liverpool.ac.uk"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/buchanankerswell"
+    - label: "Research Gate"
+      icon: "ai ai-researchgate"
+      url: "https://www.researchgate.net/profile/Buchanan_Kerswell"
+    - label: "Google Scholar"
+      icon: "ai ai-google-scholar"
+      url: "https://scholar.google.com/citations?hl=en&user=O7TM22kAAAAJ"
+    - label: "Orcid"
+      icon: "ai ai-orcid"
+      url: "https://orcid.org/0000-0003-0495-4162"
+    - label: "OSF"
+      icon: "ai ai-osf"
+      url: "https://osf.io/sd5z3/"
+
+# Site Footer
+footer:
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - log
+  - minimal-mistakes-jekyll.gemspec
+  - node_modules
+  - package.json
+  - package-lock.json
+  - Rakefile
+  - README
+  - tmp
+  - /docs
+  - /test
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# Sass/SCSS
+sass:
+  style: compressed
+  load_paths:
+    - _sass
+    - assets/css
+
+# Outputting
+permalink: /:categories/:title/
+timezone:
+
+# Pagination with jekyll-paginate-v2
+pagination:
+  enabled: true
+  per_page: 4
+  permalink: "/page/:num/"
+  title: ""
+  limit: 0
+  sort_field: "date"
+  sort_reverse: true
+  trail:
+    before: 2
+    after: 2
+
+# Plugins (previously gems:)
+plugins:
+  - jekyll-seo-tag
+  - jekyll-paginate-v2
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-seo-tag
+  - jekyll-paginate-v2
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+# Archives
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+# HTML Compression
+# - https://jch.penibelst.de/
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      classes: wide
+      author_profile: true
+      read_time: true
+      related: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      classes: wide
+      author_profile: true
