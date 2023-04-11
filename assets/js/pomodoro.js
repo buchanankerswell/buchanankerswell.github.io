@@ -9,7 +9,7 @@ let count = 0;
 let trackNum = 1;
 
 // Get random track number
-trackNum = randomIntFromInterval(1, 2)
+trackNum = randomIntFromInterval(1, 3)
 
 // Change track
 tunes.src = `assets/mp3/pomodoro${trackNum}.mp3`;
