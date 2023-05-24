@@ -4,14 +4,14 @@ author: Buchanan Kerswell, PhD
 logo: "https://s.gravatar.com/avatar/23fad620a6f427c5a4411938961e545e?s=330"
 tagline: view my current and proposed work
 description: view my current and proposed work
-email: kersweb@miamioh.edu
-post: Visiting Assistant Professor
+email: buchanan.kerswell@umontpellier.fr
+post: Cherceur (Researcher)
 field: Metamorphic Petrology & Geodynamics
-university: Miami University
-city: Oxford
-state: OH
-country: USA
-phone: "+1 480 417 2797"
+university: Géosciences Montpellier
+city: Montpellier
+state:
+country: France
+phone: "+33 70 10 70 32"
 baseurl: # the subpath of your site, e.g. /blog
 url: # the base hostname & protocol for your site, e.g. http://example.com
 show_excerpts: true

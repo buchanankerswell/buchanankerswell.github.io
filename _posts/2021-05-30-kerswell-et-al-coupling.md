@@ -9,16 +9,18 @@ categories: latestWork
 
 The notions that mechanical coupling in subduction zones regulate important seismic, volcanic, and geodynamic phenomena, and that depths of mechanical coupling may be invariant among diverse subduction zone segments ([Wada & Wang, 2009](https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2009GC002570)), begs the following questions: where, how, and why does mechanical coupling occur along the interface between converging tectonic plates? This study investigates these questions by constructing 64 numerical geodynamic models of oceanic-continental convergent margins. Such a comprehensive suite of numerical models allows us to correlate mechanical coupling depths with thermo-kinematic boundary conditons---ultimately producing an expression for predicting coupling depths in real systems.
 
-This work was published in G3 on May 30, 2021. You can find the paper [here]({{ "assets/pdf/kerswell-et-al-coupling-g3-2021.pdf" | relative_url }}).
+The [manuscript](https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2020GC009304) was published in *Geochemistry, Geophysics, Geosystems* on May 30, 2021. You can find the article [here]({{ "assets/pdf/kerswell-et-al-coupling-g3-2021.pdf" | relative_url }}).
 
 <img src="{{ "assets/images/repo-banner-coupling.png" | relative_url }}" width="100%">
+
+***Figure:*** *Visualization s of standard model cdf78 at 5.05 Ma. (top) Rock type. (bottom) Log10 of viscosity. By 5 Ma, balance is achieved between heat sinking from the upper mantle wedge to lower parts of the mantle and strong advection of heat in the circulating part of the mantle wedge. A feedback has already developed—heat advection inhibits antigorite stabilization to greater depths.*
 
 ## Coauthors:
  - [Matthew Kohn](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwj8yqqTw8T5AhWSADQIHaYXAfQQFnoECA4QAQ&url=https%3A%2F%2Fwww.boisestate.edu%2Fearth%2Fstaff-members%2Fmatthew-j-kohn%2F&usg=AOvVaw3-lM9gvqmVRHG-WhSRFOdu) (Boise State University)
  - [Taras Gerya](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjI1eiYw8T5AhViLzQIHdZJDT4QFnoECBMQAQ&url=https%3A%2F%2Ferdw.ethz.ch%2Fen%2Fpeople%2Fprofile.taras-gerya.html&usg=AOvVaw1ZWpP5eVNtfgnNmrhmGcGJ) (ETH Zürich)
 
-## Funding:
-This project was supported by the NSF grant OIA1545903 to M. Kohn, S. Penniston-Dorland, and M. Feineman.
+## Acknowledgment
+The authors thank the Geophysical Fluid Dynamics group at the Institut für Geophysik, ETH Zürich, for their computing resources and invaluable instruction, discussion, and support on the numerical modeling methods. The authors also thank P. Agard, L. Le Pourhiet, and their students at ISTeP, Sorbonne Université, for suggestions on the numerical modelling methods and discussions that greatly enhanced this study. The authors thank the anonymous reviewers for their helpful comments and suggestions, which greatly improved the manuscript. This work was supported by the National Science Foundation grant OISE 1545903 to M. Kohn, S. Penniston-Dorland, and M. Feineman.
 
 ## Open Research
 All data, code, and relevant information for reproducing this work can be found at [https://github.com/buchanankerswell/kerswell_et_al_coupling](https://github.com/buchanankerswell/kerswell_et_al_coupling), and at [https://osf.io/zjac3/](https://osf.io/zjac3/), the official Open Science Framework data repository. All code is MIT Licensed and free for use and distribution (see license details).
