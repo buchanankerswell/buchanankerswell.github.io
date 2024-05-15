@@ -14,7 +14,7 @@ The [manuscript](https://www.pnas.org/doi/abs/10.1073/pnas.1809962115) was publi
 
 <img src="{{ "assets/images/repo-banner-shear-heating.png" | relative_url }}" width="100%">
 
-***Figure:*** *Normalized heat flow data vs. normalized distance. Model curves are labeled with assumed apparent coefficients of friction (µ$^*$). Large dots with error bars are medians of binned data and their errors. Gray regions are affected by corner flow and are not considered in this study. (A) Raw data excluding Cascadia. (B) Raw data for Cascadia. (C) All data between normalized distances of 0.02 and 1.0 for well-sampled subduction zones, randomly sampled in proportion to trench length.*
+***Figure:*** *Normalized heat flow data vs. normalized distance. Model curves are labeled with assumed apparent coefficients of friction (µ$*$). Large dots with error bars are medians of binned data and their errors. Gray regions are affected by corner flow and are not considered in this study. (A) Raw data excluding Cascadia. (B) Raw data for Cascadia. (C) All data between normalized distances of 0.02 and 1.0 for well-sampled subduction zones, randomly sampled in proportion to trench length.*
 
 ## Coauthors:
 

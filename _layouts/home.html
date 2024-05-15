@@ -1,5 +1,6 @@
 ---
 layout: default
+mathjax: true
 ---
 <div class="home">
   {%- if page.title -%}
@@ -12,7 +13,7 @@ layout: default
   {%- if site.posts.size > 0 -%}
     <section class="post-list">
     {%- if site.categories.latestWork.size > 0 -%}
-      <h1 class="post-list-heading">{{ page.first_list_title | default: "Latest Research" }}</h1>
+      <h1 class="post-list-heading">{{ page.first_list_title | default: "Research Activities" }}</h1>
       {%- for post in site.categories.latestWork -%}
         <section class="post-list-item">
           <header>
