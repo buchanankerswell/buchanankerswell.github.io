@@ -19,7 +19,7 @@ categories: latestWork
 
 <img src="{{ "assets/images/repo-banner-backarc.png" | relative_url }}" width="100%">
 
-***Figure:*** *Similarity and Kriging interpolations for Vanuatu. While (a) Similarity predicts more-or-less uniformly-high surface heat flow within the region defined by many microplates, (b) excellent observational coverage allows Kriging to distinguish the most northern microplate from the New Hebrides Plate (NHP), Balmoral Reef (BR), and Conway Reef (CWR) microplates to the S. The geologic proxy datasets used to construct Similarity interpolations are apparently too coarse to resolve microplate-size features in this case. Segment boundary (bold white line) and volcanoes (gold diamonds) defined by Syracuse & Abers ([2006](https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2005gc001045)). Similarity interpolation from Lucazeau ([2019](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2019GC008389)). Plate boundaries (bold black lines) defined by Lawver et al. ([2018](https://repositories.lib.utexas.edu/handle/2152/65415)).*
+***Figure:*** *Global heat flow data compared to (a) Similarity (b) and Kriging (c) interpolations for near Japan. Volcanoes (white triangles) defined by Syracuse & Abers (2006). Global heat flow data from the International Heat Flow Commission 2024 release (Global Heat Flow Data Assessment Group, 2024). Similarity interpolation from Lucazeau (2019). Plate boundaries (thick white lines) defined by Lawver et al. (2018). Transect is from Submap Lallemand & Heuret (2017).*
 
 <img src="{{ "assets/images/repo-banner-marx.png" | relative_url }}" width="100%">
 

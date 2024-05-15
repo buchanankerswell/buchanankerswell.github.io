@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "RocMLMs: Predicting Rock Properties through Machine Learning Models"
+title: "RocMLMs: predicting rock properties through machine learning models"
 author: Buchanan Kerswell, PhD
 description: "Applying machine learning (ML) techniques to geochemical and thermodynamic datasets to increase efficiency of predicting rock properties in geodynamic numerical simulations"
 date: 2024-04-12
