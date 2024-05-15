@@ -6,7 +6,7 @@ author: Buchanan Kerswell, PhD
 
 ## Geoscientist
 
-I am passionate about research and teaching Geoscience at many levels. I enjoy engaging with curious nonexperts in my community about the local geology, for example, as much as I enjoy instructing undergraduates or presenting new research done by myself and others. I will always jump at opportunities to observe wild rocks in the field, yet I spend most days writing code, manuscripts, proposals, and/or trying to be useful to my students and colleagues.
+**I am a metamorphic petrologist** trying to understand the implications of converging tectonic plates. My work involves analyzing rocks and quantifying the impacts of petrological processes on geodynamics. I approach problems **with a broad skillset**, including: field work, petrography, computational fluid dynamics, machine learning and applied statistics, thermodynamic modeling, and analytical techniques (e.g., EPMA, LAICPMS, Raman microscopy). Thus, my students might visit remote mountains, tune electron-beams in laboratories, execute scripts on high-performance computing systems, and engage in scientific communication and education. I also have special interests in scholarly teaching, developing cutting-edge learning materials, and applying artificial intelligence to advance the Geosciences.
 
 <img class="image" src="{{ "assets/images/vaporwave-geologist.png" | relative_url }}" alt="My dreams of working long days studying rocks in the French Alps. Made with OpenAI's DALLE2 model."/>
 
