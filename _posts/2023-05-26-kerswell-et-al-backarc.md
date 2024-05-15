@@ -5,10 +5,9 @@ author: Buchanan Kerswell, PhD
 description: "Applying interpolation methods to surface heat flow data near subduction zones"
 date: 2023-05-26
 categories: latestWork
-mathjax: true
 ---
 
-This work investigates methods for interpolating surface heat flow data near subduction zones. We applied two different interpolations methods, *Similarity* and *Kriging* to the [ThermoGlobe](http://heatflow.org) dataset (Jennings et al., 2021), and compared the results. Interpolations show that surface heat flow is complex and often discontinuous along strike near subduction zones, thus implying that the deep thermal structure and/or near-surface modifications are also discontinuous.
+This work investigates methods for interpolating surface heat flow data near subduction zones. We applied two different interpolations methods, *Similarity* and *Kriging* to the Global Heat Flow Database ([GHFDB](http://ihfc-iugg.org/products/global-heat-flow-database)) and compared the results. Interpolations show that surface heat flow is complex and often discontinuous along strike near subduction zones, thus implying that the deep thermal structure and/or near-surface modifications are also discontinuous.
 
 The [manuscript](https://buchanankerswell.com/assets/dissertation/dissertation-ebook.html#chpt3) is in preparation for *Geochemistry, Geophysics, Geosystems*. You can find the preprint [here]({{ "assets/pdf/kerswell-kohn-backarc-g3-2023.pdf" | relative_url }}).
 

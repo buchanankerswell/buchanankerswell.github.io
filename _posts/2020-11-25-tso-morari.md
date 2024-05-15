@@ -5,7 +5,6 @@ author: Buchanan Kerswell, PhD
 description: "Investigating the exhumation of a UHP terrane in the Himalaya"
 date: 2020-11-25
 categories: latestWork
-mathjax: true
 ---
 
 This field-based study examined the exhumation history of the Tso Morari nappe in NW India through detailed structural, microtextural, and thermochronological analyses. The [manuscript](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2020TC006482) was published in *Tectonics* on November 25, 2020. You can find the article [here]({{ "assets/pdf/long-et-al-tso-tectonics-2020.pdf" | relative_url }}).

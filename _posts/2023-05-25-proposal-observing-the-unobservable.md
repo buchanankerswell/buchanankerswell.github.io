@@ -5,7 +5,6 @@ author: Buchanan Kerswell, PhD
 description: "Observing the unobservable"
 date: 2023-05-25
 categories: proposedWork
-mathjax: true
 ---
 
 Tectonic plate motions carry megatons of carbon stored near Earth’s surface into Earth’s deep interior each year as altered oceanic lithosphere and seafloor sediments subduct at convergent margins (Figure 3). Estimating unobservable carbon fluxes between Earth’s surface and interior is critical for projecting current climate trends. **In principle, carbon and helium isotope compositions of diamonds and volcanic gasses can proxy for carbon recycling efficiency—i.e. how much subducted carbon is returned to Earth’s surface—yet interpretations of isotopic data remain unclear and highly-uncertain (Plank & Manning, 2019).**

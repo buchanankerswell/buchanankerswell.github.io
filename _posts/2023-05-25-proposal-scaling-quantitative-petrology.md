@@ -5,7 +5,6 @@ author: Buchanan Kerswell, PhD
 description: "Scaling quantitative petrology"
 date: 2023-05-25
 categories: proposedWork
-mathjax: true
 ---
 
 Details about rock-forming processes like melting, (re)crystallization, fluid-rock interactions, and deformation are naturally encoded as sub-micrometer-scale features within mineral grains. Resolving these fine textural and compositional details is key to quantifying important aspects of our dynamic planet including: magmagenesis & volcanic hazards risks, lithospheric deformation & seismic hazards risks, geo-bio-hyrdo-atmosphere interactions & environmental hazards risks, carbon cycling & climate change, and concentration of critical elements required for transitioning to a sustainable energy future. However, **the current state-of-the art for acquiring high-quality micrometer-scale images needed for quantitative petrology is slow and expensive because image quality (spatial resolution) scales with acquisition time.**

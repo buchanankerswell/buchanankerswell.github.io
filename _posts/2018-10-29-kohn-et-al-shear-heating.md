@@ -5,7 +5,6 @@ author: Buchanan Kerswell, PhD
 description: "Investigating the petrological implications of shear heating in thermal models of subduction"
 date: 2018-10-29
 categories: latestWork
-mathjax: true
 ---
 
 Thermal structure controls numerous aspects of subduction zone metamorphism, rheology, and melting. Many thermal models assume small or negligible coefficients of friction and underpredict pressure–temperature (P–T) conditions recorded by subduction zone metamorphic rocks by hundreds of degrees Celsius. Adding shear heating to thermal models simultaneously reproduces surface heat flow and the P–T conditions of exhumed metamorphic rocks. Hot dry rocks are denser than cold wet rocks, so rocks from young-hot subduction systems are denser and harder to exhume through buoyancy. Thus, the metamorphic record may underrepresent hot-young subduction and overrepresent old-cold subduction.
