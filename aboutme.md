@@ -10,11 +10,7 @@ author: Buchanan Kerswell, PhD
 
 <img class="image" src="{{ "assets/images/vaporwave-geologist.png" | relative_url }}" alt="My dreams of working long days studying rocks in the French Alps. Made with OpenAI's DALLE2 model."/>
 
-***Figure:*** *My dreams of working in the French Alps. Made with StabilityAI's [Stable Diffusion XL](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0) model.*
-
-<img class="image" src="{{ "assets/images/vaporwave-vista.png" | relative_url }}" alt="100-meter scale fold in Paleozoic limestone from Provo Canyon, Utah"/>
-
-***Figure:*** *Riding by 100-meter scale folds in Paleozoic limestone in Provo Canyon, Utah. Made with StabilityAI's [Stable Diffusion XL](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0) model with the [MistoLine](https://huggingface.co/TheMistoAI/MistoLine) ControlNet model trained by MistoAI.*
+***Figure:*** *Dreaming of field work. Made with StabilityAI's [Stable Diffusion XL](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0) model.*
 
 ## Scholarly teaching
 
@@ -27,6 +23,10 @@ I have a deep passion for cycling. When I'm not working, I'm usually training, r
 <img class="image" src="{{ "assets/images/vaporwave-cyclist.png" | relative_url }}" alt="My dreams of riding long hours in the French Alps. Made with StabilityAI's Stable Diffusion XL model with a ControlNet model trained by MistoAI."/>
 
 ***Figure:*** *My dreams of riding in the French Alps. Made with StabilityAI's [Stable Diffusion XL](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0) model with the [MistoLine](https://huggingface.co/TheMistoAI/MistoLine) ControlNet model trained by MistoAI.*
+
+<img class="image" src="{{ "assets/images/vaporwave-vista.png" | relative_url }}" alt="100-meter scale fold in Paleozoic limestone from Provo Canyon, Utah"/>
+
+***Figure:*** *Riding by 100-meter scale folds in Paleozoic limestone in Provo Canyon, Utah. Made with StabilityAI's [Stable Diffusion XL](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0) model with the [MistoLine](https://huggingface.co/TheMistoAI/MistoLine) ControlNet model trained by MistoAI.*
 
 <img class="image" src="{{ "assets/images/vaporwave-gravel.png" | relative_url }}" alt="Racing the Belgian Waffle Ride in Kanab, Utah. Made with StabilityAI's [Stable Diffusion XL](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0) model with the [MistoLine](https://huggingface.co/TheMistoAI/MistoLine) ControlNet model trained by MistoAI."/>
 
