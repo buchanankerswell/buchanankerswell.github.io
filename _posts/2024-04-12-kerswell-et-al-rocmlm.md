@@ -3,13 +3,13 @@ layout: post
 title: "RocMLMs: predicting rock properties through machine learning models"
 author: Buchanan Kerswell, PhD
 description: "Applying machine learning (ML) techniques to geochemical and thermodynamic datasets to increase efficiency of predicting rock properties in geodynamic numerical simulations"
-date: 2024-04-12
+date: 2024-09-11
 categories: latestWork
 ---
 
 This work investigates the feasibility of using pre-trained machine learning models to predict density (and other rock properties) during numerical geodynamic simulations of mantle convection. We built a large dataset of rock properties with the Gibbs Free Energy minimization program [Perple_X](https://www.perplex.ethz.ch) (Connolly, 2009). Different regression algorithms were used to train Machine Learning models (RocMLMs), which we then evaluated in terms of accuracy and performance. We found that RocMLMs are able to predict rock properties up to 10$^1$–10$^3$ times faster than conventional approaches with equivalent accuracy. The speed of RocMLM predictions allows dynamic rock properties to be implemented in high-resolution numerical simulations of mantle convection for the first time.
 
-The manuscript has been submitted to *Journal of Geophysical Research: Machine Learning and Computation*. You can find the preprint [here]({{ "assets/pdf/kerswell-et-al-rocmlm-g3-2024.pdf" | relative_url }}).
+The manuscript is in production at the *Journal of Geophysical Research: Machine Learning and Computation*. You can find the preprint [here]({{ "assets/pdf/kerswell-et-al-rocmlm-g3-2024.pdf" | relative_url }}).
 
 <img src="{{ "assets/images/repo-banner-rocmlm.png" | relative_url }}" width="100%">
 
