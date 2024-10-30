@@ -4,14 +4,14 @@ author: Buchanan Kerswell, PhD
 logo: "https://s.gravatar.com/avatar/23fad620a6f427c5a4411938961e545e?s=330"
 tagline: view my current and proposed work
 description: view my current and proposed work
-email: buchanan.kerswell@umontpellier.fr
+email: b.kerswell@liverpool.ac.uk
 post: Postdoctoral Researcher
 field: Metamorphic Petrology & Geodynamics
-university: Géosciences Montpellier
-city: Montpellier
-state:
-country: France
-phone: "+33 70 10 70 32"
+university: University of Liverpool
+city: Liverpool
+state: England
+country: United Kingdom
+phone: "+44 7783 017682"
 baseurl: # the subpath of your site, e.g. /blog
 url: # the base hostname & protocol for your site, e.g. http://example.com
 show_excerpts: true
