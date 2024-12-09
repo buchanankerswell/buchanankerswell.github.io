@@ -9,7 +9,7 @@ categories: latestWork
 
 This work investigates the feasibility of using pre-trained machine learning models to predict density (and other rock properties) during numerical geodynamic simulations of mantle convection. We built a large dataset of rock properties with the Gibbs Free Energy minimization program [Perple_X](https://www.perplex.ethz.ch) (Connolly, 2009). Different regression algorithms were used to train Machine Learning models (RocMLMs), which we then evaluated in terms of accuracy and performance. We found that RocMLMs are able to predict rock properties up to 10$^1$–10$^3$ times faster than conventional approaches with equivalent accuracy. The speed of RocMLM predictions allows dynamic rock properties to be implemented in high-resolution numerical simulations of mantle convection for the first time.
 
-The [manuscript](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2024JH000264) was published in the *Journal of Geophysical Research: Machine Learning and Computation* on October 23, 2024. You can find the article [here]({{ "assets/pdf/kerswell-et-al-rocmlm-jgr-2024.pdf" | relative_url }}).
+The [manuscript](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2024JH000264) was published in the *Journal of Geophysical Research: Machine Learning and Computation* on October 23, 2024. You can find the article [here]({{ "assets/pdf/kerswell-et-al-rocmlm-jgr-2024.pdf" | relative_url }}). This work was also invited to be shared at the American Geophysical Union meeting in Washington DC. You can find that talk [here](https://youtu.be/FX4KjGFwSy4).
 
 <img src="{{ "assets/images/repo-banner-rocmlm.png" | relative_url }}" width="100%">
 
