@@ -1,19 +1,20 @@
 # Site settings
+---
 title: Buchanan Kerswell, PhD
 author: Buchanan Kerswell, PhD
 logo: "https://s.gravatar.com/avatar/23fad620a6f427c5a4411938961e545e?s=330"
-tagline: view my current and proposed work
-description: view my current and proposed work
+tagline: View my current and proposed work
+description: View my current and proposed work
 email: b.kerswell@liverpool.ac.uk
 post: Postdoctoral Researcher
 field: Metamorphic Petrology & Geodynamics
 university: University of Liverpool
-city: Liverpool
-state: England
+city:
+state:
 country: United Kingdom
 phone: "+44 7783 017682"
-baseurl: # the subpath of your site, e.g. /blog
-url: # the base hostname & protocol for your site, e.g. http://example.com
+baseurl:
+url:
 show_excerpts: true
 date_format: "%b %-d, %Y"
 google_analytics: UA-NNNNNNNN-N
