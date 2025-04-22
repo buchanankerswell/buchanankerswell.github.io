@@ -1,5 +1,6 @@
 ---
 title: "RocMLMs: predicting rock properties through machine learning models"
+description: This work investigates the feasibility of using pre-trained machine learning models to predict rock properties.
 categories:
   - research
   - postdoc

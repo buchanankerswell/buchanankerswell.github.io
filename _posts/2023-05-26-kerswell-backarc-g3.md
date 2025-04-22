@@ -1,5 +1,6 @@
 ---
 title: A comparison of heat flow interpolations near subduction zones
+description: This work investigates methods for interpolating surface heat flow data near subduction zones.
 categories:
   - research
   - phd
@@ -18,7 +19,7 @@ header:
     - label: Repository
       url: "https://github.com/buchanankerswell/kerswell_kohn_backarc"
     - label: Preprint
-      url: "assets/pdf/kerswell-23-backarc-g3.pdf"
+      url: /assets/pdf/kerswell-23-backarc-g3.pdf
 ---
 
 This work investigates methods for interpolating surface heat flow data near subduction zones. We applied two different interpolations methods, *Similarity* and *Kriging* to the Global Heat Flow Database ([GHFDB](http://ihfc-iugg.org/products/global-heat-flow-database)) and compared the results. Interpolations show that surface heat flow is complex and often discontinuous along strike near subduction zones, thus implying that the deep thermal structure and/or near-surface modifications are also discontinuous.

@@ -1,6 +1,6 @@
 ---
-title: "Shear heating reconciles thermal models with the metamorphic rock record of subduction"
-description: "Investigating the petrological implications of shear heating in thermal models of subduction"
+title: Shear heating reconciles thermal models with the metamorphic rock record
+description: Adding shear heating to thermal models simultaneously reproduces surface heat flow and the P–T conditions of exhumed metamorphic rocks.
 categories:
   - research
   - phd

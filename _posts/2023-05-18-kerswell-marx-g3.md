@@ -1,5 +1,6 @@
 ---
 title: "Computing rates and distributions of rock recovery in subduction zones"
+description: This work investigates how many rocks get detached from subducting oceanic plates beneath convergent margins.
 categories:
   - research
   - phd

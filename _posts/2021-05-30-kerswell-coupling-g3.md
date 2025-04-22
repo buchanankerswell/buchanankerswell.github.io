@@ -1,5 +1,6 @@
 ---
-title: "Backarc lithospheric thickness and serpentine stability control slab-mantle coupling depths in subduction zones"
+title: Controls on slab-mantle coupling depths in subduction zones
+description: This study investigates mechanical coupling at oceanic-continental convergent margins via numerical geodynamic simulation.
 categories:
   - research
   - phd

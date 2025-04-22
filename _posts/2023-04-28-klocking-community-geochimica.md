@@ -1,12 +1,13 @@
 ---
-title: "Community recommendations for geochemical data, services and analytical capabilities in the 21st century"
+title: Community recommendations for geochemical data
+description: This work involved input from many individuals during a pre-conference workshop at the Goldschmidt meeting in Honolulu.
 categories:
   - research
   - community-driven
 tags:
   - geochemistry
   - big data
-excerpt: This work involved input from many individuals during a pre-conference workshop at the Goldschmidt meeting in Honolulu, HI.
+excerpt: This work involved input from many individuals during a pre-conference workshop at the Goldschmidt meeting in Honolulu.
 header:
   overlay_image: /assets/images/headers/google-deep-mind6.png
   teaser: /assets/images/headers/google-deep-mind6.png
@@ -21,7 +22,7 @@ This work involved input from many individuals during a pre-conference workshop 
 
 The [manuscript](https://www.sciencedirect.com/science/article/pii/S0016703723001916) was published in *Geochimica et Cosmochimica Acta* on April 28, 2023. You can find the article [here]({{ "assets/pdf/klocking-23-community-geochimica.pdf" | relative_url }}).
 
-<img src="{{ "assets/images/posts/repo-banner-community.jpg" | relative_url }}" style="display: block; width: 50%; margin: auto;">
+<img src="{{ "assets/images/posts/repo-banner-community.png" | relative_url }}" style="display: block; width: 50%; margin: auto;">
 
 ***Figure:*** *The place of OneGeochemistry within the broader research data landscape (adapted from [OECD, 2017](https://doi.org/10.1787/e92fa89e-en)). Each group of stakeholders has different needs and motives for contributing to or enforcing FAIR data practices. Blue circles symbolise the role of OneGeochemistry in coordinating expert committees and facilitating education and ambassadorship.*
 

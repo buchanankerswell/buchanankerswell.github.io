@@ -1,5 +1,6 @@
 ---
-title: Thermometry and microstructural analysis imply protracted extensional exhumation of the Tso Morari UHP nappe, northwestern Himalaya
+title: Thermometry and microstructural analysis of the Tso Morari UHP nappe, Himalaya
+description: This field-based study examined the exhumation history of the Tso Morari nappe in NW India.
 categories:
   - research
   - phd
