@@ -13,7 +13,7 @@ permalink: /about/
 
 ## Scholarly Teaching
 
-Scholarly teaching is an evidence-based approach to teaching and learning in higher education---and a core focus of my professional development. Read about my [teaching interests]({{ "/teaching-philosophy/" | relative_url }}) and review the [evidence of teaching effectiveness]({{ "/teaching-record/" | relative_url }}) that I have been documenting since 2020. See my [CV]({{ "cv.html" | relative_url }}) for a complete list of courses that I have taught.
+Scholarly teaching is an evidence-based approach to teaching and learning in higher education---and a core focus of my professional development. Read about my [teaching interests]({{ "/teaching/#teaching-philosophy" | relative_url }}) and review the [evidence of teaching effectiveness]({{ "/teaching/#teaching-record" | relative_url }}) that I have been documenting since 2020. See my [CV]({{ "cv.html" | relative_url }}) for a complete list of courses that I have taught.
 
 ## Cycling Enthusiast
 
