@@ -1,17 +1,31 @@
 ---
-layout: post
 title: "Backarc lithospheric thickness and serpentine stability control slab-mantle coupling depths in subduction zones"
-author: Buchanan Kerswell, PhD
-description: "Investigating subduction mechanics with numerical geodynamic models"
-date: 2021-05-30
-categories: latestWork
+categories:
+  - research
+  - phd
+tags:
+  - subduction
+  - serpentinite
+  - dehydration
+  - geodynamics
+excerpt: This study investigates mechanical coupling at oceanic-continental convergent margins via numerical geodynamic simulation.
+header:
+  overlay_image: /assets/images/headers/steve-johnson.png
+  teaser: /assets/images/headers/steve-johnson.png
+  overlay_filter: linear-gradient(rgba(0, 0, 0, 0.9), rgba(50, 50, 50, 0.5))
+  caption: Steve Johnson
+  actions:
+    - label: Repository
+      url: "https://github.com/buchanankerswell/kerswell_et_al_coupling"
+    - label: Article
+      url: "https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2020GC009304"
 ---
 
 The notions that mechanical coupling in subduction zones regulate important seismic, volcanic, and geodynamic phenomena, and that depths of mechanical coupling may be invariant among diverse subduction zone segments ([Wada & Wang, 2009](https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2009GC002570)), begs the following questions: where, how, and why does mechanical coupling occur along the interface between converging tectonic plates? This study investigates these questions by constructing 64 numerical geodynamic models of oceanic-continental convergent margins. Such a comprehensive suite of numerical models allows us to correlate mechanical coupling depths with thermo-kinematic boundary conditons---ultimately producing an expression for predicting coupling depths in real systems.
 
 The [manuscript](https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2020GC009304) was published in *Geochemistry, Geophysics, Geosystems* on May 30, 2021. You can find the article [here]({{ "assets/pdf/kerswell-21-coupling-g3.pdf" | relative_url }}).
 
-<img src="{{ "assets/images/repo-banner-coupling.png" | relative_url }}" width="100%">
+<img src="{{ "assets/images/posts/repo-banner-coupling.png" | relative_url }}" width="100%">
 
 ***Figure:*** *Visualization s of standard model cdf78 at 5.05 Ma. (top) Rock type. (bottom) Log10 of viscosity. By 5 Ma, balance is achieved between heat sinking from the upper mantle wedge to lower parts of the mantle and strong advection of heat in the circulating part of the mantle wedge. A feedback has already developed—heat advection inhibits antigorite stabilization to greater depths.*
 

@@ -1,17 +1,29 @@
 ---
-layout: post
-title: "A comparison of heat flow interpolations near subduction zones"
-author: Buchanan Kerswell, PhD
-description: "Applying interpolation methods to surface heat flow data near subduction zones"
-date: 2023-05-26
-categories: latestWork
+title: A comparison of heat flow interpolations near subduction zones
+categories:
+  - research
+  - phd
+tags:
+  - heat flow
+  - subduction
+  - applied statistics
+  - geodynamics
+excerpt: This work investigates methods for interpolating surface heat flow data near subduction zones.
+header:
+  overlay_image: /assets/images/headers/heat-flow.png
+  teaser: /assets/images/headers/heat-flow.png
+  overlay_filter: linear-gradient(rgba(0, 0, 0, 0.9), rgba(50, 50, 50, 0.5))
+  caption: LukasFractalizator
+  actions:
+    - label: Repository
+      url: "https://github.com/buchanankerswell/kerswell_kohn_backarc"
+    - label: Preprint
+      url: "assets/pdf/kerswell-23-backarc-g3.pdf"
 ---
 
 This work investigates methods for interpolating surface heat flow data near subduction zones. We applied two different interpolations methods, *Similarity* and *Kriging* to the Global Heat Flow Database ([GHFDB](http://ihfc-iugg.org/products/global-heat-flow-database)) and compared the results. Interpolations show that surface heat flow is complex and often discontinuous along strike near subduction zones, thus implying that the deep thermal structure and/or near-surface modifications are also discontinuous.
 
-The manuscript is in preparation for *Geochemistry, Geophysics, Geosystems*. You can find the preprint [here]({{ "assets/pdf/kerswell-23-backarc-g3.pdf" | relative_url }}).
-
-<img src="{{ "assets/images/repo-banner-backarc.png" | relative_url }}" width="100%">
+<img src="{{ "assets/images/posts/repo-banner-backarc.png" | relative_url }}" width="100%">
 
 ***Figure:*** *Global heat flow data compared to (a) Similarity (b) and Kriging (c) interpolations for near Japan. Volcanoes (white triangles) defined by Syracuse & Abers (2006). Global heat flow data from the International Heat Flow Commission 2024 release (Global Heat Flow Data Assessment Group, 2024). Similarity interpolation from Lucazeau (2019). Plate boundaries (thick white lines) defined by Lawver et al. (2018). Transect is from Submap Lallemand & Heuret (2017).*
 

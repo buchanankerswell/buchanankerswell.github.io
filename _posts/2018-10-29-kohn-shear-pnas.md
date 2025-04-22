@@ -1,17 +1,28 @@
 ---
-layout: post
 title: "Shear heating reconciles thermal models with the metamorphic rock record of subduction"
-author: Buchanan Kerswell, PhD
 description: "Investigating the petrological implications of shear heating in thermal models of subduction"
-date: 2018-10-29
-categories: latestWork
+categories:
+  - research
+  - phd
+tags:
+  - shear heating
+  - subduction
+excerpt: Adding shear heating to thermal models simultaneously reproduces surface heat flow and the P–T conditions of exhumed metamorphic rocks.
+header:
+  overlay_image: /assets/images/headers/steve-johnson2.png
+  teaser: /assets/images/headers/steve-johnson2.png
+  overlay_filter: linear-gradient(rgba(0, 0, 0, 0.9), rgba(50, 50, 50, 0.5))
+  caption: Steve Johnson
+  actions:
+    - label: Article
+      url: "https://www.pnas.org/doi/abs/10.1073/pnas.1809962115"
 ---
 
 Thermal structure controls numerous aspects of subduction zone metamorphism, rheology, and melting. Many thermal models assume small or negligible coefficients of friction and underpredict pressure–temperature (P–T) conditions recorded by subduction zone metamorphic rocks by hundreds of degrees Celsius. Adding shear heating to thermal models simultaneously reproduces surface heat flow and the P–T conditions of exhumed metamorphic rocks. Hot dry rocks are denser than cold wet rocks, so rocks from young-hot subduction systems are denser and harder to exhume through buoyancy. Thus, the metamorphic record may underrepresent hot-young subduction and overrepresent old-cold subduction.
 
 The [manuscript](https://www.pnas.org/doi/abs/10.1073/pnas.1809962115) was published in the *Proceedings of the National Academy of Sciences* on October 29, 2018. You can find the article [here]({{ "assets/pdf/kohn-18-shear-pnas.pdf" | relative_url }}).
 
-<img src="{{ "assets/images/repo-banner-shear-heating.png" | relative_url }}" width="100%">
+<img src="{{ "assets/images/posts/repo-banner-shear-heating.png" | relative_url }}" width="100%">
 
 ***Figure:*** *Normalized heat flow data vs. normalized distance. Model curves are labeled with assumed apparent coefficients of friction (µ$*$). Large dots with error bars are medians of binned data and their errors. Gray regions are affected by corner flow and are not considered in this study. (A) Raw data excluding Cascadia. (B) Raw data for Cascadia. (C) All data between normalized distances of 0.02 and 1.0 for well-sampled subduction zones, randomly sampled in proportion to trench length.*
 

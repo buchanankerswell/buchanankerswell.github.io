@@ -1,17 +1,27 @@
 ---
-layout: post
 title: "Community recommendations for geochemical data, services and analytical capabilities in the 21st century"
-author: Buchanan Kerswell, PhD
-description: "Community recommendations to build better infrastructure for geochemical data"
-date: 2023-04-28
-categories: latestWork
+categories:
+  - research
+  - community-driven
+tags:
+  - geochemistry
+  - big data
+excerpt: This work involved input from many individuals during a pre-conference workshop at the Goldschmidt meeting in Honolulu, HI.
+header:
+  overlay_image: /assets/images/headers/google-deep-mind6.png
+  teaser: /assets/images/headers/google-deep-mind6.png
+  overlay_filter: linear-gradient(rgba(0, 0, 0, 0.9), rgba(50, 50, 50, 0.5))
+  caption: Google Deepmind
+  actions:
+    - label: Article
+      url: "https://www.sciencedirect.com/science/article/pii/S0016703723001916"
 ---
 
 This work involved input from many individuals during a pre-conference workshop at the Goldschmidt meeting in Honolulu, HI, during 8-9 July 2022. Our goal was to provide the geochemical community with recommendations to improve the existing infrastructure for storing and sharing geochemical data. Together we conceived OneGeochemistry: a community-driven initiative to coordinate the building of a global, online network of machine-readable data that is persistent, interoperable and reusable.
 
 The [manuscript](https://www.sciencedirect.com/science/article/pii/S0016703723001916) was published in *Geochimica et Cosmochimica Acta* on April 28, 2023. You can find the article [here]({{ "assets/pdf/klocking-23-community-geochimica.pdf" | relative_url }}).
 
-<img src="{{ "assets/images/repo-banner-community.jpg" | relative_url }}" style="display: block; width: 50%; margin: auto;">
+<img src="{{ "assets/images/posts/repo-banner-community.jpg" | relative_url }}" style="display: block; width: 50%; margin: auto;">
 
 ***Figure:*** *The place of OneGeochemistry within the broader research data landscape (adapted from [OECD, 2017](https://doi.org/10.1787/e92fa89e-en)). Each group of stakeholders has different needs and motives for contributing to or enforcing FAIR data practices. Blue circles symbolise the role of OneGeochemistry in coordinating expert committees and facilitating education and ambassadorship.*
 
