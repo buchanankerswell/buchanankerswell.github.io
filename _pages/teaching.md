@@ -7,23 +7,21 @@ toc_label: Documents
 ---
 ## Teaching Philosophy
 
-<div>
-  <iframe 
-    src="{{ 'assets/html/philosophy.html' | relative_url }}" 
-    width="100%" 
-    height="1200px" 
-    style="border: none;">
+<div class="iframe-container">
+  <iframe
+    src="{{ 'assets/html/philosophy.html' | relative_url }}"
+    width="100%"
+    style="border: none; height: 100vh;">
   </iframe>
 </div>
 
 ## Teaching Record
 
-<div>
-  <iframe 
-    src="{{ 'assets/html/record.html' | relative_url }}" 
-    width="100%" 
-    height="1200px" 
-    style="border: none;">
+<div class="iframe-container">
+  <iframe
+    src="{{ 'assets/html/record.html' | relative_url }}"
+    width="100%"
+    style="border: none; height: 100vh;">
   </iframe>
 </div>
 
