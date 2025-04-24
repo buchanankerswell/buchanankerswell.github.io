@@ -7,8 +7,8 @@ toc_label: Documents
 ---
 ## Curriculum Vitae
 
-{% capture html_path %}{{ site.url }}/assets/html/cv.html{% endcapture %}
-{% include pagedjs-html-viewer.html
-    html_url=html_path
+{% capture pdf_path %}{{ site.url }}/assets/pdf/kerswell-curriculum-vitae.pdf{% endcapture %}
+{% include pdf-viewer.html
+    pdf_url=pdf_path
     title="Buchanan Kerswell's CV"
 %}

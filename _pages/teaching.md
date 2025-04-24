@@ -7,16 +7,16 @@ toc_label: Documents
 ---
 ## Teaching Philosophy
 
-{% capture html_path %}{{ site.url }}/assets/html/philosophy.html{% endcapture %}
-{% include pagedjs-html-viewer.html
-    html_url=html_path
-    title="Buchanan Kerswell's CV"
+{% capture pdf_path %}{{ site.url }}/assets/pdf/kerswell-teaching-philosophy.pdf{% endcapture %}
+{% include pdf-viewer.html
+    pdf_url=pdf_path
+    title="Buchanan Kerswell's teaching philosophy"
 %}
 
 ## Teaching Record
 
-{% capture html_path %}{{ site.url }}/assets/html/record.html{% endcapture %}
-{% include pagedjs-html-viewer.html
-    html_url=html_path
-    title="Buchanan Kerswell's CV"
+{% capture pdf_path %}{{ site.url }}/assets/pdf/kerswell-teaching-record.pdf{% endcapture %}
+{% include pdf-viewer.html
+    pdf_url=pdf_path
+    title="Buchanan Kerswell's teaching record"
 %}

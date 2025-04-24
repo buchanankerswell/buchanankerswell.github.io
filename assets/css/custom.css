@@ -9,16 +9,3 @@
   width: 100%;
   height: 100%;
 }
-.pagedjs-html-viewer {
-  width: 100%;
-  height: 80vh;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  overflow: hidden;
-}
-.pagedjs-html-viewer-container iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
