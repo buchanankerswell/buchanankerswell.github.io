@@ -26,6 +26,12 @@ This field-based study examined the exhumation history of the Tso Morari nappe i
 
 ***Figure:*** *Cross sections of our three mapped transects. Areas that exhibit similar apparent dip of tectonic foliation were divided into dip domains, which are separated by kink axes that bisect the interlimb angle (e.g., Suppe, 1983).*
 
+{% capture pdf_path %}{{ site.url }}/assets/pdf/long-20-tso-morari-tectonics.pdf{% endcapture %}
+{% include pdf-viewer.html 
+   pdf_url=pdf_path
+   title="Thermometry and microstructural analysis of the Tso Morari UHP nappe, Himalaya"
+%}
+
 ## Coauthors:
 
  - [Sean Long](https://scholar.google.com/citations?user=P9FprbkAAAAJ&hl=en&oi=ao) (Washington State University)
@@ -42,7 +48,3 @@ This work was supported by start-up funds awarded to S. Long from the Washington
 ## Open Research
 
 All of the data used for this research are contained within the manuscript and supplementary material. The data used for this research have been placed in the online data repository Zenodo [doi: 10.5281/zenodo.4287542](https://zenodo.org/record/4287542#.X7wSvrN7mUk).
-
-## Abstract
-
-Documenting the processes that facilitate exhumation of ultrahigh-pressure (UHP) rocks at convergent margins is critical for understanding orogen dynamics. Here, we present structural and temperature data from the Himalayan UHP Tso Morari nappe (TMN) and overlying nappes, which we integrate with published pressure-temperature-time constraints to refine interpretations for their structural evolution and exhumation history. Our data indicate that the 5.5-km-thick TMN is the upper portion of a penetratively deformed ductile slab, which was extruded via distributed, pure shear-dominated, top-down-to-east shearing. Strain in the TMN is recorded by high-strength quartz fabrics (density norms between 1.74 and 2.86) and finite strain data that define 63% transport-parallel lengthening and 46% transport-normal shortening. The TMN attained peak temperatures of ~500–600°C, which decrease in the overlying Tetraogal and Mata nappes to ~150–300°C, defining a field gradient as steep as 67°C/km. Within the overlying nappes, quartz fabric strength decreases (density norms between 1.14 and 1.21) and transport-parallel lengthening and transport-normal shortening decrease to 14% and 18%, respectively. When combined with published 40Ar/39Ar thermochronometry, quartz fabric deformation temperatures as low as ~330°C indicate that the top-to-east shearing that exhumed the TMN continued until ~30 Ma. Peak temperatures constrain the maximum depth of the overlying Mata nappe to 12.5–17.5 km; when combined with published fission-track thermochronometry, this provides further support that the TMN was not underplated at upper crustal levels until ~30 Ma. The long-duration, convergence-subnormal shearing that exhumed the TMN outlasted rapid India-Asia convergence by ~15 Myr and may be the consequence of strain partitioning during oblique convergence.

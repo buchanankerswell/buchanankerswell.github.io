@@ -1,0 +1,61 @@
+<div class="pagedjs-html-viewer">
+  <iframe src="{{ include.html_url }}" title="{{ include.title | default: 'Paged.js document viewer' }}" width="100%" height="100%" style="border: none;" loading="lazy">
+    <p>It appears you cannot view this content directly within this page.</p>
+    <p><a href="{{ include.html_url }}">Click here to open the document in a new tab.</a></p>
+  </iframe>
+</div>
+<script>
+  // Find the script element itself to locate its parent pagedjs-html-viewer div
+const currentScript = document.currentScript;
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Find the closest parent div with the class pagedjs-html-viewer relative to the script tag
+  // Then find the iframe within that div
+  const viewerDiv = currentScript.previousElementSibling; // Assumes script is immediately after the div
+  if (!viewerDiv || !viewerDiv.classList.contains('pagedjs-html-viewer')) {
+      console.error("Script: Could not find the preceding .pagedjs-html-viewer div.");
+      return;
+  }
+
+  const iframe = viewerDiv.querySelector('iframe');
+
+  if (!iframe) {
+      console.error("Script: Could not find iframe within the viewer div.");
+      return;
+  }
+
+  // Use addEventListener for the load event
+  iframe.addEventListener('load', function() {
+    console.log(`Script (Include): Iframe "${iframe.title || iframe.src}" loaded.`); // Debug log
+
+    try {
+      const iframeDocument = iframe.contentWindow.document;
+
+      if (iframeDocument) {
+        console.log(`Script (Include): Accessed iframe document for "${iframe.title || iframe.src}".`); // Debug log
+
+        // Use event delegation on the iframe document
+        iframeDocument.addEventListener('click', function(event) {
+          const target = event.target.closest('a'); // Use closest to handle clicks on elements inside the link
+
+          // Ensure the click is on an anchor tag with an href and it's not specifically targeting the iframe
+          // Check if target is not null and target.target is not _self or the iframe's name
+          if (target && target.href && target.target !== '_self' && target.target !== iframe.name) {
+             event.preventDefault(); // Prevent the link from opening inside the iframe
+             // Choose how to open: _top for same tab, _blank for new tab
+             window.open(target.href, '_blank'); // Opens in a new tab
+             // Or use window.top.location.href = target.href; to open in the same tab (breaking out)
+             console.log(`Script (Include): Opening link in new tab: ${target.href}`);
+           }
+        });
+         console.log(`Script (Include): Click listener attached to iframe "${iframe.title || iframe.src}".`); // Debug log
+
+      } else {
+        console.warn(`Script (Include): Could not access iframe content for "${iframe.title || iframe.src}". Same-origin policy might be the issue.`);
+      }
+    } catch (e) {
+      console.error(`Script (Include): Error accessing iframe content or attaching listener for "${iframe.title || iframe.src}":`, e);
+    }
+  });
+});
+</script>

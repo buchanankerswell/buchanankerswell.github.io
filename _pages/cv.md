@@ -7,10 +7,8 @@ toc_label: Documents
 ---
 ## Curriculum Vitae
 
-<div class="iframe-container">
-  <iframe
-    src="{{ 'assets/html/cv.html' | relative_url }}"
-    width="100%"
-    style="border: none; height: 100vh;">
-  </iframe>
-</div>
+{% capture html_path %}{{ site.url }}/assets/html/cv.html{% endcapture %}
+{% include pagedjs-html-viewer.html
+    html_url=html_path
+    title="Buchanan Kerswell's CV"
+%}

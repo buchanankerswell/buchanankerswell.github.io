@@ -18,13 +18,19 @@ header:
       url: "https://www.pnas.org/doi/abs/10.1073/pnas.1809962115"
 ---
 
-Thermal structure controls numerous aspects of subduction zone metamorphism, rheology, and melting. Many thermal models assume small or negligible coefficients of friction and underpredict pressure–temperature (P–T) conditions recorded by subduction zone metamorphic rocks by hundreds of degrees Celsius. Adding shear heating to thermal models simultaneously reproduces surface heat flow and the P–T conditions of exhumed metamorphic rocks. Hot dry rocks are denser than cold wet rocks, so rocks from young-hot subduction systems are denser and harder to exhume through buoyancy. Thus, the metamorphic record may underrepresent hot-young subduction and overrepresent old-cold subduction.
-
-The [manuscript](https://www.pnas.org/doi/abs/10.1073/pnas.1809962115) was published in the *Proceedings of the National Academy of Sciences* on October 29, 2018. You can find the article [here]({{ "assets/pdf/kohn-18-shear-pnas.pdf" | relative_url }}).
+Thermal structure influences many aspects of subduction zone metamorphism, rheology, and melting. Most thermal models assume small or negligible friction coefficients and underpredict the pressure–temperature (P–T) conditions recorded by subduction zone metamorphic rocks by hundreds of degrees Celsius. Incorporating shear heating into these models allows for simultaneous reproduction of surface heat flow and the P–T conditions of exhumed metamorphic rocks. Because hot, dry rocks possess greater density than cold, wet ones, young-hot subduction systems produce rocks with lower buoyancy and greater difficulty of exhumation. Consequently, the metamorphic record may underrepresent young-hot subduction while overrepresenting old-cold subduction.
 
 <img src="{{ "assets/images/posts/repo-banner-shear-heating.png" | relative_url }}" width="100%">
 
-***Figure:*** *Normalized heat flow data vs. normalized distance. Model curves are labeled with assumed apparent coefficients of friction (µ$*$). Large dots with error bars are medians of binned data and their errors. Gray regions are affected by corner flow and are not considered in this study. (A) Raw data excluding Cascadia. (B) Raw data for Cascadia. (C) All data between normalized distances of 0.02 and 1.0 for well-sampled subduction zones, randomly sampled in proportion to trench length.*
+***Figure:*** *Normalized heat flow data vs. normalized distance. Model curves are labeled with assumed apparent coefficients of friction (µ$^\*$). Large dots with error bars are medians of binned data and their errors. Gray regions are affected by corner flow and are not considered in this study. (A) Raw data excluding Cascadia. (B) Raw data for Cascadia. (C) All data between normalized distances of 0.02 and 1.0 for well-sampled subduction zones, randomly sampled in proportion to trench length.*
+
+*Proceedings of the National Academy of Sciences* published the [manuscript](https://www.pnas.org/doi/abs/10.1073/pnas.1809962115) on October 29, 2018. You can find the article [here]({{ "assets/pdf/kohn-18-shear-pnas.pdf" | relative_url }}).
+
+{% capture pdf_path %}{{ site.url }}/assets/pdf/kohn-18-shear-pnas.pdf{% endcapture %}
+{% include pdf-viewer.html 
+   pdf_url=pdf_path
+   title="Shear heating reconciles thermal models with the metamorphic rock record"
+%}
 
 ## Coauthors:
 
@@ -39,8 +45,4 @@ We thank P. Molnar and S. Roecker for comments prior to submission, W. Gosnold a
 
 ## Open Research
 
-All datasets, models, and relevant information for reproducing this work can be found in the supporting information published with the online version of this article [doi: 10.1073/pnas.1809962115](https://doi.org/10.1073/pnas.1809962115).
-
-## Abstract
-
-Some commonly referenced thermal-mechanical models of current subduction zones imply temperatures that are 100–500 °C colder at 30–80-km depth than pressure–temperature conditions determined thermobarometrically from exhumed metamorphic rocks. Accurately inferring subduction zone thermal structure, whether from models or rocks, is crucial for predicting metamorphic reactions and associated fluid release, subarc melting conditions, rheologies, and fault-slip phenomena. Here, we compile surface heat flow data from subduction zones worldwide and show that values are higher than can be explained for a frictionless subduction interface often assumed for modeling. An additional heat source––likely shear heating––is required to explain these forearc heat flow values. A friction coefficient of at least 0.03 and possibly as high as 0.1 in some cases explains these data, and we recommend a provisional average value of 0.05 ± 0.015 for modeling. Even small coefficients of friction can contribute several hundred degrees of heating at depths of 30–80 km. Adding such shear stresses to thermal models quantitatively reproduces the pressure–temperature conditions recorded by exhumed metamorphic rocks. Comparatively higher temperatures generally drive rock dehydration and densification, so, at a given depth, hotter rocks are denser than colder rocks, and harder to exhume through buoyancy mechanisms. Consequently––conversely to previous proposals––exhumed metamorphic rocks might overrepresent old-cold subduction where rocks at the slab interface are wetter and more buoyant than in young-hot subduction zones.
+The supporting information published with the online version of this article hosts the datasets, models, and relevant information for reproducing this work  [doi: 10.1073/pnas.1809962115](https://doi.org/10.1073/pnas.1809962115).

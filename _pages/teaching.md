@@ -7,36 +7,16 @@ toc_label: Documents
 ---
 ## Teaching Philosophy
 
-<div class="iframe-container">
-  <iframe
-    src="{{ 'assets/html/philosophy.html' | relative_url }}"
-    width="100%"
-    style="border: none; height: 100vh;">
-  </iframe>
-</div>
+{% capture html_path %}{{ site.url }}/assets/html/philosophy.html{% endcapture %}
+{% include pagedjs-html-viewer.html
+    html_url=html_path
+    title="Buchanan Kerswell's CV"
+%}
 
 ## Teaching Record
 
-<div class="iframe-container">
-  <iframe
-    src="{{ 'assets/html/record.html' | relative_url }}"
-    width="100%"
-    style="border: none; height: 100vh;">
-  </iframe>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const iframe = document.querySelector('iframe');
-    iframe.onload = function() {
-      const iframeDocument = iframe.contentWindow.document;
-      iframeDocument.addEventListener('click', function(event) {
-        const target = event.target;
-        if (target.tagName.toLowerCase() === 'a' && target.href) {
-          event.preventDefault();  // Prevent the link from opening inside the iframe
-          window.top.location.href = target.href;  // Open the link in the top window
-        }
-      });
-    };
-  });
-</script>
+{% capture html_path %}{{ site.url }}/assets/html/record.html{% endcapture %}
+{% include pagedjs-html-viewer.html
+    html_url=html_path
+    title="Buchanan Kerswell's CV"
+%}
