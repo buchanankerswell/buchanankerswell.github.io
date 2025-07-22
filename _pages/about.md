@@ -5,7 +5,7 @@ permalink: /about/
 
 ## Geoscientist
 
-I study how Earth's mantle and tectonic plates move. I focus on rock formation at a small scale and how this affects larger systems. I use fieldwork, petrography, and lab techniques like EPMA, LAICPMS, and Raman microscopy. My colleagues and students work in remote mountains, use electron beams in labs, and run simulations on computers. I also teach, create learning materials, and explore how AI can improve geoscience.
+I study how Earth's mantle and tectonic plates move using fieldwork, petrography, numerical geodynamic modeling, applied statistics, and analytical techniques in laboratories. My work focuses on rock formation and deformation at a small scales, and how these processes affect larger systems. Thus, my colleagues and students typically work in remote mountains, use electron beams in labs, and run simulations on large computer clusters. I also teach, create learning materials, and explore how AI can improve geoscience.
 
 <img class="image" src="{{ "assets/images/about/vaporwave-geologist.png" | relative_url }}" alt="Working long days in the French Alps. Made with OpenAI's DALLE2 model."/>
 
