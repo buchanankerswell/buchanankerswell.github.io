@@ -10,16 +10,6 @@ tags:
   - machine learning
   - applied statistics
 excerpt: This work investigates the feasibility of using pre-trained machine learning models to predict rock properties.
-header:
-  overlay_image: /assets/images/headers/google-deep-mind3.png
-  teaser: /assets/images/headers/google-deep-mind3.png
-  overlay_filter: linear-gradient(rgba(0, 0, 0, 0.9), rgba(50, 50, 50, 0.5))
-  caption: Google Deepmind
-  actions:
-    - label: Repository
-      url: "https://github.com/buchanankerswell/kerswell_et_al_rocmlm"
-    - label: Article
-      url: "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2024JH000264"
 ---
 
 This study assesses the feasibility of using pre-trained machine learning models to predict rock properties in numerical geodynamic simulations of mantle convection. We generated a comprehensive dataset of rock properties using the Gibbs free energy minimization program [Perple_X](https://www.perplex.ethz.ch) (Connolly, 2009). Using this dataset, we trained a suite of machine learning regressors—collectively termed RocMLMs—and evaluated their accuracy and computational performance.

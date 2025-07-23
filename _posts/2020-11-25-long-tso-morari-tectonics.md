@@ -10,14 +10,6 @@ tags:
   - orogenesis
   - UHP
 excerpt: This field-based study examined the exhumation history of the Tso Morari nappe in NW India.
-header:
-  overlay_image: /assets/images/headers/google-deep-mind2.png
-  teaser: /assets/images/headers/google-deep-mind2.png
-  overlay_filter: linear-gradient(rgba(0, 0, 0, 0.9), rgba(50, 50, 50, 0.5))
-  caption: Google Deepmind
-  actions:
-    - label: Article
-      url: "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2020TC006482"
 ---
 
 This field-based study examined the exhumation history of the Tso Morari nappe in NW India through detailed structural, microtextural, and thermochronological analyses. The [manuscript](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2020TC006482) was published in *Tectonics* on November 25, 2020. You can find the article [here]({{ "assets/pdf/long-20-tso-morari-tectonics.pdf" | relative_url }}).

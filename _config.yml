@@ -11,7 +11,7 @@ description: "Buchanan Kerswell's homepage"
 url: "https://buchanankerswell.com"
 baseurl:
 repository:
-teaser: "assets/images/about/vaporwave-geologist.png"
+# teaser: "assets/images/about/vaporwave-geologist.png"
 logo:
 breadcrumbs: true
 words_per_minute: 200

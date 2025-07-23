@@ -1,6 +1,6 @@
 ---
-permalink: /cv/
 title: "CV"
+permalink: /cv/
 toc: true
 toc_sticky: true
 toc_label: Documents

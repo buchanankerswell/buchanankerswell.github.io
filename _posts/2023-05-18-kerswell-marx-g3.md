@@ -10,16 +10,6 @@ tags:
   - big data
   - eclogite
 excerpt: This work investigates how many rocks get detached from subducting oceanic plates beneath convergent margins.
-header:
-  overlay_image: /assets/images/headers/google-deep-mind4.png
-  teaser: /assets/images/headers/google-deep-mind4.png
-  overlay_filter: linear-gradient(rgba(0, 0, 0, 0.9), rgba(50, 50, 50, 0.5))
-  caption: Google Deepmind
-  actions:
-    - label: Repository
-      url: "https://github.com/buchanankerswell/kerswell_et_al_marx"
-    - label: Article
-      url: "https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2022GC010834"
 ---
 
 This work investigates and how many rocks get detached from subducting oceanic plates beneath convergent margins. Classification of over one-million numerical markers (representing rock fragments) from 64 numerical experiments indicates that rocks rock recovery likely happens at discrete depths, rather than continuously along the subduction interface.

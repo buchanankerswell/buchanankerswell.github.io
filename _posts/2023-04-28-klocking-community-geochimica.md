@@ -8,14 +8,6 @@ tags:
   - geochemistry
   - big data
 excerpt: This work involved input from many individuals during a pre-conference workshop at the Goldschmidt meeting in Honolulu.
-header:
-  overlay_image: /assets/images/headers/google-deep-mind6.png
-  teaser: /assets/images/headers/google-deep-mind6.png
-  overlay_filter: linear-gradient(rgba(0, 0, 0, 0.9), rgba(50, 50, 50, 0.5))
-  caption: Google Deepmind
-  actions:
-    - label: Article
-      url: "https://www.sciencedirect.com/science/article/pii/S0016703723001916"
 ---
 
 This work emerged from a collaborative effort during a pre-conference workshop held at the Goldschmidt meeting in Honolulu, HI, on 8–9 July 2022. Our objective included developing recommendations that would enhance the infrastructure for storing and sharing geochemical data. In collaboration with the broader geochemical community, we launched OneGeochemistry—a community-driven initiative aimed at coordinating the development of a global, online network of machine-readable, persistent, interoperable, and reusable geochemical data.

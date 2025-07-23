@@ -10,14 +10,6 @@ tags:
   - applied statistics
   - geodynamics
 excerpt: This work investigates methods for interpolating surface heat flow data near subduction zones.
-header:
-  overlay_image: /assets/images/headers/heat-flow.png
-  teaser: /assets/images/headers/heat-flow.png
-  overlay_filter: linear-gradient(rgba(0, 0, 0, 0.9), rgba(50, 50, 50, 0.5))
-  caption: LukasFractalizator
-  actions:
-    - label: Repository
-      url: "https://github.com/buchanankerswell/kerswell_kohn_backarc"
 ---
 
 This study explores methods for interpolating surface heat flow data in the vicinity of subduction zones. We applied two distinct approaches—Similarity and Kriging—to the Global Heat Flow Database ([GHFDB](http://ihfc-iugg.org/products/global-heat-flow-database)) and compared their results. The interpolated patterns reveal highly variable and often discontinuous surface heat flow near subduction zones along strike. These discontinuities suggest corresponding complexity in the underlying thermal structure and/or modifications within the near-surface environment.
