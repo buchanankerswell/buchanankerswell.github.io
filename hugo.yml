@@ -1,0 +1,97 @@
+baseURL: "https://buchanankerswell.com/"
+title: "Buchanan Kerswell, PhD"
+theme: PaperMod
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+pagination:
+  pagerSize: 20
+
+taxonomies:
+  tag: tags
+
+menu:
+  main:
+    - name: Research
+      url: research/
+      weight: 1
+    - name: Teaching
+      url: teaching/
+      weight: 2
+    - name: Teaching Materials
+      url: teaching_materials/
+      weight: 3
+    - name: CV
+      url: pdf/curriculum-vitae.pdf
+      weight: 4
+
+params:
+  description: "Buchanan Kerswell's research in metamorphic petrology and geodynamics — University of Liverpool."
+  author: "Buchanan Kerswell, PhD"
+  googleAnalyticsID: G-S4DT8TYQ7X
+  DateFormat: "January 2006"
+  defaultTheme: auto
+  hideFooter: false
+  disableThemeToggle: true
+  ShowShareButtons: false
+  ShowReadingTime: false
+  disableSpecial1stPost: true
+  disableAnchoredHeadings: true
+  ShowPostNavLinks: false
+  ShowBreadCrumbs: false
+  ShowCodeCopyButtons: true
+  ShowAllPagesInArchive: false
+  MainSections: ["research", "teaching", "teaching_materials"]
+  ShowToc: false
+  disableScrollToTop: true
+  TocOpen: false
+  ShowWordCount: false
+  UseHugoToc: true
+  comments: false
+  math: true
+  profileMode:
+    enabled: true
+    title: "Buchanan Kerswell, PhD"
+    subtitle: "I study how Earth’s mantle and tectonic plates move using fieldwork, petrography, and various numerical and analytical techniques. My work focuses on rock formation and deformation at a small scales, and how these processes affect larger systems. I also teach, create learning materials, and explore how AI can improve geoscience."
+    imageUrl: "profile.png"
+    imageWidth: 160
+    imageHeight: 160
+    buttons:
+      - name: Research
+        url: research/
+      - name: Teaching
+        url: teaching/
+      - name: CV
+        url: pdf/curriculum-vitae.pdf
+  socialIcons:
+    - name: email
+      url: mailto:b.kerswell@liverpool.ac.uk
+    - name: github
+      url: https://github.com/buchanankerswell
+    - name: googlescholar
+      url: https://scholar.google.com/citations?hl=en&user=O7TM22kAAAAJ
+    - name: orcid
+      url: https://orcid.org/0000-0003-0495-4162
+    - name: researchgate
+      url: https://www.researchgate.net/profile/Buchanan_Kerswell
+  assets:
+    disableScrollBarStyle: true
+  cover:
+    hiddenInList: false
+    hiddenInSingle: true
+  label:
+    text: "Buchanan Kerswell, PhD"
+    icon:
+    iconHeight: 18
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    guessSyntax: true
+    style: autumn
+  tableOfContents:
+    endLevel: 3
+    ordered: false
+    startLevel: 2
