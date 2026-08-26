@@ -1,0 +1,22 @@
+# Hugo
+public/
+resources/
+.hugo_build.lock
+
+# Jekyll (legacy, keep for safety)
+_site/
+*-cache/
+
+# Ruby (legacy)
+.bundle/
+.byebug_history
+.ruby-gemset
+.ruby-version
+*.gem
+vendor
+
+# Files
+.DS_Store
+
+# Folders
+gh-pages/

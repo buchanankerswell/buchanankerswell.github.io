@@ -1,0 +1,65 @@
+/* Custom overrides for buchanankerswell.com - Hugo/PaperMod extended */
+/* Profile mode tweaks */
+.profile img {
+  border-radius: 50%;
+}
+/* Ensure cover images don't overflow */
+.post-single .post-content img {
+  max-width: 100%;
+  height: auto;
+}
+/* Minimal year headers for research/teaching lists */
+.year-header {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin: 2.2rem 0 0.9rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--border);
+}
+.year-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.year-group .post-entry {
+  margin-bottom: var(--gap);
+}
+.year-group .post-entry:last-child {
+  margin-bottom: 0;
+}
+/* Research cards: keep date · author · journal · DOI on one line where possible */
+.post-entry .entry-footer {
+  font-size: 0.88rem;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.post-single .post-meta {
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 600px) {
+  .post-entry .entry-footer,
+  .post-single .post-meta {
+    white-space: normal;
+  }
+}
+/* Fix DOI (and any footer link) being blocked by .entry-link overlay — research cards */
+.post-entry .entry-link {
+  z-index: 0;
+}
+.post-entry .entry-footer {
+  position: relative;
+  z-index: 1;
+}
+.post-entry .entry-footer a {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+}
