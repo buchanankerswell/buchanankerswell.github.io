@@ -1,4 +1,103 @@
 /* Custom overrides for buchanankerswell.com - Hugo/PaperMod extended */
+/* Design tokens (bg/panel/ink/muted/link/hairlines/radius) are vendored
+   verbatim in tokens.css from the pinned actions tag, shared with
+   light_slides, rxnDB, and pkft. Below maps PaperMod variables onto them. */
+/* Light theme: app token values */
+:root {
+  --theme: var(--bg);
+  --entry: var(--panel);
+  --primary: var(--ink);
+  --secondary: var(--muted);
+  --tertiary: var(--hairline-strong);
+  --content: var(--ink);
+  --code-bg: var(--panel);
+  --border: var(--hairline);
+}
+/* Dark theme: app token dark values (.dark-mode class is unused here;
+   PaperMod toggles via html[data-theme]); keep in sync with tokens.css */
+:root[data-theme="dark"] {
+  --theme: hsl(var(--hue), var(--sat), 14%);
+  --entry: hsl(var(--hue), var(--sat), 17%);
+  --primary: hsl(var(--hue), var(--sat), 94%);
+  --secondary: hsl(var(--hue), var(--sat), 62%);
+  --tertiary: rgb(255 255 255 / 0.2);
+  --content: hsl(var(--hue), var(--sat), 94%);
+  --code-bg: hsl(var(--hue), var(--sat), 17%);
+  --border: rgb(255 255 255 / 0.08);
+}
+/* Type: app font stack and heading style */
+body {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+h1,
+h2,
+h3 {
+  font-weight: 530;
+  letter-spacing: -0.01em;
+}
+/* Page background: white like the apps (cards carry the panel fill).
+   PaperMod paints list pages with --code-bg; keep the dark rule as-is. */
+.list {
+  background: var(--theme);
+}
+/* App-blue content links */
+.md-content a:not(.anchor) {
+  color: var(--link);
+}
+.md-content a:not(.anchor):hover {
+  color: var(--link-hover);
+}
+/* Header hairline like the app topbar */
+.header {
+  box-shadow: inset 0 -0.5px 0 var(--hairline-strong);
+}
+/* Cards: panel fill with inset hairline ring instead of a full border */
+.post-entry {
+  border: none;
+  box-shadow: inset 0 0 0 0.5px var(--hairline-strong);
+}
+/* Home pill buttons: app button chrome */
+.button {
+  background: var(--panel);
+  box-shadow: inset 0 0 0 0.5px var(--hairline-strong);
+  color: var(--ink);
+}
+.button:hover {
+  color: var(--link);
+  box-shadow: inset 0 0 0 0.5px var(--link);
+}
+/* Tags: app pill shape */
+.post-tags a {
+  border-radius: 999px;
+}
+/* App focus ring */
+:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+/* Skip link: hidden until keyboard focus */
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--panel);
+  color: var(--ink);
+  padding: 0.5rem 1rem;
+  z-index: 1001;
+  border-radius: 0 0 var(--radius) 0;
+}
+.skip:focus-visible {
+  left: 0;
+}
 /* Profile mode tweaks */
 .profile img {
   border-radius: 50%;
@@ -49,6 +148,25 @@
   .post-single .post-meta {
     white-space: normal;
   }
+}
+/* Near-square card covers (aspect ratio < 1.75, incl. SVG logos): cap the size
+   and center instead of full-bleed, so cards stay compact. The aspect check
+   lives in layouts/_partials/cover.html, which adds `cover-square`. */
+.post-entry .entry-cover.cover-square {
+  align-items: center;
+}
+/* Same size rule for near-square images in page bodies (figure-square class
+   added by the render-image hook); block + auto margins center them. */
+.post-entry .entry-cover.cover-square img,
+.post-single .post-content img.cover-square {
+  width: auto;
+  max-width: min(100%, 300px);
+  height: auto;
+  max-height: 240px;
+  margin: 0 auto;
+}
+.post-single .post-content img.cover-square {
+  display: block;
 }
 /* Fix DOI (and any footer link) being blocked by .entry-link overlay — research cards */
 .post-entry .entry-link {

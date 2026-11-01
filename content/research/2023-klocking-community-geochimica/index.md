@@ -1,5 +1,5 @@
 ---
-title: Community Recommendations for Geochemical Data, Services and Analytical Capabilities in the 21st Century
+title: "Community Recommendations for Geochemical Data, Services and Analytical Capabilities in the 21st Century"
 date: "2023-04-28"
 tags:
 - geochemistry
@@ -20,8 +20,6 @@ doi: https://doi.org/10.1016/j.gca.2023.04.024
 ---
 
 **Download:** [article.pdf](article.pdf)
-
-**OneGeochemistry Page:** [https://onegeochemistry.github.io](https://onegeochemistry.github.io)
 
 ## Summary
 
@@ -45,4 +43,4 @@ This manuscript is the result of a workshop held at the Goldschmidt 2022 confere
 
 ## Open Research
 
-Data and code availability follows community standards described in the manuscript.
+Data and code availability follows community standards described in the manuscript. See also the [OneGeochemistry page](https://onegeochemistry.github.io).

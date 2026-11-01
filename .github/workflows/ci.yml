@@ -1,0 +1,55 @@
+name: ci
+
+# Fast checks for the Hugo site: vendored design tokens, markdown style,
+# and link health (the hugo.yml workflow owns build + deploy).
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  tokens:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/checkout@v5
+        with:
+          repository: buchanankerswell/actions
+          ref: v1
+          path: canonical
+      - name: Diff vendored tokens.css against canonical design
+        run: diff -u canonical/design/tokens.css assets/css/extended/tokens.css
+  markdownlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: DavidAnson/markdownlint-cli2-action@v25
+        with:
+          config: .markdownlint.json
+          globs: |
+            content/**/*.md
+            README.md
+  linkcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          submodules: recursive
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.169.0/hugo_extended_0.169.0_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Build site
+        run: hugo --minify --baseURL "https://buchanankerswell.com/"
+      # Local-first: relative and root-relative links resolve against the
+      # built public/ dir (--root-dir); absolute site links are skipped
+      # (they 404 on live until merged and are self-consistent by
+      # construction). Bot-walled hosts are excluded; see audit notes.
+      - uses: lycheeverse/lychee-action@v2
+        with:
+          args: --verbose --no-progress --timeout 60 --root-dir '${{ github.workspace }}/public' --exclude 'mailto:' --exclude 'buchanankerswell\.com' --exclude 'scholar\.google' --exclude 'researchgate\.net' --exclude 'doi\.org' --exclude 'nature\.com' --exclude 'onlinelibrary\.wiley\.com' --exclude 'minpet\.org' --exclude-path 'public/html' './public/**/*.html'

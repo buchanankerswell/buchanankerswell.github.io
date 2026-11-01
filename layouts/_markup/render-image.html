@@ -1,0 +1,10 @@
+{{- /* Render hook: near-square page-bundle images get figure-square (same
+     capped, centered rule as card covers). The check lives in
+     cover_class.html. Body figures sit below the fold, so always lazy. */ -}}
+{{- $img := .Page.Resources.GetMatch .Destination -}}
+{{- $cls := partial "cover_class.html" $img -}}
+{{- if $img -}}
+<img loading="lazy" src="{{ $img.RelPermalink }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ with $cls }} class="{{ . }}"{{ end }}>
+{{- else -}}
+<img loading="lazy" src="{{ .Destination | safeURL }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }}>
+{{- end -}}

@@ -3,7 +3,7 @@ title: "Buchanan Kerswell, PhD"
 theme: PaperMod
 
 enableInlineShortcodes: true
-enableRobotsTXT: true
+enableRobotsTXT: false
 pagination:
   pagerSize: 20
 
@@ -18,8 +18,8 @@ menu:
     - name: Teaching
       url: teaching/
       weight: 2
-    - name: Teaching Materials
-      url: teaching_materials/
+    - name: Software
+      url: software/
       weight: 3
     - name: CV
       url: pdf/curriculum-vitae.pdf
@@ -28,7 +28,6 @@ menu:
 params:
   description: "Buchanan Kerswell's research in metamorphic petrology and geodynamics — University of Liverpool."
   author: "Buchanan Kerswell, PhD"
-  googleAnalyticsID: G-S4DT8TYQ7X
   DateFormat: "January 2006"
   defaultTheme: auto
   hideFooter: false
@@ -41,19 +40,20 @@ params:
   ShowBreadCrumbs: false
   ShowCodeCopyButtons: true
   ShowAllPagesInArchive: false
-  MainSections: ["research", "teaching", "teaching_materials"]
+  MainSections: ["research", "teaching", "software"]
   ShowToc: false
   disableScrollToTop: true
   TocOpen: false
   ShowWordCount: false
   UseHugoToc: true
   comments: false
-  math: true
+  math: false
   profileMode:
     enabled: true
     title: "Buchanan Kerswell, PhD"
-    subtitle: "I study how Earth’s mantle and tectonic plates move using fieldwork, petrography, and various numerical and analytical techniques. My work focuses on rock formation and deformation at a small scales, and how these processes affect larger systems. I also teach, create learning materials, and explore how AI can improve geoscience."
+    subtitle: "I study how Earth’s mantle and tectonic plates move using fieldwork, petrography, and various numerical and analytical techniques. My work focuses on rock formation and deformation at small scales, and how these processes affect larger systems. I also teach, create learning materials, and explore how AI can improve geoscience."
     imageUrl: "profile.png"
+    imageTitle: "Buchanan Kerswell"
     imageWidth: 160
     imageHeight: 160
     buttons:
@@ -61,6 +61,8 @@ params:
         url: research/
       - name: Teaching
         url: teaching/
+      - name: Software
+        url: software/
       - name: CV
         url: pdf/curriculum-vitae.pdf
   socialIcons:
@@ -76,6 +78,7 @@ params:
       url: https://www.researchgate.net/profile/Buchanan_Kerswell
   assets:
     disableScrollBarStyle: true
+    theme_color: "#ffffff"
   cover:
     hiddenInList: false
     hiddenInSingle: true

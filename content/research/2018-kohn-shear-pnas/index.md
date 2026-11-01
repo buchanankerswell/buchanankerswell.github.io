@@ -1,5 +1,5 @@
 ---
-title: Shear Heating Reconciles Thermal Models with the Metamorphic Rock Record of Subduction
+title: "Shear Heating Reconciles Thermal Models with the Metamorphic Rock Record of Subduction"
 date: "2018-10-29"
 tags:
 - shear heating

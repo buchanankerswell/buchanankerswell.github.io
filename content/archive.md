@@ -1,5 +1,5 @@
 ---
 title: "Archive"
-description: "All research and teaching in reverse chronological order."
+description: "All research, teaching, and software in reverse chronological order."
 layout: "archives"
 ---

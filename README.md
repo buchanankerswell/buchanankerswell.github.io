@@ -1,38 +1,15 @@
 # My personal website
 
-[https://buchanankerswell.com](https://buchanankerswell.com) — Hugo 0.165.0 extended + PaperMod.
+[https://buchanankerswell.com](https://buchanankerswell.com) — Hugo + PaperMod.
 
 ## Development
 
 ```bash
+git clone --recurse-submodules <url>  # PaperMod theme; or: git submodule update --init
 hugo server          # http://localhost:1313
 hugo --minify        # prod build to public/
 ```
 
-Content in `content/research/<slug>/` and `content/teaching/` (page bundles with localized PDFs). Global assets in `static/pdf/`. See `AGENTS.md` and `hugo.yml`.
+Content in `content/research/<slug>/`, `content/teaching/<slug>/`, and `content/software/<slug>/` (page bundles with local figures and PDFs). Global assets in `static/pdf/`.
 
-Deploys via `.github/workflows/hugo.yml` on push to `main`.
-
-# License
-
-MIT License
-
-Copyright (c) 2021 Buchanan Kerswell
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Deploys via `.github/workflows/hugo.yml` on push to `main`. Checks via `.github/workflows/ci.yml`.

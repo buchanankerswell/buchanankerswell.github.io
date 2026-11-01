@@ -37,11 +37,11 @@ This field-based study examined the exhumation history of the Tso Morari nappe i
 ## Coauthors
 
 - [Sean Long](https://scholar.google.com/citations?user=P9FprbkAAAAJ&hl=en&oi=ao) (Washington State University)
- - [Matthew Kohn](https://scholar.google.com/citations?user=xSyB1KQAAAAJ&hl=en) (Boise State University)
- - Jesslyn Starnes (Washington State University)
- - [Kyle Larson](https://scholar.google.com/citations?user=mPKPZPMAAAAJ&hl=en&oi=ao) (University of British Columbia)
- - [Noland Blackford](https://scholar.google.com/citations?user=Dao6M04AAAAJ&hl=en&oi=ao) (Washington State University)
- - [Emmanuel Soignard](https://scholar.google.com/citations?user=K3FWldkAAAAJ&hl=en&oi=ao) (Arizona State University)
+- [Matthew Kohn](https://scholar.google.com/citations?user=xSyB1KQAAAAJ&hl=en) (Boise State University)
+- Jesslyn Starnes (Washington State University)
+- [Kyle Larson](https://scholar.google.com/citations?user=mPKPZPMAAAAJ&hl=en&oi=ao) (University of British Columbia)
+- [Noland Blackford](https://scholar.google.com/citations?user=Dao6M04AAAAJ&hl=en&oi=ao) (Washington State University)
+- [Emmanuel Soignard](https://scholar.google.com/citations?user=K3FWldkAAAAJ&hl=en&oi=ao) (Arizona State University)
 
 ## Acknowledgement
 
