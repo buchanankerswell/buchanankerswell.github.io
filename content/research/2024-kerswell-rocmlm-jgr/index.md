@@ -3,7 +3,7 @@ title: "RocMLMs: Predicting Rock Properties Through Machine Learning Models"
 date: "2024-04-12"
 tags:
 - mantle petrology
-- phase transformations
+- phase transformation
 - machine learning
 - applied statistics
 author:

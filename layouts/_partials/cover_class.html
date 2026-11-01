@@ -1,0 +1,11 @@
+{{- /* Aspect classifier shared by the card covers (cover.html) and the page
+     bodies (render-image.html). Input: an image resource (or nil).
+     Returns "cover-square" when near-square (ratio < 1.75, incl. SVG),
+     else "". Single seam for the threshold. */ -}}
+{{- $class := "" -}}
+{{- with . -}}
+{{- if or (eq .MediaType.SubType "svg") (and (gt .Width 0) (gt .Height 0) (lt (div (float .Width) .Height) 1.75)) -}}
+{{- $class = "cover-square" -}}
+{{- end -}}
+{{- end -}}
+{{- $class -}}

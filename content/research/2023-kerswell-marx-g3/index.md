@@ -1,5 +1,5 @@
 ---
-title: Computing Rates and Distributions of Rock Recovery in Subduction Zones
+title: "Computing Rates and Distributions of Rock Recovery in Subduction Zones"
 date: "2023-05-18"
 tags:
 - subduction
@@ -24,7 +24,7 @@ doi: https://doi.org/10.1029/2022GC010834
 
 ## Summary
 
-This work investigates and how many rocks get detached from subducting oceanic plates beneath convergent margins. Classification of over one-million numerical markers (representing rock fragments) from 64 numerical experiments indicates that rocks rock recovery likely happens at discrete depths, rather than continuously along the subduction interface.
+This work investigates how many rocks get detached from subducting oceanic plates beneath convergent margins. Classification of over one-million numerical markers (representing rock fragments) from 64 numerical experiments indicates that rocks rock recovery likely happens at discrete depths, rather than continuously along the subduction interface.
 
 ---
 
@@ -37,7 +37,7 @@ This work investigates and how many rocks get detached from subducting oceanic p
 ## Coauthors
 
 - [Matthew Kohn](https://scholar.google.com/citations?user=xSyB1KQAAAAJ&hl=en) (Boise State University)
- - [Taras Gerya](https://scholar.google.com/citations?user=ek1H-_QAAAAJ&hl=en&oi=ao) (ETH Zürich)
+- [Taras Gerya](https://scholar.google.com/citations?user=ek1H-_QAAAAJ&hl=en&oi=ao) (ETH Zürich)
 
 ## Acknowledgement
 

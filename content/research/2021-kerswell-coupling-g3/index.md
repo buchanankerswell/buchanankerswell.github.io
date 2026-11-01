@@ -1,5 +1,5 @@
 ---
-title: Backarc Lithospheric Thickness and Serpentine Stability Control Slab-Mantle Coupling Depths in Subduction Zones
+title: "Backarc Lithospheric Thickness and Serpentine Stability Control Slab-Mantle Coupling Depths in Subduction Zones"
 date: "2021-05-30"
 tags:
 - subduction
@@ -39,7 +39,7 @@ To address these questions, this study develops 64 numerical geodynamic models o
 ## Coauthors
 
 - [Matthew Kohn](https://scholar.google.com/citations?user=xSyB1KQAAAAJ&hl=en) (Boise State University)
- - [Taras Gerya](https://scholar.google.com/citations?user=ek1H-_QAAAAJ&hl=en&oi=ao) (ETH Zürich)
+- [Taras Gerya](https://scholar.google.com/citations?user=ek1H-_QAAAAJ&hl=en&oi=ao) (ETH Zürich)
 
 ## Acknowledgement
 
