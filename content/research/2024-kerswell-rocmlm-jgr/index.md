@@ -20,8 +20,6 @@ journal: "JGR: MLC"
 doi: https://doi.org/10.1029/2024JH000264
 ---
 
-**Download:** [article.pdf](article.pdf)
-
 ## Summary
 
 This study assesses the feasibility of using pre-trained machine learning models to predict rock properties in numerical geodynamic simulations of mantle convection. We generated a comprehensive dataset of rock properties using the Gibbs free energy minimization program [Perple_X](https://www.perplex.ethz.ch) (Connolly, 2009). Using this dataset, we trained a suite of machine learning regressors—collectively termed RocMLMs—and evaluated their accuracy and computational performance.
