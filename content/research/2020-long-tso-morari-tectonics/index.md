@@ -20,8 +20,6 @@ journal: Tectonics
 doi: https://doi.org/10.1029/2020TC006482
 ---
 
-**Download:** [article.pdf](article.pdf)
-
 ## Summary
 
 This field-based study examined the exhumation history of the Tso Morari nappe in NW India through detailed structural, microtextural, and thermochronological analyses.

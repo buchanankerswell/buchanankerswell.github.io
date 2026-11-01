@@ -20,8 +20,6 @@ journal: G3
 doi: https://doi.org/10.1029/2022GC010834
 ---
 
-**Download:** [article.pdf](article.pdf)
-
 ## Summary
 
 This work investigates how many rocks get detached from subducting oceanic plates beneath convergent margins. Classification of over one-million numerical markers (representing rock fragments) from 64 numerical experiments indicates that rocks rock recovery likely happens at discrete depths, rather than continuously along the subduction interface.

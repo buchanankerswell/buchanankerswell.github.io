@@ -20,8 +20,6 @@ journal: G3
 doi: https://doi.org/10.1029/2020GC009304
 ---
 
-**Download:** [article.pdf](article.pdf)
-
 ## Summary
 
 Mechanical coupling in subduction zones plays a critical role in controlling seismic activity, volcanism, and broader geodynamic processes. The idea that the depth of mechanical coupling remains consistent across diverse subduction zone segments ([Wada & Wang, 2009](https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2009GC002570)) prompts key questions: where, how, and why does mechanical coupling occur along the interface between converging tectonic plates?

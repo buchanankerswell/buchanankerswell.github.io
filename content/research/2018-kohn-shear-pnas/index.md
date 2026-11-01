@@ -18,8 +18,6 @@ journal: PNAS
 doi: https://doi.org/10.1073/pnas.1809962115
 ---
 
-**Download:** [article.pdf](article.pdf)
-
 ## Summary
 
 Thermal structure influences many aspects of subduction zone metamorphism, rheology, and melting. Most thermal models assume small or negligible friction coefficients and underpredict the pressure–temperature (P–T) conditions recorded by subduction zone metamorphic rocks by hundreds of degrees Celsius. Incorporating shear heating into these models allows for simultaneous reproduction of surface heat flow and the P–T conditions of exhumed metamorphic rocks. Because hot, dry rocks possess greater density than cold, wet ones, young-hot subduction systems produce rocks with lower buoyancy and greater difficulty of exhumation. Consequently, the metamorphic record may underrepresent young-hot subduction while overrepresenting old-cold subduction.

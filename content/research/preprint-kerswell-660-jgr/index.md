@@ -19,8 +19,6 @@ journal: "in review (JGR: SE)"
 doi:
 ---
 
-**Download:** [preprint.pdf](preprint.pdf)
-
 ## Summary
 
 This study investigated how reaction rates (kinetics) during ringwoodite decomposition control the seismic structure and displacement of Earth's 660 km mantle discontinuity within subducting slabs and mantle plumes. By incorporating diffusion-controlled kinetic parameters into compressible mantle flow simulations, we evaluated how disequilibrium influences slab dynamics and mantle transition zone behavior. We show that while hot plumes maintain narrow, kinetics-insensitive 660 km boundaries, cold subducting slabs are strongly regulated by kinetics---where slower reaction rates create metastable ringwoodite, amplify boundary deflections by a factor of 2–4, and actively promote slab stagnation.

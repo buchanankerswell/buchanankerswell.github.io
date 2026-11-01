@@ -19,8 +19,6 @@ journal: "JGR: SE"
 doi: https://doi.org/10.1029/2026JB033781
 ---
 
-**Download:** [article.pdf](article.pdf)
-
 ## Summary
 
 This study investigated how reaction rates (kinetics) and rock strength affect the structure and displacement of Earth's 410 km mantle discontinuity during the olivine $\Leftrightarrow$ wadsleyite phase transition. By simulating both hot mantle plumes and cold subducting slabs across a wide range of kinetic parameters, we evaluated how disequilibrium influences seismic observations. We show that while high temperatures in plumes consistently maintain a sharp transition, cold subduction zones are heavily controlled by kinetics, where slower reaction rates widen the boundary, displace it downward, and create metastable olivine wedges that impede slab descent.

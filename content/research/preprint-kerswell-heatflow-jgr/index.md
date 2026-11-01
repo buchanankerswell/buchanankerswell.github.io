@@ -20,8 +20,6 @@ journal: "in review (JGR: SE)"
 doi:
 ---
 
-**Download:** [preprint.pdf](preprint.pdf)
-
 ## Summary
 
 This work investigated the spatial continuity of surface heat flow near subduction zones. We compared two different interpolations methods, *Similarity* and *Kriging* with surface heat flow data from the Global Heat Flow Data Assessment Group et al. ([2024](https://doi.org/10.5880/fidgeo.2024.014)). Our analysis showed that along-strike surface heat flow continuity near subduction zones is ambiguous or geographically limited, not globally uniform.
