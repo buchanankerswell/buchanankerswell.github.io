@@ -7,8 +7,8 @@ tags:
 - microscopy
 author:
 - Buchanan Kerswell
-description: Interactive microscope-slide viewer for learning minerals
-summary: Interactive microscope-slide viewer for learning minerals
+description: Interactive thin-section viewer for teaching mineralogy
+summary: Interactive thin-section viewer for teaching mineralogy
 cover:
   image: figure.jpg
   alt: Thin-section poster for the olivine tutorial
@@ -21,31 +21,29 @@ disableAnchoredHeadings: false
 
 ## Summary
 
-[Light Slides](https://buchanankerswell.com/light_slides) is a free study viewer for learning minerals under the microscope. It follows the textbook *Optical Mineralogy* by Perkins, Kohn & Brady ([optical.minpet.org](https://optical.minpet.org)). Drag a slider to move the microscope stage back and forth while short notes explain what you are looking at. It runs in any web browser, and the videos stream from the cloud so the site stays small.
+[Light Slides](https://buchanankerswell.com/light_slides) is a free study viewer for learning minerals under the microscope. It follows the textbook *Optical Mineralogy* by Perkins, Kohn & Brady ([optical.minpet.org](https://optical.minpet.org)). Rotate the microscope stage back and forth while Prof. Kohn explains what you are looking at. It runs in any web browser.
 
 ---
 
 ![Figure](figure.jpg)
 
-*Figure:* Poster image for the olivine tutorial. Each tutorial pairs microscope footage with short explanatory notes.
-
 ---
 
 ## Features
 
-- Drag a slider to move the stage while short notes explain each view
-- Find tutorials by mineral, feature, or color
-- Free in any browser; videos stream from the cloud
+- Rotate the stage while each view is explained
+- Search tutorials by mineral, feature, or color
+- Free in any web browser
 
 ---
 
 ## Collaborators
 
-- [Matthew Kohn](https://scholar.google.com/citations?user=xSyB1KQAAAAJ&hl=en&oi=ao) (Boise State University)
+- [Prof. Matthew Kohn](https://scholar.google.com/citations?user=xSyB1KQAAAAJ&hl=en&oi=ao) (Boise State University)
 
 ## Acknowledgement
 
-These videos and tutorials were produced by Matt Kohn (Boise State University) from hours of filming petrographic slides from his own personal research library. Light Slides accompanies *Optical Mineralogy* by [Dexter Perkins](https://campus.und.edu/directory/dexter.perkins) (University of North Dakota), Matt Kohn (Boise State University), and [John Brady](https://scholar.google.com/citations?user=fZ1icDoAAAAJ&hl=en&oi=sra) (Smith College). Supported by the University of North Dakota, Boise State University, Smith College, and the National Science Foundation.
+These videos and tutorials were produced by Prof. Matthew Kohn (Boise State University) from hours of filming petrographic slides from his own personal research library. Light Slides accompanies *Optical Mineralogy* by [Dexter Perkins](https://campus.und.edu/directory/dexter.perkins) (University of North Dakota), Matthew Kohn (Boise State University), and [John Brady](https://scholar.google.com/citations?user=fZ1icDoAAAAJ&hl=en&oi=sra) (Smith College). Supported by the University of North Dakota, Boise State University, Smith College, and the National Science Foundation.
 
 ## Open Research
 

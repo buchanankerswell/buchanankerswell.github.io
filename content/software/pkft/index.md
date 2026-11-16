@@ -7,8 +7,8 @@ tags:
 - peak fitting
 author:
 - Buchanan Kerswell
-description: Find peaks in noisy one-dimensional data
-summary: Find peaks in noisy one-dimensional data
+description: Find peaks in one-dimensional data
+summary: Find peaks in one-dimensional data
 cover:
   image: figure.svg
   alt: pkft logo
@@ -21,13 +21,11 @@ disableAnchoredHeadings: false
 
 ## Summary
 
-[pkft](https://github.com/buchanankerswell/pkft) finds peaks in noisy one-dimensional measurements, such as groups of ages that each come with an uncertainty. Paste in a small table of values, look at the plots, and fit up to 25 peaks—or let the app choose the number of peaks for you. A worked example is built in, so you can try it with one click.
+[pkft](https://github.com/buchanankerswell/pkft) finds peaks in one-dimensional datasets, such as groups of ages that each come with an uncertainty. Upload or paste in a small table of values, visualize the data, and fit peaks.
 
 ---
 
 ![Figure](figure.svg)
-
-*Figure:* pkft logo.
 
 ---
 
@@ -39,7 +37,7 @@ disableAnchoredHeadings: false
 
 ## Acknowledgement
 
-I gratefully acknowledge feedback and suggestions provided by [Matthew Kohn](https://scholar.google.com/citations?user=xSyB1KQAAAAJ&hl=en&oi=ao) and Kayleigh Harvey. Peak modeling follows [IsoplotR](https://github.com/pvermees/IsoplotR/) (Vermeesch, 2018); demo data from Trayler et al. (2020).
+I gratefully acknowledge feedback and suggestions provided by [Prof. Matthew Kohn](https://scholar.google.com/citations?user=xSyB1KQAAAAJ&hl=en&oi=ao) and Kayleigh Harvey. Peak modeling follows [IsoplotR](https://github.com/pvermees/IsoplotR/) (Vermeesch, 2018); demo data from Trayler et al. (2020).
 
 ## Open Research
 

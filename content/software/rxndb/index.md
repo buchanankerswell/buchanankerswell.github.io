@@ -21,13 +21,11 @@ disableAnchoredHeadings: false
 
 ## Summary
 
-[rxnDB](https://github.com/buchanankerswell/rxndb) is a searchable collection of published lab experiments on how minerals change with pressure and temperature. Install it with `pip install rxnDB`, run `rxndb`, and open the page in your browser to look up a reaction, see the data behind it, draw the boundary between minerals, and decide what experiment to run next. Every view has its own link, so you can share exactly what you see.
+[rxnDB](https://github.com/buchanankerswell/rxndb) is a searchable collection of published lab experiments on how minerals change with pressure and temperature. Install it with `pip install rxnDB`, run `rxndb`, and open the page in your browser to look up a reaction, see the data behind it, draw the boundary between minerals, and decide what experiment to run next.
 
 ---
 
 ![Figure](figure.svg)
-
-*Figure:* rxnDB logo.
 
 ---
 
@@ -39,7 +37,7 @@ disableAnchoredHeadings: false
 
 ## Acknowledgement
 
-rxnDB was developed with [Simon Hunt](https://research.manchester.ac.uk/en/persons/simon.hunt) (University of Manchester) and [John Wheeler](https://scholar.google.co.uk/citations?user=jsfp2-8AAAAJ&hl=en) (University of Liverpool). This work was funded by the UKRI NERC Large Grant no. NE/V018477/1 awarded to John Wheeler at the University of Liverpool.
+rxnDB was developed with [Simon Hunt](https://research.manchester.ac.uk/en/persons/simon.hunt) (University of Manchester) and [Prof. John Wheeler](https://scholar.google.co.uk/citations?user=jsfp2-8AAAAJ&hl=en) (University of Liverpool). This work was funded by the UKRI NERC Large Grant no. NE/V018477/1 awarded to John Wheeler at the University of Liverpool.
 
 ## Open Research
 
