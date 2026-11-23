@@ -1,7 +1,14 @@
+---
 name: ci
 
 # Fast checks for the Hugo site: vendored design tokens, markdown style,
-# and link health (the hugo.yml workflow owns build + deploy).
+# spelling, and link health (the hugo.yml workflow owns build + deploy).
+# Linkcheck runs source-only via the shared lychee reusable; the excludes
+# below mirror the old built-HTML check (bot-walled hosts are excluded;
+# absolute site links are skipped -- they 404 on live until merged and are
+# self-consistent by construction). submap.fr excluded 2026-11-23:
+# redirects to submap.gm.umontpellier.fr with expired cert (upstream,
+# renewal date unknown).
 on:
   pull_request:
     branches: [main]
@@ -12,46 +19,24 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
-  tokens:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v5
-      - uses: actions/checkout@v5
-        with:
-          repository: buchanankerswell/actions
-          ref: v1
-          path: canonical
-      - name: Diff vendored tokens.css against canonical design
-        run: diff -u canonical/design/tokens.css assets/css/extended/tokens.css
+  design-drift:
+    uses: buchanankerswell/actions/.github/workflows/design-drift.yml@v1
+    with:
+      static-dir: assets/css/extended
+      files: tokens.css
   markdownlint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v5
-      - uses: DavidAnson/markdownlint-cli2-action@v25
-        with:
-          config: .markdownlint.json
-          globs: |
-            content/**/*.md
-            README.md
+    uses: buchanankerswell/actions/.github/workflows/markdownlint.yml@v1
+    with:
+      globs: |
+        content/**/*.md
+        README.md
+  typos:
+    uses: buchanankerswell/actions/.github/workflows/typos.yml@v1
   linkcheck:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v5
-        with:
-          submodules: recursive
-      - name: Install Hugo CLI
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.169.0/hugo_extended_0.169.0_linux-amd64.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
-      - name: Build site
-        run: hugo --minify --baseURL "https://buchanankerswell.com/"
-      # Local-first: relative and root-relative links resolve against the
-      # built public/ dir (--root-dir); absolute site links are skipped
-      # (they 404 on live until merged and are self-consistent by
-      # construction). Bot-walled hosts are excluded; see audit notes.
-      # submap.fr excluded 2026-11-23: redirects to submap.gm.umontpellier.fr
-      # with expired cert (upstream, renewal date unknown).
-      - uses: lycheeverse/lychee-action@v2
-        with:
-          args: --verbose --no-progress --timeout 60 --root-dir '${{ github.workspace }}/public' --exclude 'mailto:' --exclude 'buchanankerswell\.com' --exclude 'scholar\.google' --exclude 'researchgate\.net' --exclude 'doi\.org' --exclude 'nature\.com' --exclude 'onlinelibrary\.wiley\.com' --exclude 'minpet\.org' --exclude 'submap' --exclude-path 'public/html' './public/**/*.html'
+    uses: buchanankerswell/actions/.github/workflows/linkcheck.yml@v1
+    with:
+      args: "--verbose --no-progress --timeout 60 --exclude 'mailto:' --exclude 'buchanankerswell\\.com' --exclude 'scholar\\.google' --exclude 'researchgate\\.net' --exclude 'doi\\.org' --exclude 'nature\\.com' --exclude 'onlinelibrary\\.wiley\\.com' --exclude 'minpet\\.org' --exclude 'submap' './content/**/*.md' './README.md'"

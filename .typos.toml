@@ -1,0 +1,9 @@
+[default.extend-words]
+# Spanish/French proper nouns in research summaries
+Instituto = "Instituto"
+Internacional = "Internacional"
+Villegas = "Villegas"
+
+# Vendored Hugo theme: upstream typos, not ours
+[files]
+extend-exclude = ["themes/**"]
