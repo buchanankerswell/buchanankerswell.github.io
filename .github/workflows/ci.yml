@@ -39,4 +39,4 @@ jobs:
   linkcheck:
     uses: buchanankerswell/actions/.github/workflows/linkcheck.yml@v1
     with:
-      args: "--verbose --no-progress --timeout 60 --exclude 'mailto:' --exclude 'buchanankerswell\\.com' --exclude 'scholar\\.google' --exclude 'researchgate\\.net' --exclude 'doi\\.org' --exclude 'nature\\.com' --exclude 'onlinelibrary\\.wiley\\.com' --exclude 'minpet\\.org' --exclude 'submap' './content/**/*.md' './README.md'"
+      args: "--verbose --no-progress --timeout 60 --root-dir '${{ github.workspace }}/static' --exclude 'mailto:' --exclude 'buchanankerswell\\.com' --exclude 'scholar\\.google' --exclude 'researchgate\\.net' --exclude 'doi\\.org' --exclude 'nature\\.com' --exclude 'onlinelibrary\\.wiley\\.com' --exclude 'minpet\\.org' --exclude 'submap' './content/**/*.md' './README.md'"
