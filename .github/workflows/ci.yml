@@ -8,7 +8,8 @@ name: ci
 # absolute site links are skipped -- they 404 on live until merged and are
 # self-consistent by construction). submap.fr excluded 2026-11-23:
 # redirects to submap.gm.umontpellier.fr with expired cert (upstream,
-# renewal date unknown).
+# renewal date unknown). zenodo.org excluded 2026-11-24: returns 403 to
+# CI runners while serving browsers fine.
 on:
   pull_request:
     branches: [main]
@@ -39,4 +40,4 @@ jobs:
   linkcheck:
     uses: buchanankerswell/actions/.github/workflows/linkcheck.yml@v1
     with:
-      args: "--verbose --no-progress --timeout 60 --root-dir static --exclude 'mailto:' --exclude 'buchanankerswell\\.com' --exclude 'scholar\\.google' --exclude 'researchgate\\.net' --exclude 'doi\\.org' --exclude 'nature\\.com' --exclude 'onlinelibrary\\.wiley\\.com' --exclude 'minpet\\.org' --exclude 'submap' './content/**/*.md' './README.md'"
+      args: "--verbose --no-progress --timeout 60 --root-dir static --exclude 'mailto:' --exclude 'buchanankerswell\\.com' --exclude 'scholar\\.google' --exclude 'researchgate\\.net' --exclude 'doi\\.org' --exclude 'nature\\.com' --exclude 'onlinelibrary\\.wiley\\.com' --exclude 'minpet\\.org' --exclude 'zenodo\\.org' --exclude 'submap' './content/**/*.md' './README.md'"
